@@ -91,13 +91,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       id="home"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="relative overflow-hidden transition-all duration-700 select-none min-h-[640px]"
+      className="relative overflow-hidden transition-all duration-700 select-none"
     >
       {/* ========================================================= */}
       {/* SLIDE 0: CURRENT HERO SECTION (Original Flagship Design)   */}
       {/* ========================================================= */}
       {activeSlide === 0 && (
-        <div className="relative pt-6 pb-20 md:pb-28 bg-gradient-to-b from-[#e8f1fc] via-[#f2f7fd] to-white animate-fade-in transition-opacity duration-700">
+        <div className="relative pt-0 pb-12 sm:pt-1 sm:pb-16 bg-gradient-to-b from-[#e8f1fc] via-[#f2f7fd] to-white animate-fade-in transition-opacity duration-700">
           {/* Sky Ambient Clouds & Glow */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] bg-gradient-to-b from-sky-300/30 via-indigo-200/20 to-transparent blur-3xl -z-10 rounded-full" />
@@ -106,44 +106,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            {/* Top pill badge */}
-            <div className="inline-block mb-4">
-              <div className="px-5 py-1.5 rounded-full border border-sky-300/60 bg-white/80 backdrop-blur-sm text-sky-800 text-xs sm:text-sm font-medium shadow-sm">
-                Your Education Buddy
-              </div>
-            </div>
-
             {/* Main Title matching Screenshot 1 */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-800 tracking-tight max-w-4xl mx-auto leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 tracking-tight max-w-4xl mx-auto leading-[1.05]">
               Best <span className="font-editorial-italic font-normal">Overseas</span> Education <br className="hidden sm:inline" />
               Consultants in India.
             </h1>
 
-            {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-              <button
-                onClick={onOpenCallback}
-                className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full bg-white text-slate-800 font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg hover:border-indigo-200 border border-slate-100 transition-all active:scale-95"
-              >
-                <Phone className="w-4 h-4 text-slate-700" />
-                Request a Callback
-              </button>
-
-              <button
-                onClick={onOpenCounselling}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-700 font-medium text-xs sm:text-sm hover:text-indigo-600 transition-colors group"
-              >
-                <span className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-700 group-hover:bg-indigo-600 group-hover:text-white transition-all">
-                  <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
-                </span>
-                Get Free Counselling
-              </button>
-            </div>
-
             {/* Moving Pro-Level Radar Flight along Dotted Arch */}
-            <div className="mt-6 sm:mt-10 max-w-5xl mx-auto relative px-2 pointer-events-none">
+            <div className="mt-1 sm:mt-2 max-w-5xl mx-auto relative px-2 pointer-events-none">
               <svg
-                className="w-full h-24 sm:h-32 md:h-36 overflow-visible"
+                className="w-full h-12 sm:h-16 md:h-20 overflow-visible"
                 viewBox="0 0 1000 140"
                 fill="none"
               >
@@ -156,22 +128,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </linearGradient>
                 </defs>
 
-                <path
-                  id="airplaneFlightArc"
-                  d="M 30 125 Q 500 15 970 125"
-                  stroke="url(#flightLineGrad)"
-                  strokeWidth="1.75"
-                  strokeDasharray="6 6"
-                  strokeLinecap="round"
-                />
+                <g transform="translate(0, -18)">
+                  <path
+                    id="airplaneFlightArc"
+                    d="M 30 77 Q 500 -33 970 77"
+                    stroke="url(#flightLineGrad)"
+                    strokeWidth="1.75"
+                    strokeDasharray="6 6"
+                    strokeLinecap="round"
+                  />
 
-                <g>
-                  <animateMotion dur="8.5s" repeatCount="indefinite" rotate="auto">
-                    <mpath href="#airplaneFlightArc" />
-                  </animateMotion>
+                  <g>
+                    <animateMotion dur="8.5s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#airplaneFlightArc" />
+                    </animateMotion>
 
-                  {/* Pro Radar Flight Icon */}
-                  <g transform="translate(0, 0)">
+                    {/* Pro Radar Flight Icon */}
+                    <g transform="translate(0, 0)">
                     <circle cx="0" cy="0" r="14" fill="#38bdf8" opacity="0.12">
                       <animate attributeName="r" values="8;18;8" dur="2.5s" repeatCount="indefinite" />
                       <animate attributeName="opacity" values="0.25;0.05;0.25" dur="2.5s" repeatCount="indefinite" />
@@ -194,13 +167,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <circle cx="-3.8" cy="-11" r="0.65" fill="#ef4444" />
                     <circle cx="-3.8" cy="11" r="0.65" fill="#22c55e" />
                     <circle cx="-13" cy="0" r="0.65" fill="#ffffff" />
+                    </g>
                   </g>
                 </g>
               </svg>
             </div>
 
             {/* 5 Photo Tiles for PARIS, LONDON, CHINA, RUSSIA, SYDNEY */}
-            <div className="-mt-8 sm:-mt-12 pt-2 pb-8">
+            <div className="-mt-8 sm:-mt-11 pt-1 pb-4">
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto items-end justify-center">
                 {HERO_LANDMARKS.map((landmark, idx) => {
                   const floatClasses = [
@@ -211,11 +185,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     'animate-float-5'
                   ];
                   const heights = [
-                    'h-64 sm:h-72',
-                    'h-72 sm:h-80',
-                    'h-64 sm:h-70',
-                    'h-72 sm:h-80',
-                    'h-64 sm:h-74'
+                    'h-60 sm:h-68',
+                    'h-68 sm:h-76',
+                    'h-60 sm:h-66',
+                    'h-68 sm:h-76',
+                    'h-60 sm:h-70'
                   ];
 
                   return (
@@ -235,14 +209,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/50 group-hover:via-black/10 transition-colors" />
 
-                      <div className="relative z-10 pt-3.5 px-3 flex justify-center">
-                        <span className={`inline-block px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold tracking-widest uppercase shadow-md backdrop-blur-md ${landmark.badgeBg}`}>
+                      <div className="relative z-10 pt-2.5 px-2 flex justify-center">
+                        <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-extrabold tracking-wider uppercase shadow-md backdrop-blur-md ${landmark.badgeBg}`}>
                           {landmark.city}
                         </span>
                       </div>
 
-                      <div className="absolute inset-x-0 bottom-0 p-3.5 z-10 text-center flex flex-col items-center">
-                        <span className="text-xs sm:text-sm font-bold text-white drop-shadow-md">
+                      <div className="absolute inset-x-0 bottom-0 p-2.5 z-10 text-center flex flex-col items-center">
+                        <span className="text-[11px] sm:text-xs font-bold text-white drop-shadow-md">
                           {landmark.country}
                         </span>
                         <span className="text-[10px] text-white/80 font-medium mt-0.5 line-clamp-1">
@@ -252,7 +226,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                            landmark.id === 'russia' ? 'Top Medical Academies' :
                            'Australia · Post-Study PSW'}
                         </span>
-                        <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <span className="inline-flex items-center gap-1 text-[10px] font-semibold bg-white/90 text-slate-900 px-2.5 py-1 rounded-full shadow-sm">
                             Explore <ArrowUpRight className="w-2.5 h-2.5" />
                           </span>
@@ -265,7 +239,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Country Selector Pills */}
-            <div className="mt-10 max-w-4xl mx-auto space-y-3">
+            <div className="mt-6 max-w-4xl mx-auto space-y-2">
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                 {row1Countries.map((c) => {
                   const isActive = activeCountryId === c.id;
@@ -314,7 +288,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* SLIDE 1: TRAVEL & FLIGHTS (Title directly on image)        */}
       {/* ========================================================= */}
       {activeSlide === 1 && (
-        <div className="relative pt-24 pb-28 sm:pt-32 sm:pb-36 min-h-[640px] flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
+        <div className="relative min-h-[calc(100svh-4rem)] px-4 py-8 sm:py-10 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure Travel Photo (No box background) */}
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -324,7 +298,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
 
           {/* Headings & Title directly on the Image */}
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-6 text-center">
             <div className="inline-block mb-5">
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-bold shadow-lg">
                 <Plane className="w-4 h-4 text-sky-400" />
@@ -365,7 +339,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* SLIDE 2: GLOBAL EXPLORATION (Title directly on image)      */}
       {/* ========================================================= */}
       {activeSlide === 2 && (
-        <div className="relative pt-24 pb-28 sm:pt-32 sm:pb-36 min-h-[640px] flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
+        <div className="relative min-h-[calc(100svh-4rem)] px-4 py-8 sm:py-10 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure World Landmark Photo */}
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -375,7 +349,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
 
           {/* Headings & Title directly on the Image */}
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-6 text-center">
             <div className="inline-block mb-5">
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-bold shadow-lg">
                 <Compass className="w-4 h-4 text-amber-400" />
@@ -416,7 +390,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* SLIDE 3: EDUCATION & UNIVERSITIES (Title directly on image)*/}
       {/* ========================================================= */}
       {activeSlide === 3 && (
-        <div className="relative pt-24 pb-28 sm:pt-32 sm:pb-36 min-h-[640px] flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
+        <div className="relative min-h-[calc(100svh-4rem)] px-4 py-4 sm:py-6 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure University Campus Photo */}
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -426,35 +400,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
 
           {/* Headings & Title directly on the Image */}
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-            <div className="inline-block mb-5">
+          <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-6 text-center">
+            <div className="inline-block mb-3">
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-bold shadow-lg">
                 <GraduationCap className="w-4 h-4 text-emerald-400" />
                 Global University Admissions &amp; Elite Degrees
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
               Unlock Global Education with <br />
               <span className="animate-text-flip font-editorial-italic font-bold text-emerald-300 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] mx-2 inline-block">
                 {eduWords[eduWordIdx]}
               </span>
             </h2>
 
-            <p className="mt-5 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
               Direct institutional tie-ups across Australia, UK, Germany, Canada, and Ireland. Secure up to 100% scholarships and express 14-day offer letters.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <button
                 onClick={onOpenCallback}
-                className="px-8 py-3.5 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-sm shadow-xl transition-all active:scale-95 flex items-center gap-2"
+                className="px-8 py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-sm shadow-xl transition-all active:scale-95 flex items-center gap-2"
               >
                 <GraduationCap className="w-4 h-4" /> Explore Top Universities
               </button>
               <button
                 onClick={onOpenCounselling}
-                className="px-7 py-3.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-bold text-sm border border-white/50 shadow-lg transition-all active:scale-95"
+                className="px-7 py-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-bold text-sm border border-white/50 shadow-lg transition-all active:scale-95"
               >
                 Check Scholarship Eligibility
               </button>
@@ -467,7 +441,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* SLIDE 4: JOBS & CAREERS (Title directly on image)          */}
       {/* ========================================================= */}
       {activeSlide === 4 && (
-        <div className="relative pt-24 pb-28 sm:pt-32 sm:pb-36 min-h-[640px] flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
+        <div className="relative min-h-[calc(100svh-4rem)] px-4 py-4 sm:py-6 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure Modern Global Professional Skyline Photo */}
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -477,35 +451,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
 
           {/* Headings & Title directly on the Image */}
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-            <div className="inline-block mb-5">
+          <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-6 text-center">
+            <div className="inline-block mb-3">
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-bold shadow-lg">
                 <Briefcase className="w-4 h-4 text-cyan-400" />
                 International Careers &amp; Direct Employer Placements
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
               Launch High-Paying Careers in <br />
               <span className="animate-text-flip font-editorial-italic font-bold text-cyan-300 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] mx-2 inline-block">
                 {jobWords[jobWordIdx]}
               </span>
             </h2>
 
-            <p className="mt-5 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
               Direct employer hospital contracts for nurses and doctors in Germany starting from €3,200/month, plus tax-free engineering and tech roles in Dubai.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <button
                 onClick={onOpenCallback}
-                className="px-8 py-3.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-extrabold text-sm shadow-xl transition-all active:scale-95 flex items-center gap-2"
+                className="px-8 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-extrabold text-sm shadow-xl transition-all active:scale-95 flex items-center gap-2"
               >
                 <Briefcase className="w-4 h-4" /> Apply for Overseas Jobs
               </button>
               <button
                 onClick={onOpenCounselling}
-                className="px-7 py-3.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-bold text-sm border border-white/50 shadow-lg transition-all active:scale-95"
+                className="px-7 py-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-bold text-sm border border-white/50 shadow-lg transition-all active:scale-95"
               >
                 Free Resume Assessment
               </button>
