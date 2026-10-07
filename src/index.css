@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.font-editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  color: #d97706;
+}
+
+/* Floating animation for 3D landmark cards */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes floatDelay {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-0.5deg);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatDelay 6s ease-in-out infinite 0.7s;
+}
+
+.animate-float-3 {
+  animation: floatSlow 5.5s ease-in-out infinite 1.4s;
+}
+
+.animate-float-4 {
+  animation: floatDelay 6.2s ease-in-out infinite 2.1s;
+}
+
+.animate-float-5 {
+  animation: floatSlow 5.8s ease-in-out infinite 2.8s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth marquee scrolling right to left */
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: scrollRightToLeft 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left-delayed {
+  display: flex;
+  width: max-content;
+  animation: scrollRightToLeft 36s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .animate-marquee-left,
+.marquee-container:hover .animate-marquee-left-delayed {
+  animation-play-state: paused;
+}
+
+/* Text Flip Animation for Hero Titles */
+@keyframes textFlipIn {
+  0% {
+    transform: translateY(18px) rotateX(-50deg);
+    opacity: 0;
+  }
+  20%, 80% {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-18px) rotateX(50deg);
+    opacity: 0;
+  }
+}
+
+.animate-text-flip {
+  display: inline-block;
+  animation: textFlipIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: center;
+}
+
+
+

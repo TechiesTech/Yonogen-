@@ -1,0 +1,239 @@
+.photo-frame-section {
+  width: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: visible;
+}
+
+.photo-frame-container {
+  position: relative;
+  width: 520px;
+  height: 560px;
+  margin: 0 auto;
+}
+
+/* Common image frame */
+.frame {
+  position: absolute;
+  overflow: hidden;
+  background: #f5f5f5;
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+/* --------------------------------
+   TOP RIGHT — CITY
+-------------------------------- */
+
+.frame-city {
+  top: 15px;
+  right: 20px;
+
+  width: 260px;
+  height: 245px;
+
+  clip-path: polygon(
+    7% 17%,
+    86% 0%,
+    100% 5%,
+    96% 83%,
+    89% 94%,
+    30% 100%,
+    3% 78%,
+    0% 42%
+  );
+
+  border-radius: 30px;
+}
+
+.frame-city img {
+  transform: scale(1.05);
+}
+
+
+/* --------------------------------
+   MIDDLE LEFT — WOMAN
+-------------------------------- */
+
+.frame-student {
+  left: 15px;
+  top: 130px;
+
+  width: 245px;
+  height: 225px;
+
+  clip-path: polygon(
+    10% 2%,
+    78% 0%,
+    100% 20%,
+    95% 75%,
+    72% 94%,
+    27% 100%,
+    4% 80%,
+    0% 30%
+  );
+
+  border-radius: 28px;
+}
+
+.frame-student img {
+  transform: scale(1.05);
+}
+
+
+/* --------------------------------
+   BOTTOM LEFT — GRADUATE
+-------------------------------- */
+
+.frame-graduate {
+  left: 25px;
+  bottom: 20px;
+
+  width: 245px;
+  height: 205px;
+
+  clip-path: polygon(
+    7% 7%,
+    85% 0%,
+    100% 31%,
+    91% 70%,
+    61% 100%,
+    24% 94%,
+    4% 65%,
+    0% 25%
+  );
+
+  border-radius: 25px;
+}
+
+.frame-graduate img {
+  transform: scale(1.05);
+}
+
+
+/* --------------------------------
+   HOVER EFFECT
+-------------------------------- */
+
+.frame:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  z-index: 10;
+}
+
+.frame:hover img {
+  transform: scale(1.12);
+  filter: saturate(1.08);
+}
+
+
+/* --------------------------------
+   FLOATING CURSOR
+-------------------------------- */
+
+.floating-cursor {
+  position: absolute;
+
+  left: 275px;
+  top: 270px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 20;
+
+  animation:
+    cursorFloat 3s ease-in-out infinite,
+    cursorRotate 4s ease-in-out infinite;
+}
+
+.floating-cursor svg {
+  width: 30px;
+  height: 30px;
+
+  filter:
+    drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12));
+}
+
+
+@keyframes cursorFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+@keyframes cursorRotate {
+
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: -8deg;
+  }
+
+}
+
+
+/* --------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media (max-width: 1200px) {
+  .photo-frame-container {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .photo-frame-section {
+    min-height: 460px;
+  }
+
+  .photo-frame-container {
+    width: 350px;
+    height: 450px;
+    transform: scale(0.85);
+    transform-origin: center center;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .photo-frame-container {
+    transform: scale(0.72);
+    transform-origin: center center;
+  }
+
+}
