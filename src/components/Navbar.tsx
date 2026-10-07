@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCallback, onOpenCounsellin
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 leading-none flex items-center gap-1">
-                Jagvimal
+                YOLOgen
                 <span className="text-xs px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 font-semibold border border-amber-200/60">Overseas</span>
               </span>
               <span className="text-[10px] text-slate-500 font-medium tracking-wide mt-0.5">
