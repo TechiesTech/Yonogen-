@@ -43,7 +43,7 @@ export const VisaServicesSection: React.FC<VisaServicesSectionProps> = ({ onSele
                 style={{
                   background:
                     visa.id === 'visitor-visa'
-                      ? 'linear-gradient(135deg, #fffbeb 0%, #ffffff 50%, #fef3c7 100%)'
+                      ? 'linear-gradient(135deg, #f8f0ff 0%, #ffffff 50%, #f1e0ff 100%)'
                       : visa.id === 'student-visa'
                       ? 'linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #dcfce7 100%)'
                       : 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #e0f2fe 100%)'
@@ -87,7 +87,7 @@ export const VisaServicesSection: React.FC<VisaServicesSectionProps> = ({ onSele
                 style={{
                   background:
                     visa.id === 'citizenship'
-                      ? 'linear-gradient(135deg, #fffbeb 0%, #ffffff 50%, #fef3c7 100%)'
+                      ? 'linear-gradient(135deg, #f8f0ff 0%, #ffffff 50%, #f1e0ff 100%)'
                       : 'linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #dcfce7 100%)'
                 }}
               >

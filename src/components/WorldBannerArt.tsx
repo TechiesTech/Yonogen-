@@ -11,9 +11,9 @@ export const WorldBannerArt: React.FC<{ className?: string }> = ({ className = '
             <stop offset="100%" stopColor="#0369a1" />
           </radialGradient>
           <linearGradient id="sandStone" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#fef3c7" />
-            <stop offset="50%" stopColor="#fde68a" />
-            <stop offset="100%" stopColor="#d97706" />
+            <stop offset="0%" stopColor="#830dfa" />
+            <stop offset="50%" stopColor="#830dfa" />
+            <stop offset="100%" stopColor="#830dfa" />
           </linearGradient>
           <linearGradient id="metalEiffel" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#d1d5db" />
@@ -24,7 +24,7 @@ export const WorldBannerArt: React.FC<{ className?: string }> = ({ className = '
         {/* Floating Mini Hot Air Balloon */}
         <ellipse cx="65" cy="55" rx="14" ry="17" fill="#38bdf8" />
         <ellipse cx="65" cy="55" rx="5" ry="17" fill="#f43f5e" />
-        <rect x="62" y="74" width="6" height="5" rx="1" fill="#b45309" />
+        <rect x="62" y="74" width="6" height="5" rx="1" fill="#830dfa" />
         <line x1="59" y1="71" x2="62" y2="74" stroke="#64748b" strokeWidth="0.8" />
         <line x1="71" y1="71" x2="68" y2="74" stroke="#64748b" strokeWidth="0.8" />
 
@@ -38,7 +38,7 @@ export const WorldBannerArt: React.FC<{ className?: string }> = ({ className = '
         {/* Big Ben Clock Tower (Back center) */}
         <rect x="182" y="48" width="28" height="110" fill="url(#sandStone)" />
         <polygon points="180,48 196,15 212,48" fill="#475569" />
-        <circle cx="196" cy="65" r="8" fill="#ffffff" stroke="#92400e" strokeWidth="1.5" />
+        <circle cx="196" cy="65" r="8" fill="#ffffff" stroke="#830dfa" strokeWidth="1.5" />
         <line x1="196" y1="65" x2="196" y2="60" stroke="#000000" strokeWidth="1" />
         <line x1="196" y1="65" x2="200" y2="65" stroke="#000000" strokeWidth="1" />
 
@@ -47,10 +47,10 @@ export const WorldBannerArt: React.FC<{ className?: string }> = ({ className = '
         <circle cx="118" cy="38" r="6" fill="#2dd4bf" />
         {/* Torch arm */}
         <line x1="114" y1="42" x2="105" y2="28" stroke="#2dd4bf" strokeWidth="3" />
-        <circle cx="104" cy="26" r="3" fill="#facc15" />
+        <circle cx="104" cy="26" r="3" fill="#830dfa" />
 
         {/* Colosseum / Classical Arch facade on bottom left */}
-        <path d="M 40 180 L 40 135 Q 85 130 130 135 L 130 180 Z" fill="#fed7aa" stroke="#ea580c" strokeWidth="1" />
+        <path d="M 40 180 L 40 135 Q 85 130 130 135 L 130 180 Z" fill="#fed7aa" stroke="#830dfa" strokeWidth="1" />
         <path d="M 50 175 L 50 155 Q 60 148 70 155 L 70 175 Z" fill="#7c2d12" />
         <path d="M 80 175 L 80 155 Q 90 148 100 155 L 100 175 Z" fill="#7c2d12" />
         <path d="M 110 175 L 110 155 Q 120 148 125 155 L 125 175 Z" fill="#7c2d12" />
@@ -58,8 +58,8 @@ export const WorldBannerArt: React.FC<{ className?: string }> = ({ className = '
         {/* Eiffel Tower in Foreground */}
         <path d="M 98 178 L 122 80 L 138 80 L 162 178 Q 130 155 98 178 Z" fill="url(#metalEiffel)" />
         <polygon points="125,80 130,28 135,80" fill="url(#metalEiffel)" />
-        <line x1="130" y1="28" x2="130" y2="18" stroke="#f59e0b" strokeWidth="2.5" />
-        <circle cx="130" cy="18" r="2.5" fill="#fef08a" />
+        <line x1="130" y1="28" x2="130" y2="18" stroke="#830dfa" strokeWidth="2.5" />
+        <circle cx="130" cy="18" r="2.5" fill="#830dfa" />
         {/* Arch opening */}
         <path d="M 116 178 Q 130 162 144 178 Z" fill="#1f2937" opacity="0.7" />
 

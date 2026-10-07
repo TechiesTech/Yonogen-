@@ -10,16 +10,16 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
     case 'visitor':
       return (
         <div className={`relative flex items-center justify-center ${className}`}>
-          {/* Traveler with bucket/safari hat, sunglasses, yellow shirt, suitcase */}
+          {/* Traveler with bucket/safari hat, sunglasses, lavender shirt, suitcase */}
           <svg viewBox="0 0 200 240" className="w-full h-full drop-shadow-xl" aria-label="Visitor Visa Traveler">
             <defs>
               <linearGradient id="suitYellow" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" />
-                <stop offset="100%" stopColor="#d97706" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
               <linearGradient id="suitcaseGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#facc15" />
-                <stop offset="100%" stopColor="#ca8a04" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
               <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#fed7aa" />
@@ -28,11 +28,11 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             </defs>
 
             {/* Suitcase on the left */}
-            <rect x="18" y="125" width="45" height="70" rx="8" fill="url(#suitcaseGold)" stroke="#a16207" strokeWidth="2" />
-            <rect x="23" y="132" width="35" height="56" rx="4" fill="#eab308" opacity="0.6" />
-            <line x1="18" y1="160" x2="63" y2="160" stroke="#854d0e" strokeWidth="2" />
+            <rect x="18" y="125" width="45" height="70" rx="8" fill="url(#suitcaseGold)" stroke="#830dfa" strokeWidth="2" />
+            <rect x="23" y="132" width="35" height="56" rx="4" fill="#830dfa" opacity="0.6" />
+            <line x1="18" y1="160" x2="63" y2="160" stroke="#830dfa" strokeWidth="2" />
             {/* Suitcase handle */}
-            <path d="M 33 125 L 33 90 Q 33 85 40 85 Q 47 85 47 90 L 47 125" fill="none" stroke="#713f12" strokeWidth="3" />
+            <path d="M 33 125 L 33 90 Q 33 85 40 85 Q 47 85 47 90 L 47 125" fill="none" stroke="#830dfa" strokeWidth="3" />
             {/* Wheels */}
             <circle cx="28" cy="198" r="4.5" fill="#334155" />
             <circle cx="53" cy="198" r="4.5" fill="#334155" />
@@ -49,9 +49,9 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             <rect x="82" y="148" width="48" height="26" rx="5" fill="#cbd5e1" />
             <line x1="106" y1="152" x2="106" y2="174" stroke="#94a3b8" strokeWidth="2" />
 
-            {/* Torso / Yellow T-Shirt */}
+            {/* Torso / Lavender T-Shirt */}
             <rect x="76" y="98" width="56" height="54" rx="14" fill="url(#suitYellow)" />
-            <circle cx="104" cy="98" r="8" fill="#d97706" />
+            <circle cx="104" cy="98" r="8" fill="#830dfa" />
 
             {/* Arm holding tablet/map */}
             <path d="M 76 108 L 56 128 L 62 136 L 80 120" fill="url(#suitYellow)" />
@@ -68,9 +68,9 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             <line x1="102" y1="56" x2="106" y2="56" stroke="#1e293b" strokeWidth="2" />
 
             {/* Safari Sun Hat */}
-            <ellipse cx="104" cy="42" rx="36" ry="10" fill="#fde047" stroke="#ca8a04" strokeWidth="1.5" />
-            <path d="M 82 42 Q 104 22 126 42 Z" fill="#eab308" />
-            <rect x="85" y="38" width="38" height="4" fill="#b45309" />
+            <ellipse cx="104" cy="42" rx="36" ry="10" fill="#830dfa" stroke="#830dfa" strokeWidth="1.5" />
+            <path d="M 82 42 Q 104 22 126 42 Z" fill="#830dfa" />
+            <rect x="85" y="38" width="38" height="4" fill="#830dfa" />
 
             {/* Airplane stamp badge floating */}
             <circle cx="160" cy="115" r="16" fill="#ecfdf5" stroke="#10b981" strokeWidth="1.5" />
@@ -107,13 +107,13 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             <path d="M 68 110 L 52 145 L 75 145 Z" fill="#db2777" />
             {/* Textbooks in hand */}
             <rect x="42" y="132" width="36" height="12" rx="2" fill="#38bdf8" />
-            <rect x="45" y="122" width="30" height="10" rx="2" fill="#fbbf24" />
+            <rect x="45" y="122" width="30" height="10" rx="2" fill="#830dfa" />
             <rect x="48" y="114" width="25" height="8" rx="2" fill="#34d399" />
 
             {/* Right hand waving */}
             <path d="M 128 110 L 148 100 L 158 85 L 150 82 L 138 98 Z" fill="url(#studSkin)" />
             {/* Floating sparkle note */}
-            <circle cx="165" cy="80" r="3" fill="#f59e0b" />
+            <circle cx="165" cy="80" r="3" fill="#830dfa" />
 
             {/* Neck */}
             <rect x="96" y="82" width="12" height="16" fill="url(#studSkin)" />
@@ -133,7 +133,7 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             <path d="M 96 70 Q 103 76 110 70" fill="none" stroke="#e11d48" strokeWidth="2.5" strokeLinecap="round" />
 
             {/* Floating graduation star */}
-            <polygon points="155,40 158,48 166,48 160,53 162,61 155,56 148,61 150,53 144,48 152,48" fill="#fbbf24" />
+            <polygon points="155,40 158,48 166,48 160,53 162,61 155,56 148,61 150,53 144,48 152,48" fill="#830dfa" />
           </svg>
         </div>
       );
@@ -145,17 +145,17 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
           <svg viewBox="0 0 200 240" className="w-full h-full drop-shadow-xl" aria-label="Worker Visa">
             <defs>
               <linearGradient id="helmetYellow" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#fde047" />
-                <stop offset="100%" stopColor="#eab308" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
             </defs>
 
             {/* Worker Body */}
             <rect x="70" y="96" width="64" height="70" rx="12" fill="#64748b" />
             {/* Safety vest stripes */}
-            <rect x="80" y="96" width="12" height="70" fill="#f97316" />
-            <rect x="112" y="96" width="12" height="70" fill="#f97316" />
-            <rect x="70" y="130" width="64" height="10" fill="#fde047" />
+            <rect x="80" y="96" width="12" height="70" fill="#830dfa" />
+            <rect x="112" y="96" width="12" height="70" fill="#830dfa" />
+            <rect x="70" y="130" width="64" height="10" fill="#830dfa" />
 
             {/* Arms on hips - confident pose */}
             <path d="M 70 108 L 48 135 L 56 150 L 72 132" fill="#475569" />
@@ -175,10 +175,10 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             {/* Friendly smile inside beard */}
             <path d="M 96 66 Q 102 70 108 66" stroke="#ffffff" strokeWidth="2" fill="none" />
 
-            {/* Yellow Construction Hard Hat */}
-            <ellipse cx="102" cy="38" rx="28" ry="14" fill="url(#helmetYellow)" stroke="#ca8a04" strokeWidth="1.5" />
-            <path d="M 80 38 Q 102 14 124 38 Z" fill="#facc15" />
-            <rect x="98" y="16" width="8" height="24" rx="2" fill="#ca8a04" opacity="0.6" />
+            {/* Lavender Construction Hard Hat */}
+            <ellipse cx="102" cy="38" rx="28" ry="14" fill="url(#helmetYellow)" stroke="#830dfa" strokeWidth="1.5" />
+            <path d="M 80 38 Q 102 14 124 38 Z" fill="#830dfa" />
+            <rect x="98" y="16" width="8" height="24" rx="2" fill="#830dfa" opacity="0.6" />
           </svg>
         </div>
       );
@@ -190,8 +190,8 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
           <svg viewBox="0 0 200 240" className="w-full h-full drop-shadow-xl" aria-label="Citizenship Family">
             <defs>
               <linearGradient id="dadOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f97316" />
-                <stop offset="100%" stopColor="#ea580c" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
               <linearGradient id="momPink" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#f472b6" />
@@ -224,11 +224,11 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             <path d="M 99 111 Q 102 114 105 111" stroke="#1d4ed8" strokeWidth="1.5" fill="none" />
 
             {/* Protective hugging hands */}
-            <path d="M 72 100 Q 86 112 88 126" stroke="#ea580c" strokeWidth="3" fill="none" />
+            <path d="M 72 100 Q 86 112 88 126" stroke="#830dfa" strokeWidth="3" fill="none" />
             <path d="M 130 100 Q 116 112 114 126" stroke="#db2777" strokeWidth="3" fill="none" />
 
             {/* House/Citizenship badge */}
-            <polygon points="102,68 110,75 94,75" fill="#eab308" />
+            <polygon points="102,68 110,75 94,75" fill="#830dfa" />
           </svg>
         </div>
       );
@@ -276,10 +276,10 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
             {/* Handshake in Center */}
             <path d="M 72 105 L 94 116" stroke="#fed7aa" strokeWidth="7" strokeLinecap="round" />
             <path d="M 128 105 L 106 116" stroke="#fed7aa" strokeWidth="7" strokeLinecap="round" />
-            <rect x="94" y="112" width="12" height="10" rx="3" fill="#f59e0b" />
+            <rect x="94" y="112" width="12" height="10" rx="3" fill="#830dfa" />
 
             {/* Deal Sparkle */}
-            <polygon points="100,96 102,102 108,102 103,106 105,112 100,108 95,112 97,106 92,102 98,102" fill="#eab308" />
+            <polygon points="100,96 102,102 108,102 103,106 105,112 100,108 95,112 97,106 92,102 98,102" fill="#830dfa" />
           </svg>
         </div>
       );

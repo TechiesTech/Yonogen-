@@ -23,8 +23,8 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
                 <stop offset="100%" stopColor="#a7f3d0" />
               </linearGradient>
               <linearGradient id="goldTop" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#fef08a" />
-                <stop offset="100%" stopColor="#f59e0b" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
             </defs>
 
@@ -61,11 +61,11 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
 
             {/* Upper Spire */}
             <polygon points="92,45 98,15 102,15 108,45" fill="url(#eiffelBase)" />
-            <line x1="100" y1="15" x2="100" y2="5" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="100" y1="15" x2="100" y2="5" stroke="#830dfa" strokeWidth="2.5" strokeLinecap="round" />
             <circle cx="100" cy="5" r="3" fill="url(#goldTop)" />
 
             {/* Light beam / glow */}
-            <polygon points="100,5 60,0 140,0" fill="#fef08a" opacity="0.18" />
+            <polygon points="100,5 60,0 140,0" fill="#830dfa" opacity="0.18" />
           </svg>
         </div>
       );
@@ -76,9 +76,9 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
           <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
             <defs>
               <linearGradient id="stoneWall" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#fef08a" />
-                <stop offset="50%" stopColor="#fde047" />
-                <stop offset="100%" stopColor="#eab308" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="50%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
               <linearGradient id="bridgeWater" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#60a5fa" />
@@ -92,21 +92,21 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
             <polygon points="100,165 175,140 175,150 100,175" fill="#1e40af" />
 
             {/* Left Tower */}
-            <rect x="48" y="55" width="32" height="85" rx="2" fill="url(#stoneWall)" stroke="#ca8a04" strokeWidth="1" />
+            <rect x="48" y="55" width="32" height="85" rx="2" fill="url(#stoneWall)" stroke="#830dfa" strokeWidth="1" />
             {/* Left Tower Roofs */}
             <polygon points="44,55 64,25 64,55" fill="#0284c7" />
             <polygon points="64,25 84,55 64,55" fill="#0369a1" />
-            <circle cx="64" cy="22" r="2.5" fill="#fef08a" />
+            <circle cx="64" cy="22" r="2.5" fill="#830dfa" />
             {/* Windows Left */}
             <rect x="58" y="70" width="12" height="18" rx="6" fill="#1e293b" />
             <rect x="58" y="100" width="12" height="18" rx="6" fill="#1e293b" />
 
             {/* Right Tower */}
-            <rect x="120" y="55" width="32" height="85" rx="2" fill="url(#stoneWall)" stroke="#ca8a04" strokeWidth="1" />
+            <rect x="120" y="55" width="32" height="85" rx="2" fill="url(#stoneWall)" stroke="#830dfa" strokeWidth="1" />
             {/* Right Tower Roofs */}
             <polygon points="116,55 136,25 136,55" fill="#0284c7" />
             <polygon points="136,25 156,55 136,55" fill="#0369a1" />
-            <circle cx="136" cy="22" r="2.5" fill="#fef08a" />
+            <circle cx="136" cy="22" r="2.5" fill="#830dfa" />
             {/* Windows Right */}
             <rect x="130" y="70" width="12" height="18" rx="6" fill="#1e293b" />
             <rect x="130" y="100" width="12" height="18" rx="6" fill="#1e293b" />
@@ -150,31 +150,31 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
             {/* Tier 1 Level */}
             <rect x="75" y="105" width="50" height="30" fill="url(#pagodaRed)" stroke="#991b1b" strokeWidth="1" />
             {/* Columns & lattice */}
-            <line x1="88" y1="105" x2="88" y2="135" stroke="#fef08a" strokeWidth="2.5" />
-            <line x1="112" y1="105" x2="112" y2="135" stroke="#fef08a" strokeWidth="2.5" />
+            <line x1="88" y1="105" x2="88" y2="135" stroke="#830dfa" strokeWidth="2.5" />
+            <line x1="112" y1="105" x2="112" y2="135" stroke="#830dfa" strokeWidth="2.5" />
             <rect x="94" y="112" width="12" height="18" fill="#7f1d1d" />
 
             {/* Tier 1 Eaves (curved) */}
-            <path d="M 50 108 Q 100 95 150 108 Q 100 85 50 108 Z" fill="url(#roofGold)" stroke="#f59e0b" strokeWidth="1.5" />
+            <path d="M 50 108 Q 100 95 150 108 Q 100 85 50 108 Z" fill="url(#roofGold)" stroke="#830dfa" strokeWidth="1.5" />
 
             {/* Tier 2 Level */}
             <rect x="80" y="78" width="40" height="20" fill="url(#pagodaRed)" />
-            <line x1="92" y1="78" x2="92" y2="98" stroke="#fef08a" strokeWidth="2" />
-            <line x1="108" y1="78" x2="108" y2="98" stroke="#fef08a" strokeWidth="2" />
+            <line x1="92" y1="78" x2="92" y2="98" stroke="#830dfa" strokeWidth="2" />
+            <line x1="108" y1="78" x2="108" y2="98" stroke="#830dfa" strokeWidth="2" />
 
             {/* Tier 2 Eaves */}
-            <path d="M 60 78 Q 100 68 140 78 Q 100 60 60 78 Z" fill="url(#roofGold)" stroke="#f59e0b" strokeWidth="1.5" />
+            <path d="M 60 78 Q 100 68 140 78 Q 100 60 60 78 Z" fill="url(#roofGold)" stroke="#830dfa" strokeWidth="1.5" />
 
             {/* Tier 3 Level */}
             <rect x="86" y="56" width="28" height="16" fill="url(#pagodaRed)" />
 
             {/* Tier 3 Eaves */}
-            <path d="M 70 56 Q 100 48 130 56 Q 100 40 70 56 Z" fill="url(#roofGold)" stroke="#f59e0b" strokeWidth="1.5" />
+            <path d="M 70 56 Q 100 48 130 56 Q 100 40 70 56 Z" fill="url(#roofGold)" stroke="#830dfa" strokeWidth="1.5" />
 
             {/* Finial / Spire */}
-            <polygon points="97,42 100,22 103,42" fill="#eab308" />
-            <circle cx="100" cy="20" r="3.5" fill="#fef08a" />
-            <line x1="100" y1="20" x2="100" y2="10" stroke="#fef08a" strokeWidth="2" strokeLinecap="round" />
+            <polygon points="97,42 100,22 103,42" fill="#830dfa" />
+            <circle cx="100" cy="20" r="3.5" fill="#830dfa" />
+            <line x1="100" y1="20" x2="100" y2="10" stroke="#830dfa" strokeWidth="2" strokeLinecap="round" />
             <circle cx="100" cy="10" r="2" fill="#ffffff" />
           </svg>
         </div>
@@ -188,7 +188,7 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
               <linearGradient id="domeSwirl1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#ef4444" />
                 <stop offset="50%" stopColor="#10b981" />
-                <stop offset="100%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
               <linearGradient id="domeSwirl2" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#3b82f6" />
@@ -196,8 +196,8 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
                 <stop offset="100%" stopColor="#8b5cf6" />
               </linearGradient>
               <linearGradient id="domeGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#fef08a" />
-                <stop offset="100%" stopColor="#d97706" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </linearGradient>
             </defs>
 
@@ -215,20 +215,20 @@ export const LandmarkArt: React.FC<LandmarkArtProps> = ({ type, className = '' }
             <rect x="58" y="70" width="24" height="45" fill="#dc2626" />
             {/* Left Onion Dome */}
             <path d="M 60 70 Q 52 50 70 38 Q 88 50 80 70 Z" fill="url(#domeSwirl2)" />
-            <line x1="70" y1="38" x2="70" y2="30" stroke="#fef08a" strokeWidth="2" />
-            <line x1="67" y1="33" x2="73" y2="33" stroke="#fef08a" strokeWidth="1.5" />
+            <line x1="70" y1="38" x2="70" y2="30" stroke="#830dfa" strokeWidth="2" />
+            <line x1="67" y1="33" x2="73" y2="33" stroke="#830dfa" strokeWidth="1.5" />
 
             {/* Right Tower & Onion Dome */}
             <rect x="118" y="70" width="24" height="45" fill="#dc2626" />
             <path d="M 120 70 Q 112 50 130 38 Q 148 50 140 70 Z" fill="url(#domeSwirl1)" />
-            <line x1="130" y1="38" x2="130" y2="30" stroke="#fef08a" strokeWidth="2" />
-            <line x1="127" y1="33" x2="133" y2="33" stroke="#fef08a" strokeWidth="1.5" />
+            <line x1="130" y1="38" x2="130" y2="30" stroke="#830dfa" strokeWidth="2" />
+            <line x1="127" y1="33" x2="133" y2="33" stroke="#830dfa" strokeWidth="1.5" />
 
             {/* Central Main Tower (Taller) */}
             <rect x="85" y="55" width="30" height="60" fill="#991b1b" />
-            <path d="M 85 55 Q 75 30 100 15 Q 125 30 115 55 Z" fill="url(#domeGold)" stroke="#b45309" strokeWidth="1.5" />
-            <line x1="100" y1="15" x2="100" y2="5" stroke="#fef08a" strokeWidth="2.5" />
-            <line x1="96" y1="9" x2="104" y2="9" stroke="#fef08a" strokeWidth="2" />
+            <path d="M 85 55 Q 75 30 100 15 Q 125 30 115 55 Z" fill="url(#domeGold)" stroke="#830dfa" strokeWidth="1.5" />
+            <line x1="100" y1="15" x2="100" y2="5" stroke="#830dfa" strokeWidth="2.5" />
+            <line x1="96" y1="9" x2="104" y2="9" stroke="#830dfa" strokeWidth="2" />
           </svg>
         </div>
       );

@@ -211,7 +211,7 @@ export const HERO_LANDMARKS: LandmarkCard[] = [
     country: 'China',
     bgColor: 'from-amber-500 to-orange-600',
     textColor: 'text-white',
-    accentColor: '#f97316',
+    accentColor: '#830dfa',
     badgeBg: 'bg-amber-600/90 text-white',
     imageUrl: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=700&q=85',
     svgType: 'pagoda'
@@ -233,8 +233,8 @@ export const HERO_LANDMARKS: LandmarkCard[] = [
     country: 'Australia',
     bgColor: 'from-amber-400 to-yellow-500',
     textColor: 'text-white',
-    accentColor: '#eab308',
-    badgeBg: 'bg-yellow-500/90 text-slate-900',
+    accentColor: '#830dfa',
+    badgeBg: 'bg-yellow-500/90 text-white',
     imageUrl: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=700&q=85',
     svgType: 'sydneyopera'
   }

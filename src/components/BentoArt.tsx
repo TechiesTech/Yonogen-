@@ -13,9 +13,9 @@ export const BentoArt: React.FC<BentoArtProps> = ({ type, className = '' }) => {
           <svg viewBox="0 0 200 180" className="w-full h-full drop-shadow-xl" aria-label="IELTS Lightbulbs">
             <defs>
               <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#fef08a" />
-                <stop offset="50%" stopColor="#f59e0b" />
-                <stop offset="100%" stopColor="#d97706" />
+                <stop offset="0%" stopColor="#830dfa" />
+                <stop offset="50%" stopColor="#830dfa" />
+                <stop offset="100%" stopColor="#830dfa" />
               </radialGradient>
               <linearGradient id="armSleeve1" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#38bdf8" />
@@ -28,7 +28,7 @@ export const BentoArt: React.FC<BentoArtProps> = ({ type, className = '' }) => {
             </defs>
 
             {/* Ambient Aura */}
-            <circle cx="100" cy="55" r="45" fill="#fef9c3" opacity="0.6" />
+            <circle cx="100" cy="55" r="45" fill="#830dfa" opacity="0.6" />
 
             {/* Arm 1 (Left - smaller bulb) */}
             <rect x="35" y="125" width="22" height="55" rx="6" fill="url(#armSleeve2)" />
@@ -82,20 +82,20 @@ export const BentoArt: React.FC<BentoArtProps> = ({ type, className = '' }) => {
             <path d="M 145 28 L 145 68 L 138 60 L 131 68 L 131 28 Z" fill="#ec4899" />
 
             {/* Pencil floating */}
-            <rect x="175" y="55" width="8" height="55" rx="3" transform="rotate(18 179 82)" fill="#f59e0b" />
+            <rect x="175" y="55" width="8" height="55" rx="3" transform="rotate(18 179 82)" fill="#830dfa" />
             <polygon points="174,115 178,125 182,113" fill="#fed7aa" />
 
             {/* Graduation Cap in foreground */}
             <polygon points="85,95 135,115 85,135 35,115" fill="url(#gradCap)" />
             {/* Cap skull rim underneath */}
             <path d="M 55 124 Q 85 142 115 124 L 115 140 Q 85 158 55 140 Z" fill="#3730a3" />
-            {/* Golden Tassel */}
-            <circle cx="85" cy="115" r="3" fill="#facc15" />
-            <path d="M 85 115 Q 115 120 120 148" stroke="#facc15" strokeWidth="3" fill="none" strokeLinecap="round" />
-            <rect x="117" y="146" width="6" height="12" rx="2" fill="#eab308" />
+            {/* Lavender Tassel */}
+            <circle cx="85" cy="115" r="3" fill="#830dfa" />
+            <path d="M 85 115 Q 115 120 120 148" stroke="#830dfa" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <rect x="117" y="146" width="6" height="12" rx="2" fill="#830dfa" />
 
             {/* Cute star sparkles */}
-            <polygon points="40,65 42,70 48,70 44,74 46,80 40,76 34,80 36,74 32,70 38,70" fill="#fbbf24" />
+            <polygon points="40,65 42,70 48,70 44,74 46,80 40,76 34,80 36,74 32,70 38,70" fill="#830dfa" />
           </svg>
         </div>
       );
@@ -121,8 +121,8 @@ export const BentoArt: React.FC<BentoArtProps> = ({ type, className = '' }) => {
             <path d="M 70 40 H 155 V 75 H 70 Z" fill="#0f172a" />
             {/* Red stripe */}
             <path d="M 70 75 H 155 V 110 H 70 Z" fill="#dc2626" />
-            {/* Gold/Yellow stripe */}
-            <path d="M 70 110 H 155 V 150 Q 155 155 150 155 H 75 Q 70 155 70 150 Z" fill="#eab308" />
+            {/* Lavender stripe */}
+            <path d="M 70 110 H 155 V 150 Q 155 155 150 155 H 75 Q 70 155 70 150 Z" fill="#830dfa" />
 
             {/* German text "Deutsch" on the book */}
             <text x="112" y="97" textAnchor="middle" fill="#ffffff" fontWeight="bold" fontSize="13" letterSpacing="1" fontFamily="sans-serif">
@@ -164,14 +164,14 @@ export const BentoArt: React.FC<BentoArtProps> = ({ type, className = '' }) => {
             </defs>
 
             {/* Clipboard on the background left */}
-            <rect x="25" y="45" width="70" height="95" rx="8" fill="#fef08a" stroke="#eab308" strokeWidth="2" />
+            <rect x="25" y="45" width="70" height="95" rx="8" fill="#830dfa" stroke="#830dfa" strokeWidth="2" />
             {/* Clipboard top clip */}
             <rect x="45" y="38" width="30" height="12" rx="4" fill="#94a3b8" />
             <circle cx="60" cy="44" r="2.5" fill="#475569" />
             {/* Checklist lines */}
-            <line x1="38" y1="65" x2="80" y2="65" stroke="#b45309" strokeWidth="2.5" strokeLinecap="round" />
-            <line x1="38" y1="80" x2="80" y2="80" stroke="#b45309" strokeWidth="2.5" strokeLinecap="round" />
-            <line x1="38" y1="95" x2="80" y2="95" stroke="#b45309" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="38" y1="65" x2="80" y2="65" stroke="#830dfa" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="38" y1="80" x2="80" y2="80" stroke="#830dfa" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="38" y1="95" x2="80" y2="95" stroke="#830dfa" strokeWidth="2.5" strokeLinecap="round" />
             {/* Heart EKG badge on clipboard */}
             <circle cx="72" cy="115" r="10" fill="#fca5a5" />
             <path d="M 66 115 L 70 115 L 72 110 L 74 120 L 76 115 L 79 115" stroke="#b91c1c" strokeWidth="1.5" fill="none" />

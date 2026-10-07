@@ -88,8 +88,8 @@ export const UniversitiesGridSection: React.FC = () => {
       <div className="flex items-center gap-2.5">
         <div className="w-7 h-7 bg-[#002b49] rounded-md flex items-center justify-center text-amber-400 shrink-0 shadow-2xs">
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="5" fill="#f59e0b" />
-            <path d="M12 2v2m0 16v2M2 12h2m16 0h2" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="12" cy="12" r="5" fill="#830dfa" />
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2" stroke="#830dfa" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </div>
         <div className="text-left">
