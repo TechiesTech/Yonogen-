@@ -102,7 +102,13 @@ export const VisaServicesSection: React.FC<VisaServicesSectionProps> = ({ onSele
                 </div>
 
                 {/* Character 3D Graphic */}
-                <div className="absolute right-4 bottom-2 w-40 sm:w-48 h-48 sm:h-52 pointer-events-none group-hover:scale-105 transition-transform duration-300">
+                <div
+                  className={`absolute right-4 bottom-2 pointer-events-none group-hover:scale-105 transition-transform duration-300 ${
+                    visa.characterType === 'business'
+                      ? 'w-44 sm:w-48 h-48 sm:h-52'
+                      : 'w-40 sm:w-48 h-48 sm:h-52'
+                  }`}
+                >
                   <CharacterArt type={visa.characterType} className="w-full h-full" />
                 </div>
 
