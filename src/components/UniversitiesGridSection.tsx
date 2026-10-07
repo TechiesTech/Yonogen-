@@ -109,7 +109,7 @@ export const UniversitiesGridSection: React.FC = () => {
   const marqueeRow2 = [...UNIVERSITIES_PARTNERS.slice(3), ...UNIVERSITIES_PARTNERS.slice(0, 3), ...UNIVERSITIES_PARTNERS.slice(3), ...UNIVERSITIES_PARTNERS.slice(0, 3)];
 
   return (
-    <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <section className="py-10 sm:py-14 bg-white relative overflow-hidden">
       {/* Study Abroad World Travel & Education Background with Low Opacity */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
         {/* World Landmarks & Study Abroad Vector Photo Background */}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Globe, Phone, Mail, MapPin } from 'lucide-react';
-import { WorldBannerArt } from './WorldBannerArt';
 
 export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }> = ({ onOpenCallback }) => {
   const [email, setEmail] = useState('');
@@ -14,22 +13,26 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
   };
 
   return (
-    <div id="contact" className="bg-[#fcfdff] pt-8 pb-14 border-t border-slate-100">
+    <div id="contact" className="bg-[#fcfdff] py-10 sm:py-14 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Banner Card matching Screenshot 6 & 7 */}
-        <div className="relative rounded-[36px] bg-gradient-to-r from-amber-100/90 via-orange-50 to-emerald-50/80 p-8 sm:p-12 md:p-14 overflow-hidden shadow-lg border border-amber-200/80 mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="relative max-w-5xl mx-auto rounded-[36px] bg-gradient-to-r from-amber-100/90 via-orange-50 to-emerald-50/80 px-4 py-3 sm:px-6 sm:py-4 md:px-7 md:py-5 overflow-visible shadow-lg border border-amber-200/80 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
             
             {/* Left 3D World Landmarks Art (5 cols) */}
-            <div className="lg:col-span-5 flex items-center justify-center">
-              <div className="w-full max-w-sm sm:max-w-md h-52 sm:h-64">
-                <WorldBannerArt className="w-full h-full" />
+            <div className="relative lg:col-span-5 flex items-center justify-center min-h-56 sm:min-h-64">
+              <div className="absolute inset-x-0 -top-24 bottom-0 sm:-top-28 lg:inset-x-auto lg:left-[-10%] lg:right-auto lg:-top-32 lg:-bottom-12 mx-auto lg:mx-0 w-full max-w-md sm:max-w-lg lg:w-[130%] lg:max-w-none">
+                <img
+                  src="/images/world-landmarks.png"
+                  alt="World landmarks surrounding a globe"
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                />
               </div>
             </div>
 
             {/* Right Content & Email Form (7 cols) */}
-            <div className="lg:col-span-7 space-y-5 text-left">
+            <div className="lg:col-span-7 lg:pl-14 space-y-5 text-left">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Start your <br />
                 <span className="font-editorial-italic font-normal">Overseas Education</span> <br />

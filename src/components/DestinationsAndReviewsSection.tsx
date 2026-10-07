@@ -18,7 +18,7 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
   const activeStory = CLIENT_TESTIMONIALS[activeStoryIndex];
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-10 sm:py-14 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Destination Cities Grid matching Screenshot 3 Top */}
         <div className="mb-24">

@@ -71,7 +71,7 @@ export const TestPrepAndCareerSection: React.FC<{ onOpenCounselling: () => void 
   };
 
   return (
-    <section id="test-prep" className="py-20 sm:py-28 bg-[#fbfcfe] relative overflow-hidden">
+    <section id="test-prep" className="py-10 sm:py-14 bg-[#fbfcfe] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Bento Grid matching Screenshot 4 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">

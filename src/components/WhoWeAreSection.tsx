@@ -3,7 +3,7 @@ import PhotoFrames from './PhotoFrames';
 
 export const WhoWeAreSection: React.FC = () => {
   return (
-    <section id="about-us" className="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <section id="about-us" className="py-10 sm:py-14 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Text & Stats Column (7 cols) */}

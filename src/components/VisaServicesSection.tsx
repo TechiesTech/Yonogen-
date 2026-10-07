@@ -12,7 +12,7 @@ export const VisaServicesSection: React.FC<VisaServicesSectionProps> = ({ onSele
   const bottomRowVisas = VISA_SERVICES.slice(3);
 
   return (
-    <section id="study-abroad" className="py-20 sm:py-28 bg-[#fafcff] relative overflow-hidden">
+    <section id="study-abroad" className="py-10 sm:py-14 bg-[#fafcff] relative overflow-hidden">
       {/* Background Soft Gradients */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-100/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-100/20 rounded-full blur-3xl pointer-events-none" />
@@ -25,7 +25,7 @@ export const VisaServicesSection: React.FC<VisaServicesSectionProps> = ({ onSele
               Our Services
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             We have clubbed your <br />
             <span className="font-editorial-italic font-normal">Wish</span> to study <br className="sm:hidden" />
             Aboard
