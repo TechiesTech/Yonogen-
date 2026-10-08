@@ -12,20 +12,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100/80 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo matching theme */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-emerald-700 flex items-center justify-center text-slate-950 shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform">
-              <Globe className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 leading-none flex items-center gap-1">
-                YOLOgen
-                <span className="text-xs px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 font-semibold border border-amber-200/60">Consultant</span>
-              </span>
-              <span className="text-[10px] text-slate-500 font-medium tracking-wide mt-0.5">
-                In the direction that leads till end
-              </span>
-            </div>
+          {/* Logo */}
+          <a href="#" className="flex items-center group py-2">
+            <img
+              src="/images/Yologen Global Flight Logo.png"
+              alt="YOLOgen Logo"
+              className="h-12 sm:h-20 w-auto object-contain group-hover:scale-105 transition-transform"
+            />
           </a>
 
           {/* Desktop Navigation Links */}
