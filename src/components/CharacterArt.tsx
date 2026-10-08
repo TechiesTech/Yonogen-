@@ -11,7 +11,7 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
       return (
         <div className={`relative flex items-center justify-center ${className}`}>
           <img
-            src="/images/visitor-visa-traveler.png"
+            src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471195/visitor-visa-traveler_pwcj9z.png"
             alt="Traveler with luggage"
             className="w-full h-full object-contain drop-shadow-xl"
           />
@@ -22,7 +22,7 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
       return (
         <div className={`relative flex items-center justify-center ${className}`}>
           <img
-            src="/images/student-visa-student.png"
+            src=""
             alt="Student carrying books and wearing a backpack"
             className="w-full h-full object-contain drop-shadow-xl"
           />
@@ -33,7 +33,7 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
       return (
         <div className={`relative flex items-center justify-center ${className}`}>
           <img
-            src="/images/worker-visa-worker.png"
+            src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471195/worker-visa-worker_chpck4.png"
             alt="Construction worker wearing a hard hat and safety vest"
             className="w-full h-full object-contain drop-shadow-xl"
           />
@@ -55,7 +55,7 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
       return (
         <div className={`relative flex items-center justify-center ${className}`}>
           <img
-            src="/images/business-visa-partners.png"
+            src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/business-visa-partners_aiihbf.png"
             alt="Business professionals standing together"
             className="w-full h-full object-contain drop-shadow-xl"
           />
