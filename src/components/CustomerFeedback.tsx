@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle, ThumbsUp, MessageSquare, Play, Send, ShieldCheck, Plus } from 'lucide-react';
 import { TestimonialReview } from '../data/mockData';
-import { HoverEffect } from './ui/card-hover-effect';
+import { FocusCards } from './ui/focus-cards';
 
 export interface FeedbackItem {
   id: string;
@@ -251,14 +251,14 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
       </div>
 
       {/* Verified student stories */}
-      <HoverEffect
-        items={filteredReviews.map((review) => {
+      <FocusCards
+        cards={filteredReviews.map((review) => {
           const isLiked = !!helpfulLiked[review.id];
 
           return {
             key: review.id,
             title: review.name,
-            description: review.reviewText,
+            src: review.avatar,
             content: (
               <div className="flex h-full flex-col justify-between gap-4">
                 <div>
