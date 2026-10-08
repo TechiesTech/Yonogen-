@@ -315,7 +315,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div
             className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/hero-slide-2_maolhq.jpg')",
+              backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791485086/photo-1780584523927-8bc7f966637d_x2izyv.avif')",
               backgroundSize: 'cover'
             }}
           />
@@ -367,7 +367,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div
             className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: "url('/images/hero-slide-3.jpg')",
+              backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791485455/photo-1789758612541-2f758489a20f_ghdays.avif')",
               backgroundSize: 'cover'
             }}
           />
@@ -419,7 +419,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div
             className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: "url('/images/hero-slide-4.jpg')",
+              backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791485934/photo-1498307833015-e7b400441eb8_tyalhb.avif')",
               backgroundSize: 'cover'
             }}
           />
@@ -471,7 +471,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div
             className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: "url('/images/hero-slide-5.jpg')",
+              backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791485837/photo-1506012787146-f92b2d7d6d96_z6w6lz.avif')",
               backgroundSize: 'cover'
             }}
           />

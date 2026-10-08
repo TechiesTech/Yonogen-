@@ -44,7 +44,7 @@ export const CharacterArt: React.FC<CharacterArtProps> = ({ type, className = ''
       return (
         <div className={`relative flex items-center justify-center ${className}`}>
           <img
-            src="/images/citizenship-family.png"
+            src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/citizenship-family_kvkwc5.png"
             alt="Family traveling together with their luggage"
             className="w-full h-full object-contain drop-shadow-xl"
           />
