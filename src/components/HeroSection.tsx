@@ -147,28 +147,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
                     {/* Pro Radar Flight Icon */}
                     <g transform="translate(0, 0)">
-                    <circle cx="0" cy="0" r="14" fill="#38bdf8" opacity="0.12">
-                      <animate attributeName="r" values="8;18;8" dur="2.5s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" values="0.25;0.05;0.25" dur="2.5s" repeatCount="indefinite" />
-                    </circle>
+                      <circle cx="0" cy="0" r="14" fill="#38bdf8" opacity="0.12">
+                        <animate attributeName="r" values="8;18;8" dur="2.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.25;0.05;0.25" dur="2.5s" repeatCount="indefinite" />
+                      </circle>
 
-                    <circle cx="0" cy="0" r="4" fill="#2563eb" opacity="0.4" filter="blur(2px)" />
+                      <circle cx="0" cy="0" r="4" fill="#2563eb" opacity="0.4" filter="blur(2px)" />
 
-                    <rect x="-1" y="-5.2" width="3.6" height="1.5" rx="0.75" fill="#1e293b" stroke="#ffffff" strokeWidth="0.4" />
-                    <rect x="-1" y="3.7" width="3.6" height="1.5" rx="0.75" fill="#1e293b" stroke="#ffffff" strokeWidth="0.4" />
+                      <rect x="-1" y="-5.2" width="3.6" height="1.5" rx="0.75" fill="#1e293b" stroke="#ffffff" strokeWidth="0.4" />
+                      <rect x="-1" y="3.7" width="3.6" height="1.5" rx="0.75" fill="#1e293b" stroke="#ffffff" strokeWidth="0.4" />
 
-                    <path
-                      d="M 13,0 C 12,-0.6 8.5,-1.1 4.5,-1.1 L 3,-1.1 L -1.8,-11.2 C -2.4,-11.8 -3.3,-11.8 -3.8,-11.3 L -4.1,-10.8 L -2,-1.1 L -7.2,-1.1 L -9.8,-5 C -10.2,-5.4 -10.8,-5.4 -11.2,-5 L -11.4,-4.6 L -10.1,-0.8 L -13,-0.5 C -13.6,-0.2 -13.8,0 -13.8,0 C -13.8,0 -13.6,0.2 -13,0.5 L -10.1,0.8 L -11.4,4.6 C -10.8,5.4 -10.2,5.4 -9.8,5 L -7.2,1.1 L -2,1.1 L -4.1,10.8 C -3.3,11.8 -2.4,11.8 -1.8,11.3 L 3,1.1 L 4.5,1.1 C 8.5,1.1 12,0.6 13,0 Z"
-                      fill="#1d4ed8"
-                      stroke="#ffffff"
-                      strokeWidth="0.8"
-                      strokeLinejoin="round"
-                    />
+                      <path
+                        d="M 13,0 C 12,-0.6 8.5,-1.1 4.5,-1.1 L 3,-1.1 L -1.8,-11.2 C -2.4,-11.8 -3.3,-11.8 -3.8,-11.3 L -4.1,-10.8 L -2,-1.1 L -7.2,-1.1 L -9.8,-5 C -10.2,-5.4 -10.8,-5.4 -11.2,-5 L -11.4,-4.6 L -10.1,-0.8 L -13,-0.5 C -13.6,-0.2 -13.8,0 -13.8,0 C -13.8,0 -13.6,0.2 -13,0.5 L -10.1,0.8 L -11.4,4.6 C -10.8,5.4 -10.2,5.4 -9.8,5 L -7.2,1.1 L -2,1.1 L -4.1,10.8 C -3.3,11.8 -2.4,11.8 -1.8,11.3 L 3,1.1 L 4.5,1.1 C 8.5,1.1 12,0.6 13,0 Z"
+                        fill="#1d4ed8"
+                        stroke="#ffffff"
+                        strokeWidth="0.8"
+                        strokeLinejoin="round"
+                      />
 
-                    <ellipse cx="8" cy="0" rx="1.2" ry="0.6" fill="#7dd3fc" />
-                    <circle cx="-3.8" cy="-11" r="0.65" fill="#ef4444" />
-                    <circle cx="-3.8" cy="11" r="0.65" fill="#22c55e" />
-                    <circle cx="-13" cy="0" r="0.65" fill="#ffffff" />
+                      <ellipse cx="8" cy="0" rx="1.2" ry="0.6" fill="#7dd3fc" />
+                      <circle cx="-3.8" cy="-11" r="0.65" fill="#ef4444" />
+                      <circle cx="-3.8" cy="11" r="0.65" fill="#22c55e" />
+                      <circle cx="-13" cy="0" r="0.65" fill="#ffffff" />
                     </g>
                   </g>
                 </g>
@@ -223,10 +223,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         </span>
                         <span className="text-[10px] text-white/80 font-medium mt-0.5 line-clamp-1">
                           {landmark.id === 'paris' ? 'France · Schengen' :
-                           landmark.id === 'london' ? 'UK · Top Global Unis' :
-                           landmark.id === 'china' ? 'Asia · Low Tuition' :
-                           landmark.id === 'russia' ? 'Top Medical Academies' :
-                           'Australia · Post-Study PSW'}
+                            landmark.id === 'london' ? 'UK · Top Global Unis' :
+                              landmark.id === 'china' ? 'Asia · Low Tuition' :
+                                landmark.id === 'russia' ? 'Top Medical Academies' :
+                                  'Australia · Post-Study PSW'}
                         </span>
                         <div className="mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <span className="inline-flex items-center gap-1 text-[10px] font-semibold bg-white/90 text-slate-900 px-2.5 py-1 rounded-full shadow-sm">
@@ -249,11 +249,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <button
                       key={c.id}
                       onClick={() => handleCountryClick(c)}
-                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm ${
-                        isActive
-                          ? 'bg-purple-100/90 text-purple-900 border border-purple-300 ring-2 ring-purple-400/20 shadow-md font-semibold'
-                          : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/80 hover:border-slate-300'
-                      }`}
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm ${isActive
+                        ? 'bg-purple-100/90 text-purple-900 border border-purple-300 ring-2 ring-purple-400/20 shadow-md font-semibold'
+                        : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/80 hover:border-slate-300'
+                        }`}
                     >
                       <img src={c.flagUrl} alt="" className="w-5 h-5 rounded-full object-cover shadow-xs border border-white" />
                       <span>{c.name}</span>
@@ -269,11 +268,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <button
                       key={c.id}
                       onClick={() => handleCountryClick(c)}
-                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm ${
-                        isActive
-                          ? 'bg-purple-100/90 text-purple-900 border border-purple-300 ring-2 ring-purple-400/20 shadow-md font-semibold'
-                          : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/80 hover:border-slate-300'
-                      }`}
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm ${isActive
+                        ? 'bg-purple-100/90 text-purple-900 border border-purple-300 ring-2 ring-purple-400/20 shadow-md font-semibold'
+                        : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/80 hover:border-slate-300'
+                        }`}
                     >
                       <img src={c.flagUrl} alt="" className="w-5 h-5 rounded-full object-cover shadow-xs border border-white" />
                       <span>{c.name}</span>
@@ -295,7 +293,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div
             className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/hero-slide-2_maolhq.jpg')",
+              backgroundImage: "url('/images/hero-slide-2.jpg')",
               backgroundSize: '100% 100%'
             }}
           />
@@ -354,6 +352,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Headings & Title directly on the Image */}
           <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-6 text-center">
+            <div className="inline-block mb-5">
+              <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-bold shadow-lg">
+                <Compass className="w-4 h-4 text-amber-400" />
+                World Exploration &amp; Global Student Life
+              </span>
+            </div>
+
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
               Turn Every Semester into <br />
               <span className="animate-text-flip font-editorial-italic font-bold text-amber-300 mx-2 inline-block">
@@ -496,15 +501,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               key={idx}
               onClick={() => setActiveSlide(idx)}
               aria-label={`Jump to slide ${idx + 1}`}
-              className={`h-2 transition-all duration-300 rounded-full ${
-                isActive
-                  ? activeSlide === 0
-                    ? 'w-8 bg-indigo-600 shadow-md'
-                    : 'w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]'
-                  : activeSlide === 0
+              className={`h-2 transition-all duration-300 rounded-full ${isActive
+                ? activeSlide === 0
+                  ? 'w-8 bg-indigo-600 shadow-md'
+                  : 'w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]'
+                : activeSlide === 0
                   ? 'w-2 bg-slate-300 hover:bg-slate-400'
                   : 'w-2 bg-white/40 hover:bg-white/70'
-              }`}
+                }`}
             />
           );
         })}
