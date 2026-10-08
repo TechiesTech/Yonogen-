@@ -26,17 +26,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
             <a href="#home" className="text-sm font-semibold text-amber-600 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-amber-500 after:rounded-full">
               Home
             </a>
-            <a href="#study-abroad" className="text-sm font-medium text-slate-600 hover:text-amber-600 transition-colors">
-              Study Abroad
-            </a>
-            <a href="#test-prep" className="text-sm font-medium text-slate-600 hover:text-amber-600 transition-colors">
-              Test Prep
-            </a>
-            <a href="#jobs" className="text-sm font-medium text-slate-600 hover:text-amber-600 transition-colors">
-              Job
-            </a>
             <a href="#about-us" className="text-sm font-medium text-slate-600 hover:text-amber-600 transition-colors">
               About us
+            </a>
+            <a href="#study-abroad" className="text-sm font-medium text-slate-600 hover:text-amber-600 transition-colors">
+              Our Services
             </a>
             <a href="#testimonials" className="text-sm font-medium text-slate-600 hover:text-amber-600 transition-colors">
               Blog
@@ -79,32 +73,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
             Home
           </a>
           <a
-            href="#study-abroad"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
-          >
-            Study Abroad
-          </a>
-          <a
-            href="#test-prep"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
-          >
-            Test Prep
-          </a>
-          <a
-            href="#jobs"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
-          >
-            Job
-          </a>
-          <a
             href="#about-us"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
           >
             About us
+          </a>
+          <a
+            href="#study-abroad"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >
+            Our Services
           </a>
           <a
             href="#testimonials"

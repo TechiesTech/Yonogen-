@@ -291,9 +291,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="relative min-h-[calc(100svh-4rem)] px-4 py-8 sm:py-10 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure Travel Photo (No box background) */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=85')`
+              backgroundImage: "url('/images/hero-slide-2.jpg')",
+              backgroundSize: '100% 100%'
             }}
           />
 
@@ -342,9 +343,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="relative min-h-[calc(100svh-4rem)] px-4 py-8 sm:py-10 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure World Landmark Photo */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=2000&q=85')`
+              backgroundImage: "url('/images/hero-slide-3.jpg')",
+              backgroundSize: '100% 100%'
             }}
           />
 
@@ -393,9 +395,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="relative min-h-[calc(100svh-4rem)] px-4 py-4 sm:py-6 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure University Campus Photo */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2000&q=85')`
+              backgroundImage: "url('/images/hero-slide-4.jpg')",
+              backgroundSize: '100% 100%'
             }}
           />
 
@@ -444,9 +447,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="relative min-h-[calc(100svh-4rem)] px-4 py-4 sm:py-6 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700">
           {/* Simple, Pure Modern Global Professional Skyline Photo */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85')`
+              backgroundImage: "url('/images/hero-slide-5.jpg')",
+              backgroundSize: '100% 100%'
             }}
           />
 
