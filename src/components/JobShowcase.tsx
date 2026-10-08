@@ -220,12 +220,6 @@ export const JobShowcase = () => {
                     </motion.div>
                   )}
 
-                  <button
-                    className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-white text-xs sm:text-sm font-bold tracking-wide transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
-                    style={{ backgroundColor: activeJob.theme.primary, boxShadow: `0 12px 20px -4px ${activeJob.theme.primary}40` }}
-                  >
-                    VIEW OPPORTUNITY
-                  </button>
                 </motion.div>
               </AnimatePresence>
             </div>
