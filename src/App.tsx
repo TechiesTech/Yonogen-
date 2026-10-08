@@ -7,6 +7,7 @@ import { DestinationsAndReviewsSection } from './components/DestinationsAndRevie
 import { TestPrepAndCareerSection } from './components/TestPrepAndCareerSection';
 import { UniversitiesGridSection } from './components/UniversitiesGridSection';
 import { NewsletterAndFooterSection } from './components/NewsletterAndFooterSection';
+import { StickyScrollRevealDemo } from './components/StickyScrollRevealDemo';
 import { CallbackModal, CountryModal, VisaModal, VideoModal } from './components/Modals';
 import { Country, VisaService, TestimonialReview } from './data/mockData';
 
@@ -40,6 +41,9 @@ export default function App() {
         <VisaServicesSection
           onSelectVisa={(visa) => setSelectedVisa(visa)}
         />
+
+        {/* Sticky Scroll Reveal Demo */}
+        <StickyScrollRevealDemo />
 
         {/* Screenshot 3: Study Destinations (Melbourne, Sydney, etc.) & Client Reviews with Google/Clutch */}
         <DestinationsAndReviewsSection
