@@ -4,7 +4,6 @@ import { HeroSection } from './components/HeroSection';
 import { WhoWeAreSection } from './components/WhoWeAreSection';
 import { VisaServicesSection } from './components/VisaServicesSection';
 import { DestinationsAndReviewsSection } from './components/DestinationsAndReviewsSection';
-import { TestPrepAndCareerSection } from './components/TestPrepAndCareerSection';
 import { UniversitiesGridSection } from './components/UniversitiesGridSection';
 import { NewsletterAndFooterSection } from './components/NewsletterAndFooterSection';
 import { JobShowcase } from './components/JobShowcase';
@@ -47,11 +46,6 @@ export default function App() {
         {/* Screenshot 3: Study Destinations (Melbourne, Sydney, etc.) & Client Reviews with Google/Clutch */}
         <DestinationsAndReviewsSection
           onSelectReview={(review) => setSelectedReview(review)}
-          onOpenCounselling={() => setCallbackModalOpen(true)}
-        />
-
-        {/* Screenshot 4: Test Prep Bento Grid (IELTS, PTE, German, Job Opportunities) */}
-        <TestPrepAndCareerSection
           onOpenCounselling={() => setCallbackModalOpen(true)}
         />
 
