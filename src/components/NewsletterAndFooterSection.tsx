@@ -78,7 +78,7 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
           
           {/* Linkedin */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/yologen-669450442/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
@@ -91,7 +91,7 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
 
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/yologen.in?utm_source=qr&stkn=MXM5ZDI5aGVjZWhjbA=="
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-pink-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
@@ -104,7 +104,7 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
 
             {/* Facebook */}
           <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1FBB4zG6ib/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-400 text-xs sm:text-sm font-medium text-slate-700 transition-all"
@@ -133,7 +133,7 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
 
           {/* YouTube */}
           <a
-            href="https://youtube.com"
+            href="https://youtube.com/@yologen?si=WkfNewyryhhKLTsz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-red-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
