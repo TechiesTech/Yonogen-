@@ -28,7 +28,7 @@ export const VisaServicesSection: React.FC<VisaServicesSectionProps> = ({ onSele
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             We have clubbed your <br />
             <span className="font-editorial-italic font-normal">Wish</span> to <br className="sm:hidden" />
-            Aboard Opportunities
+            Abroad Opportunities
           </h2>
         </div>
 
