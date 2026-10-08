@@ -21,7 +21,6 @@ export default function App() {
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
       {/* Top Navbar */}
       <Navbar
-        onOpenCallback={() => setCallbackModalOpen(true)}
         onOpenCounselling={() => setCallbackModalOpen(true)}
       />
 

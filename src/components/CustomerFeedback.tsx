@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, ThumbsUp, MessageSquare, Play, Filter, Send, Award, ShieldCheck, Plus, Sparkles } from 'lucide-react';
+import { CheckCircle, ThumbsUp, MessageSquare, Play, Send, ShieldCheck, Plus } from 'lucide-react';
 import { TestimonialReview } from '../data/mockData';
+import { FocusCards } from './ui/focus-cards';
 
 export interface FeedbackItem {
   id: string;
@@ -34,7 +35,7 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Google',
     highlightBadge: 'AUD $14,000 Merit Scholarship',
     counselor: 'Priya Mehta (Senior Lead)',
-    reviewText: 'Jagvimal Overseas was hands down the best decision for my Australian admission. They streamlined my SOP, secured a tuition fee waiver, and processed my subclass 500 visa in just 12 working days. Extremely professional team without hidden fees!',
+    reviewText: 'YOLOgen Consultant was hands down the best decision for my Australian admission. They streamlined my SOP, secured a tuition fee waiver, and processed my subclass 500 visa in just 12 working days. Extremely professional team without hidden fees!',
     helpfulCount: 42,
     hasVideo: true
   },
@@ -51,7 +52,7 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Google',
     highlightBadge: 'Direct WHO/NMC Seat',
     counselor: 'Rajesh Choudhary',
-    reviewText: 'After NEET, I was worried about private college budgets in India. The Jagvimal team arranged my direct admission in Kazan with zero donation, organized Indian food hostel accommodation, and supported my parents throughout the journey.',
+    reviewText: 'After NEET, I was worried about private college budgets in India. The YOLOgen Consultant team arranged my direct admission in Kazan with zero donation, organized Indian food hostel accommodation, and supported my parents throughout the journey.',
     helpfulCount: 38,
     hasVideo: true
   },
@@ -85,14 +86,14 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Google',
     highlightBadge: 'Approved After Prior Refusal',
     counselor: 'Amanpreet Kaur',
-    reviewText: 'I had one Canadian visa refusal from another local agent. Jagvimal’s immigration lawyer reconstructed my Statement of Purpose with airtight financial justification. Visa granted within 22 days with full co-op work authorization.',
+    reviewText: 'I had one Canadian visa refusal from another local agent. YOLOgen Consultant helped reconstruct my Statement of Purpose with clear financial justification. Visa granted within 22 days with full co-op work authorization.',
     helpfulCount: 51,
     hasVideo: true
   },
   {
     id: 'fb-5',
     name: 'Pooja Verma',
-    avatar: 'https://images.unsplash.com/photo-1594824813511-9a99787ff27c?auto=format&fit=crop&w=260&q=80',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=260&q=80',
     country: 'Germany',
     flag: '🇩🇪',
     program: 'Anerkennung Nursing Program',
@@ -102,7 +103,7 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Clutch',
     highlightBadge: '100% Free Tuition & Sponsored Relocation',
     counselor: 'Sunita Sharma',
-    reviewText: 'I joined as a B.Sc nurse from Punjab. Jagvimal took care of embassy interview drills, translated all my clinical transcripts into German, and provided free accommodation for the first month in Hamburg. Incredible service!',
+    reviewText: 'I joined as a B.Sc nurse from Punjab. YOLOgen Consultant helped with embassy interview preparation, translated my clinical transcripts into German, and supported my move to Hamburg. Incredible service!',
     helpfulCount: 35,
     hasVideo: false
   },
@@ -110,16 +111,16 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     id: 'fb-6',
     name: 'Dr. Sneha Patel',
     avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=260&q=80',
-    country: 'Kazakhstan',
-    flag: '🇰🇿',
+    country: 'New Zealand',
+    flag: '🇳🇿',
     program: 'General Medicine (English Medium)',
-    university: 'Astana Medical University',
+    university: 'University of Auckland',
     rating: 5,
     date: '1 month ago',
     verifiedSource: 'Google',
-    highlightBadge: 'Low Cost $4,100/yr Package',
+    highlightBadge: 'English-Medium Medical Program',
     counselor: 'Vikas Shekhawat',
-    reviewText: 'The hospital rotations here are top notch with English speaking faculty. Jagvimal team members even accompanied our student batch from Delhi airport right to our university hostel rooms.',
+    reviewText: 'The hospital rotations here are top notch with English speaking faculty. YOLOgen Consultant team members even accompanied our student batch from Delhi airport right to our university hostel rooms.',
     helpfulCount: 22,
     hasVideo: false
   }
@@ -146,7 +147,7 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
   });
   const [submittedMessage, setSubmittedMessage] = useState(false);
 
-  const filters = ['All', 'Australia', 'Germany', 'Canada', 'Russia', 'Kazakhstan'];
+  const filters = ['All', 'Australia', 'Germany', 'Canada', 'Russia', 'New Zealand'];
 
   const filteredReviews = reviewsList.filter((item) => {
     if (selectedFilter === 'All') return true;
@@ -176,7 +177,7 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
       Germany: '🇩🇪',
       Canada: '🇨🇦',
       Russia: '🇷🇺',
-      Kazakhstan: '🇰🇿'
+      'New Zealand': '🇳🇿'
     };
 
     const newItem: FeedbackItem = {
@@ -191,7 +192,7 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
       date: 'Just now',
       verifiedSource: 'Google',
       highlightBadge: 'Newly Verified Student Review',
-      counselor: 'Jagvimal Admissions Desk',
+      counselor: 'YOLOgen Consultant',
       reviewText: newReview.reviewText,
       helpfulCount: 1,
       hasVideo: false
@@ -249,131 +250,126 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
         </div>
       </div>
 
-      {/* Premium Feedback Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredReviews.map((review) => {
+      {/* Verified student stories */}
+      <FocusCards
+        cards={filteredReviews.map((review) => {
           const isLiked = !!helpfulLiked[review.id];
 
-          return (
-            <div
-              key={review.id}
-              className="group bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
-            >
-              {/* Top Accent Gradient Border */}
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-emerald-500 opacity-60 group-hover:opacity-100 transition-opacity" />
+          return {
+            key: review.id,
+            title: review.name,
+            src: review.avatar,
+            content: (
+              <div className="flex h-full flex-col justify-between gap-4">
+                <div>
+                  <div className="mb-3 flex items-start justify-between gap-2">
+                    <div className="flex min-w-0 items-center gap-2.5">
+                      <div className="relative shrink-0">
+                        <img
+                          src={review.avatar}
+                          alt={review.name}
+                          className="h-11 w-11 rounded-full object-cover ring-2 ring-violet-100"
+                        />
+                        <span className="absolute -bottom-1 -right-1 rounded-full bg-white px-1 text-sm leading-5 shadow-sm" title={review.country}>
+                          {review.flag}
+                        </span>
+                      </div>
 
-              <div>
-                {/* Header: Avatar, Name, Country Flag */}
-                <div className="flex items-start justify-between gap-3 mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="relative">
-                      <img
-                        src={review.avatar}
-                        alt={review.name}
-                        className="w-12 h-12 rounded-full object-cover ring-2 ring-slate-100 group-hover:ring-indigo-300 transition-all"
-                      />
-                      <span className="absolute -bottom-1 -right-1 text-base leading-none" title={review.country}>
-                        {review.flag}
+                      <div className="min-w-0">
+                        <h4 className="flex items-center gap-1 text-sm font-bold text-slate-900">
+                          {review.name}
+                          <span title="Verified admission" className="inline-flex shrink-0 items-center">
+                            <ShieldCheck className="h-3.5 w-3.5 text-blue-500" />
+                          </span>
+                        </h4>
+                        <p className="mt-0.5 truncate text-[11px] font-medium text-slate-500">
+                          {review.program}
+                        </p>
+                        <p className="mt-0.5 truncate text-[11px] font-semibold text-violet-700">
+                          {review.university}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex shrink-0 flex-col items-end gap-1 pt-0.5">
+                      <div className="flex text-xs leading-none text-violet-600" aria-label={`${review.rating} out of 5 stars`}>
+                        {Array.from({ length: review.rating }).map((_, i) => (
+                          <span key={i} aria-hidden="true">★</span>
+                        ))}
+                      </div>
+                      <span className="flex items-center gap-1 text-[9px] font-semibold text-slate-400">
+                        {review.verifiedSource === 'Google' ? (
+                          <span className="text-blue-600 font-bold">Google</span>
+                        ) : (
+                          <span className="text-red-600 font-bold">Clutch</span>
+                        )}
+                        <span>· {review.date}</span>
                       </span>
                     </div>
-
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors flex items-center gap-1.5">
-                        {review.name}
-                        <span title="Verified Admission" className="inline-flex items-center">
-                          <ShieldCheck className="w-3.5 h-3.5 text-blue-500 inline shrink-0" />
-                        </span>
-                      </h4>
-                      <p className="text-[11px] text-slate-500 font-medium line-clamp-1">
-                        {review.program}
-                      </p>
-                      <p className="text-[10px] text-indigo-700 font-semibold line-clamp-1">
-                        {review.university}
-                      </p>
-                    </div>
                   </div>
 
-                  {/* Rating & Verified Pill */}
-                  <div className="flex flex-col items-end gap-1">
-                    <div className="flex text-amber-400 text-xs">
-                      {Array.from({ length: review.rating }).map((_, i) => (
-                        <span key={i}>★</span>
-                      ))}
-                    </div>
-                    <span className="text-[9px] font-semibold text-slate-400 flex items-center gap-1">
-                      {review.verifiedSource === 'Google' ? (
-                        <span className="text-blue-600 font-bold">Google</span>
-                      ) : (
-                        <span className="text-red-600 font-bold">Clutch</span>
-                      )}
-                      <span>· {review.date}</span>
+                  <div className="mb-3">
+                    <span className="inline-flex max-w-full items-center gap-1 rounded-lg border border-emerald-200/80 bg-emerald-50/80 px-2.5 py-1 text-[10px] font-bold leading-snug text-emerald-800">
+                      ✓ {review.highlightBadge}
                     </span>
                   </div>
+
+                  <p className="line-clamp-4 text-xs italic leading-6 text-slate-600 sm:text-sm">
+                    “{review.reviewText}”
+                  </p>
                 </div>
 
-                {/* Highlight Badge */}
-                <div className="mb-3.5">
-                  <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200/80 text-[10px] font-bold">
-                    ✓ {review.highlightBadge}
-                  </span>
-                </div>
+                <div className="flex items-center justify-between gap-2 border-t border-slate-100 pt-3">
+                  <div className="min-w-0 truncate text-[10px] text-slate-400">
+                    Mentor: <span className="font-semibold text-slate-700">{review.counselor}</span>
+                  </div>
 
-                {/* Review Text */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic mb-4">
-                  "{review.reviewText}"
-                </p>
-              </div>
+                  <div className="flex shrink-0 items-center gap-1.5">
+                    {review.hasVideo && (
+                      <button
+                        onClick={() =>
+                          onSelectReview({
+                            id: review.id,
+                            name: review.name,
+                            role: review.program,
+                            university: review.university,
+                            country: review.country,
+                            rating: review.rating,
+                            avatar: review.avatar,
+                            hasVideo: true,
+                            videoTitle: `${review.name} - Success Video Story`,
+                            quote: review.reviewText,
+                            size: 'medium',
+                            tag: review.country
+                          })
+                        }
+                        className="inline-flex items-center gap-1 rounded-lg bg-violet-50 px-2.5 py-1.5 text-[10px] font-bold text-violet-800 transition-colors hover:bg-violet-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2"
+                        title="Watch Video Review"
+                      >
+                        <Play className="h-2.5 w-2.5 fill-current" /> Watch
+                      </button>
+                    )}
 
-              {/* Card Footer: Counselor & Video Action & Helpful counter */}
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                <div className="text-[10px] text-slate-400">
-                  Mentor: <span className="font-semibold text-slate-600">{review.counselor}</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  {review.hasVideo && (
                     <button
-                      onClick={() =>
-                        onSelectReview({
-                          id: review.id,
-                          name: review.name,
-                          role: review.program,
-                          university: review.university,
-                          country: review.country,
-                          rating: review.rating,
-                          avatar: review.avatar,
-                          hasVideo: true,
-                          videoTitle: `${review.name} - Success Video Story`,
-                          quote: review.reviewText,
-                          size: 'medium',
-                          tag: review.country
-                        })
-                      }
-                      className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 px-2 py-1 rounded-md transition-colors"
-                      title="Watch Video Review"
+                      onClick={() => toggleHelpful(review.id)}
+                      aria-pressed={isLiked}
+                      className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-[10px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 ${
+                        isLiked
+                          ? 'bg-violet-100 text-violet-800'
+                          : 'bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-700'
+                      }`}
+                      title="Mark review as helpful"
                     >
-                      <Play className="w-2.5 h-2.5 fill-current" /> Watch
+                      <ThumbsUp className="h-3 w-3" />
+                      <span>{review.helpfulCount}</span>
                     </button>
-                  )}
-
-                  <button
-                    onClick={() => toggleHelpful(review.id)}
-                    className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md transition-colors text-[10px] font-semibold ${
-                      isLiked
-                        ? 'bg-amber-100 text-amber-900 font-bold'
-                        : 'bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-700'
-                    }`}
-                    title="Mark review as helpful"
-                  >
-                    <ThumbsUp className="w-3 h-3" />
-                    <span>{review.helpfulCount}</span>
-                  </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
+            )
+          };
         })}
-      </div>
+      />
 
       {/* Share Feedback Modal */}
       {isWriteReviewOpen && (
@@ -402,7 +398,7 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
                   <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-900 border border-amber-200">
                     <MessageSquare className="w-3 h-3" /> Student Review Submission
                   </span>
-                  <h3 className="text-2xl font-bold text-slate-900 mt-2">Share Your Jagvimal Experience</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mt-2">Share Your YOLOgen Experience</h3>
                   <p className="text-xs text-slate-500 mt-1">
                     Your candid feedback guides other students on their international admissions journey.
                   </p>
@@ -437,7 +433,7 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
                         <option value="Germany">Germany</option>
                         <option value="Canada">Canada</option>
                         <option value="Russia">Russia</option>
-                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="New Zealand">New Zealand</option>
                       </select>
                     </div>
 

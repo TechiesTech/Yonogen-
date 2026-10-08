@@ -108,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             {/* Main Title matching Screenshot 1 */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 tracking-tight max-w-4xl mx-auto leading-[1.05]">
-              Best <span className="font-editorial-italic font-normal">Overseas</span> Education <br className="hidden sm:inline" />
+              Your <span className="font-editorial-italic font-normal">Global</span> Visa &amp; Migration <br className="hidden sm:inline" />
               Consultants in India.
             </h1>
 
