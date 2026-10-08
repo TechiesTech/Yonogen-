@@ -279,7 +279,7 @@ export const VISA_SERVICES: VisaService[] = [
   },
   {
     id: 'citizenship',
-    title: 'Citizenship',
+    title: 'Migration',
     slug: 'citizenship',
     description: 'Embrace a future of stability and opportunity: our expert guidance supports your journey to citizenship.',
     characterType: 'citizenship',
@@ -339,6 +339,42 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     tagline: 'Resource Hub & Extra Regional Migration Points',
     universities: 5,
     studentsRating: 4.7
+  },
+  {
+    id: 'london',
+    name: 'London',
+    country: 'United Kingdom',
+    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80',
+    tagline: 'A global capital for culture, business, and research',
+    universities: 18,
+    studentsRating: 4.8
+  },
+  {
+    id: 'toronto',
+    name: 'Toronto',
+    country: 'Canada',
+    imageUrl: 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&w=600&q=80',
+    tagline: 'A welcoming hub for innovation and opportunity',
+    universities: 8,
+    studentsRating: 4.8
+  },
+  {
+    id: 'berlin',
+    name: 'Berlin',
+    country: 'Germany',
+    imageUrl: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=600&q=80',
+    tagline: 'A creative, international center for higher learning',
+    universities: 12,
+    studentsRating: 4.7
+  },
+  {
+    id: 'auckland',
+    name: 'Auckland',
+    country: 'New Zealand',
+    imageUrl: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80',
+    tagline: 'A diverse study destination between city and nature',
+    universities: 5,
+    studentsRating: 4.8
   }
 ];
 
