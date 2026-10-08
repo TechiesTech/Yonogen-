@@ -204,12 +204,22 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             </ul>
           </div>
 
-          {/* Col 6: Contact Emails */}
+          {/* Col 6: Contact Details */}
           <div>
             <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
-              <span className="text-amber-500 font-extrabold">/</span> Email Us
+              <span className="text-amber-500 font-extrabold">/</span> Contact Us
             </h4>
             <ul className="space-y-2.5 text-[11px] sm:text-xs text-slate-600">
+              <li>
+                <a
+                  href="tel:+919703962596"
+                  className="inline-flex items-start gap-1.5 transition-colors hover:text-[#830dfa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2 rounded-sm"
+                  aria-label="Call YOLOgen Consultant at +91 97039 62596"
+                >
+                  <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                  +91 97039 62596
+                </a>
+              </li>
               {[
                 ['Careers', 'carrers@yologen.in'],
                 ['General enquiries', 'contact@yologen.in'],
