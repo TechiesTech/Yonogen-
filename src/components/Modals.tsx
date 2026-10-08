@@ -339,13 +339,7 @@ export const VisaModal: React.FC<{ visa: VisaService | null; onClose: () => void
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
-          <button
-            onClick={onClose}
-            className="flex-1 py-3 px-5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors text-center"
-          >
-            Apply for {visa.title} with Expert Guidance
-          </button>
+        <div className="flex justify-end">
           <button
             onClick={onClose}
             className="py-3 px-5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors text-center"
