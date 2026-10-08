@@ -71,8 +71,20 @@ export const TestPrepAndCareerSection: React.FC<{ onOpenCounselling: () => void 
   };
 
   return (
-    <section id="test-prep" className="py-10 sm:py-14 bg-[#fbfcfe] relative overflow-hidden">
+    <section id="test-prep" className="pt-3 pb-10 sm:pt-4 sm:pb-14 bg-[#fbfcfe] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-7 max-w-3xl text-center sm:mb-8">
+          <span className="mb-3 inline-flex rounded-full border border-violet-200 bg-violet-50 px-4 py-1.5 text-xs font-semibold text-violet-800">
+            Your Next Chapter
+          </span>
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+            Build Skills. <span className="font-editorial-italic font-normal">Go Further.</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
+            Prepare for international exams, learn a new language, and discover career opportunities abroad.
+          </p>
+        </div>
+
         {/* Bento Grid matching Screenshot 4 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           

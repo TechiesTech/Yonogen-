@@ -136,7 +136,7 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
         </div>
 
         {/* Client Reviews Section matching Screenshot 3 Middle */}
-        <div className="pt-8 pb-16">
+        <div className="pt-8 pb-3 sm:pb-4">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="inline-block mb-3">
               <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-2xs">
