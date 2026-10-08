@@ -23,9 +23,8 @@ export const WhoWeAreSection: React.FC = () => {
               </h2>
             </div>
 
-            {/* Exact copy from screenshot */}
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
-              We at Jagvimal Overseas Consultants, are not simply the traditional Visa and Immigration Consultant, but we are a team of experts which work incessantly to make your abroad study goal achievable. There are ample of locations across India who work towards the same goal, but what makes us different is our approach. Our Team of experts at Jagvimal Overseas Consultants assist our applicants in choosing courses and then planning the same to attain success.
+              <span className="font-semibold text-[#830dfa]">YOLOgen</span> Consultant helps people plan their next step abroad. Whether you want to study, work, visit, or migrate, our team can guide you through visa options, documents, and the application process. We also support course selection and overseas career planning, with clear guidance tailored to your goals at every step.
             </p>
 
             {/* Stats Grid matching Screenshot 2 with vertical purple accent lines */}
@@ -35,7 +34,7 @@ export const WhoWeAreSection: React.FC = () => {
                 <div className="w-1 h-12 bg-indigo-600 rounded-full shrink-0" />
                 <div>
                   <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">500+</div>
-                  <div className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Students went abroad</div>
+                  <div className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Clients supported</div>
                 </div>
               </div>
 

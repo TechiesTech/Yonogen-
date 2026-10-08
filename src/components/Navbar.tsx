@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Send, Menu, X, Globe, PhoneCall } from 'lucide-react';
+import { Send, Menu, X, Globe } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenCallback: () => void;
   onOpenCounselling: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenCallback, onOpenCounselling }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -49,13 +48,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCallback, onOpenCounsellin
 
           {/* Right Action Button matching Screenshot 1 */}
           <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={onOpenCallback}
-              className="text-xs font-semibold text-slate-600 hover:text-amber-700 px-3 py-2 rounded-full transition-colors flex items-center gap-1.5"
-            >
-              <PhoneCall className="w-3.5 h-3.5 text-amber-600" />
-              Callback
-            </button>
             <button
               onClick={onOpenCounselling}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200/90 shadow-sm hover:shadow-md hover:border-amber-300 hover:text-amber-700 transition-all active:scale-95"
@@ -129,15 +121,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCallback, onOpenCounsellin
             Contact us
           </a>
           <div className="pt-2 flex flex-col gap-2">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenCallback();
-              }}
-              className="w-full py-2.5 rounded-full border border-slate-200 text-slate-800 text-xs font-semibold hover:bg-slate-50 flex items-center justify-center gap-1.5"
-            >
-              <PhoneCall className="w-3.5 h-3.5 text-amber-600" /> Request Callback
-            </button>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
