@@ -35,7 +35,7 @@ const REVIEWS = [
     rating: 4.5,
     name: 'Sneha Patel',
     program: 'MBBS Abroad',
-    avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=260&q=80',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791472036/ChatGPT_Image_Oct_8_2026_08_35_36_PM_onxwhe.png',
   },
 ];
 
