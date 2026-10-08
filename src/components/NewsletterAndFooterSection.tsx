@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Globe, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }> = ({ onOpenCallback }) => {
   const [email, setEmail] = useState('');
@@ -96,23 +96,52 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-pink-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
           >
-            <div className="w-5 h-5 rounded-md bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white flex items-center justify-center text-[11px]">
-              📷
+            <div className="w-5 h-5 rounded-md bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white flex items-center justify-center">
+              <Instagram className="w-3.5 h-3.5" strokeWidth={2.5} />
             </div>
             Instagram
           </a>
 
-          {/* Whatsapp */}
+            {/* Facebook */}
           <a
-            href="https://whatsapp.com"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-400 text-xs sm:text-sm font-medium text-slate-700 transition-all"
+            >
+              <div className="w-5 h-5 rounded-full bg-[#1877f2] text-white flex items-center justify-center font-bold text-[11px]">
+                f
+              </div>
+              Facebook
+            </a>
+
+            {/* Whatsapp */}
+            <a
+              href="https://wa.me/919703962596?text=%F0%9F%91%8B%20Hello%20YOLOgen%20Consultant%20team%2C%20I%E2%80%99m%20looking%20for%20visa%20consultancy.%20Could%20you%20please%20share%20the%20visa%20categories%20you%20assist%20with%2C%20including%20study%2C%20work%2C%20visitor%2C%20business%2C%20and%20migration%20visas%2C%20and%20explain%20how%20to%20get%20started%3F%20Thank%20you."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
           >
-            <div className="w-5 h-5 rounded-full bg-[#25d366] text-white flex items-center justify-center font-bold text-[11px]">
-              💬
+            <div className="w-5 h-5 rounded-full bg-[#25d366] text-white flex items-center justify-center">
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" aria-hidden="true">
+                <path d="M20.2 11.4a8.2 8.2 0 0 1-12.1 7.2L4 19.7l1.1-4a8.2 8.2 0 1 1 15.1-4.3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                <path d="M9 8.3c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2.1 2 .2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1.1-.2-2.4-.9-3.7-2.1-1.1-1-1.9-2.2-2.2-3.2-.3-.9 0-1.7.5-2.3.3-.3.6-.5.8-.7Z" fill="currentColor" />
+              </svg>
             </div>
             Whatsapp
+          </a>
+
+          {/* YouTube */}
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-red-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
+          >
+            <div className="w-5 h-5 rounded-full bg-[#ff0000] text-white flex items-center justify-center text-[10px]">
+              ▶
+            </div>
+            YouTube
           </a>
 
         </div>

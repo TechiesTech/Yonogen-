@@ -3,19 +3,19 @@ import "./PhotoFrames.css";
 
 const frames = [
   {
-    src: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80",
-    className: "frame frame-city",
-    alt: "City & Historic University Architecture",
+    src: "/images/airport-travel.jpg",
+    className: "frame frame-travel",
+    alt: "International airport travel",
   },
   {
-    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    src: "/images/students-collaborating.jpg",
     className: "frame frame-student",
-    alt: "International Student",
+    alt: "Students collaborating in a university library",
   },
   {
-    src: "/images/graduate-celebrating.jpg",
-    className: "frame frame-graduate",
-    alt: "Graduate Celebrating",
+    src: "/images/career-teamwork.jpg",
+    className: "frame frame-career",
+    alt: "Professionals collaborating on a career project",
   },
 ];
 
@@ -24,17 +24,17 @@ export default function PhotoFrames() {
     <div className="photo-frame-section">
       <div className="photo-frame-container">
 
-        {/* Top / City */}
+        {/* Travel and migration */}
         <div className={frames[0].className}>
           <img src={frames[0].src} alt={frames[0].alt} loading="lazy" />
         </div>
 
-        {/* Middle / Student */}
+        {/* Study */}
         <div className={frames[1].className}>
           <img src={frames[1].src} alt={frames[1].alt} loading="lazy" />
         </div>
 
-        {/* Bottom / Graduate */}
+        {/* Work */}
         <div className={frames[2].className}>
           <img src={frames[2].src} alt={frames[2].alt} loading="lazy" />
         </div>

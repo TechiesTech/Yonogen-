@@ -37,10 +37,10 @@
 }
 
 /* --------------------------------
-   TOP RIGHT — CITY
+   TOP RIGHT — TRAVEL
 -------------------------------- */
 
-.frame-city {
+.frame-travel {
   top: 15px;
   right: 20px;
 
@@ -61,7 +61,7 @@
   border-radius: 30px;
 }
 
-.frame-city img {
+.frame-travel img {
   transform: scale(1.05);
 }
 
@@ -97,10 +97,10 @@
 
 
 /* --------------------------------
-   BOTTOM LEFT — GRADUATE
+   BOTTOM LEFT — CAREER
 -------------------------------- */
 
-.frame-graduate {
+.frame-career {
   left: 25px;
   bottom: 20px;
 
@@ -121,7 +121,7 @@
   border-radius: 25px;
 }
 
-.frame-graduate img {
+.frame-career img {
   transform: scale(1.05);
 }
 
