@@ -1,9 +1,9 @@
 import React from 'react';
-import { ArrowRight, Phone, Instagram } from 'lucide-react';
+import { ArrowRight, Phone, Instagram, Mail } from 'lucide-react';
 
 export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }> = ({ onOpenCallback }) => {
   return (
-    <div id="contact" className="bg-[#fcfdff] py-10 sm:py-14 border-t border-slate-100">
+    <div id="contact" className="border-t border-slate-100 bg-[#fcfdff] pt-10 pb-3 sm:pt-14 sm:pb-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Banner Card matching Screenshot 6 & 7 */}
@@ -129,9 +129,13 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
 
         </div>
 
-        {/* 5 Column Navigation Grid matching Screenshot 6 & 7 */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-16 border-b border-slate-200/80 text-left">
+      </div>
 
+      <div className="border-t border-violet-200 bg-[#f3e8ff]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {/* Footer navigation and contact columns */}
+          <div className="grid grid-cols-2 gap-x-6 gap-y-6 pb-8 border-b border-violet-200 text-left md:grid-cols-3 lg:grid-cols-6">
+          
           {/* Col 1: Quick Links */}
           <div>
             <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
@@ -199,22 +203,47 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
               <li><span className="hover:text-amber-600 cursor-pointer">July Intake Australia</span></li>
             </ul>
           </div>
-        </div>
 
-        {/* Bottom Legal & Accreditations */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-700">YOLOgen Consultant</span>
-            <span>·</span>
-            <span>© {new Date().getFullYear()} All rights reserved.</span>
+          {/* Col 6: Contact Emails */}
+          <div>
+            <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
+              <span className="text-amber-500 font-extrabold">/</span> Email Us
+            </h4>
+            <ul className="space-y-2.5 text-[11px] sm:text-xs text-slate-600">
+              {[
+                ['Careers', 'carrers@yologen.in'],
+                ['General enquiries', 'contact@yologen.in'],
+                ['Travel', 'travel@yologen.in'],
+                ['Study', 'study@yologen.in'],
+              ].map(([label, email]) => (
+                <li key={email}>
+                  <a
+                    href={`mailto:${email}`}
+                    className="inline-flex items-start gap-1.5 break-all transition-colors hover:text-[#830dfa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2 rounded-sm"
+                    aria-label={`${label}: ${email}`}
+                  >
+                    <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                    {email}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
           </div>
 
-          <div className="flex items-center gap-4 text-slate-500">
-            <span>Govt. of India Registered &amp; British Council Certified</span>
-            <span>·</span>
-            <button onClick={onOpenCallback} className="hover:text-amber-600">Privacy Policy</button>
-            <span>·</span>
-            <button onClick={onOpenCallback} className="hover:text-amber-600">Terms of Service</button>
+          {/* Bottom Legal & Accreditations */}
+          <div className="grid grid-cols-1 items-center justify-items-center gap-3 pt-5 text-xs text-slate-400 md:grid-cols-3">
+            <div className="flex items-center gap-2 md:justify-self-start">
+              <span className="font-bold text-slate-700">YOLOgen Consultant</span>
+            </div>
+
+            <span className="text-center">© {new Date().getFullYear()} All rights reserved.</span>
+
+            <div className="flex items-center gap-4 text-slate-500 md:justify-self-end">
+              <button onClick={onOpenCallback} className="hover:text-amber-600">Privacy Policy</button>
+              <span>·</span>
+              <button onClick={onOpenCallback} className="hover:text-amber-600">Terms of Service</button>
+            </div>
           </div>
         </div>
       </div>
