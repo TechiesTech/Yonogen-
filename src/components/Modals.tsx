@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Phone, Calendar, Globe, GraduationCap, Clock, Award, ShieldCheck, Send, Loader2 } from 'lucide-react';
+import { X, CheckCircle2, Phone, Clock, Award, ShieldCheck, Loader2 } from 'lucide-react';
 import { Country, VisaService } from '../data/mockData';
 
 interface ModalProps {
