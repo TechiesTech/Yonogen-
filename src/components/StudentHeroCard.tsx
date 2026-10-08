@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
-  "https://i.pinimg.com/1200x/21/30/e3/2130e3a334abf0e8becd745a46e6b08d.jpg",
-  "https://i.pinimg.com/736x/18/ef/41/18ef412b065c76b51966f14293930084.jpg",
-  "https://i.pinimg.com/1200x/35/39/10/353910766a843c9a86ebc7ab47ef51f1.jpg",
-  "https://i.pinimg.com/736x/db/fd/01/dbfd013fa8e321392623cc21b18001a1.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472393/557e5c61bc970fcf4aadd0eab9f28134_eai3vj.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472391/2130e3a334abf0e8becd745a46e6b08d_wcbjzt.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472392/18ef412b065c76b51966f14293930084_tswd5j.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472392/86ec50656b1aef024239f2cb38a65516_x1ninm.jpg",
 ];
 
 const AVATARS = [

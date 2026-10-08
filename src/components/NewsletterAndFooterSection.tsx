@@ -5,16 +5,16 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
   return (
     <div id="contact" className="border-t border-slate-100 bg-[#fcfdff] pt-10 pb-3 sm:pt-14 sm:pb-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Banner Card matching Screenshot 6 & 7 */}
         <div className="relative max-w-5xl mx-auto rounded-[36px] bg-gradient-to-r from-amber-100/90 via-orange-50 to-emerald-50/80 px-4 py-3 sm:px-6 sm:py-4 md:px-7 md:py-5 overflow-visible shadow-lg border border-amber-200/80 mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-            
+
             {/* Left 3D World Landmarks Art (5 cols) */}
             <div className="relative lg:col-span-5 flex items-center justify-center min-h-56 sm:min-h-64">
               <div className="absolute inset-x-0 -top-24 bottom-0 sm:-top-28 lg:inset-x-auto lg:left-[-10%] lg:right-auto lg:-top-32 lg:-bottom-12 mx-auto lg:mx-0 w-full max-w-md sm:max-w-lg lg:w-[130%] lg:max-w-none">
                 <img
-                  src="/images/world-landmarks.png"
+                  src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471195/world-landmarks_jmsvvt.png"
                   alt="World landmarks surrounding a globe"
                   className="w-full h-full object-contain drop-shadow-2xl"
                 />
@@ -47,7 +47,7 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
 
         {/* Social Links Row matching Screenshot 6 & 7 */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-20">
-          
+
           {/* Linkedin */}
           <a
             href="https://www.linkedin.com/in/yologen-669450442/"
@@ -74,22 +74,22 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             Instagram
           </a>
 
-            {/* Facebook */}
+          {/* Facebook */}
           <a
-              href="https://www.facebook.com/share/1FBB4zG6ib/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-400 text-xs sm:text-sm font-medium text-slate-700 transition-all"
-            >
-              <div className="w-5 h-5 rounded-full bg-[#1877f2] text-white flex items-center justify-center font-bold text-[11px]">
-                f
-              </div>
-              Facebook
-            </a>
+            href="https://www.facebook.com/share/1FBB4zG6ib/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-400 text-xs sm:text-sm font-medium text-slate-700 transition-all"
+          >
+            <div className="w-5 h-5 rounded-full bg-[#1877f2] text-white flex items-center justify-center font-bold text-[11px]">
+              f
+            </div>
+            Facebook
+          </a>
 
-            {/* Whatsapp */}
-            <a
-              href="https://wa.me/919703962596?text=%F0%9F%91%8B%20Hello%20YOLOgen%20Consultant%20team%2C%20I%E2%80%99m%20looking%20for%20visa%20consultancy.%20Could%20you%20please%20share%20the%20visa%20categories%20you%20assist%20with%2C%20including%20study%2C%20work%2C%20visitor%2C%20business%2C%20and%20migration%20visas%2C%20and%20explain%20how%20to%20get%20started%3F%20Thank%20you."
+          {/* Whatsapp */}
+          <a
+            href="https://wa.me/919703962596?text=%F0%9F%91%8B%20Hello%20YOLOgen%20Consultant%20team%2C%20I%E2%80%99m%20looking%20for%20visa%20consultancy.%20Could%20you%20please%20share%20the%20visa%20categories%20you%20assist%20with%2C%20including%20study%2C%20work%2C%20visitor%2C%20business%2C%20and%20migration%20visas%2C%20and%20explain%20how%20to%20get%20started%3F%20Thank%20you."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"

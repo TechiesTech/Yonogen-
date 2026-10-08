@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
           {/* Logo */}
           <a href="#home" className="flex items-center group py-2" aria-label="YOLOgen home">
             <img
-              src="/images/Yologen Global Flight Logo.png"
+              src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471196/Yologen_Global_Flight_Logo_q7dnae.png"
               alt="YOLOgen Logo"
               className="h-12 sm:h-20 w-auto object-contain group-hover:scale-105 transition-transform"
             />

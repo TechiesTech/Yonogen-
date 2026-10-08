@@ -7,7 +7,7 @@ export const WhoWeAreSection: React.FC = () => {
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/who-we-are-background.jpg')" }}
+        style={{ backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791471195/who-we-are-background_il5zyf.jpg')" }}
       />
       <div aria-hidden="true" className="absolute inset-0 bg-white/85" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

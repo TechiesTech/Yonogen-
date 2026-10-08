@@ -8,7 +8,7 @@ const jobs = [
     country: "ALBANIA",
     category: "WORK PERMIT",
     title: "GREENHOUSE",
-    image: "/images/posters/Greenhouse Vacancy in Albania.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475346/Greenhouse_Vacancy_in_Albania_gbd7um.png",
     description: "Exciting opportunities to work in the agricultural sector in Albania. We are recruiting dedicated workers for greenhouse operations.",
     details: [
       "Role: Warehouse",
@@ -18,13 +18,13 @@ const jobs = [
       "Duty: 5–6 days",
       "Processing time: 2–3 months"
     ],
-    fee: {
-      title: "Processing fee: ₹4 LAKH",
-      lines: [
-        "Initial payment: ₹50K",
-        "After visa: ₹3.5 LAKH"
-      ]
-    },
+    // fee: {
+    //   title: "Processing fee: ₹4 LAKH",
+    //   lines: [
+    //     "Initial payment: ₹50K",
+    //     "After visa: ₹3.5 LAKH"
+    //   ]
+    // },
     theme: {
       primary: "#2F7D32", // Green
       background: "#f0fdf4", // Light green background (emerald-50)
@@ -36,7 +36,7 @@ const jobs = [
     country: "SLOVAKIA",
     category: "WORK PERMIT",
     title: "TRUCK / TRAILER DRIVER",
-    image: "/images/posters/Slovakia Truck Driver Recruitment Poster.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475370/Slovakia_Truck_Driver_Recruitment_Poster_cijf9y.png",
     description: "Professional driving opportunities with established employers. Hit the road with lucrative truck driving positions across Europe.",
     details: [
       "Role: Truck / Trailer Driver",
@@ -45,14 +45,14 @@ const jobs = [
       "Contract: 2 Years",
       "Processing time: 3–4 months"
     ],
-    fee: {
-      title: "Processing fee: ₹8 LAKH",
-      lines: [
-        "+ Flight Ticket",
-        "Security Deposit: ₹50K",
-        "After visa: ₹7.5 Lakh"
-      ]
-    },
+    // fee: {
+    //   title: "Processing fee: ₹8 LAKH",
+    //   lines: [
+    //     "+ Flight Ticket",
+    //     "Security Deposit: ₹50K",
+    //     "After visa: ₹7.5 Lakh"
+    //   ]
+    // },
     theme: {
       primary: "#dc2626", // Red from the poster
       background: "#fef2f2", // Light red background
@@ -64,7 +64,7 @@ const jobs = [
     country: "GEORGIA",
     category: "JOB OPPORTUNITY",
     title: "NURSING PROFESSIONALS",
-    image: "/images/posters/Nursing in Georgia.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475347/Nursing_in_Georgia_efhuz0.png",
     description: "Advance your healthcare career with nursing opportunities in Georgia. We connect qualified healthcare professionals with top medical facilities.",
     details: [
       "Role: Registered Nurse",
@@ -84,7 +84,7 @@ const jobs = [
     country: "GLOBAL",
     category: "CAREER OPPORTUNITY",
     title: "INTERNATIONAL NURSING",
-    image: "/images/posters/nursing.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475348/nursing_dybief.png",
     description: "Take your nursing career worldwide. Discover incredible nursing positions across Europe and beyond, offering competitive salaries.",
     details: [
       "Various global locations",
@@ -213,9 +213,9 @@ export const JobShowcase = () => {
                       transition={{ delay: 0.4 }}
                       className="bg-white/60 p-3 rounded-xl border border-white mb-5 shadow-sm backdrop-blur-md"
                     >
-                      <h4 className="font-bold text-slate-900 text-xs sm:text-sm mb-1">{activeJob.fee.title}</h4>
+                      <h4 className="font-bold text-slate-900 text-xs sm:text-sm mb-1"></h4>
                       <div className="text-[11px] sm:text-xs text-slate-600 space-y-0.5 font-medium">
-                        {activeJob.fee.lines.map((line, i) => <div key={i}>{line}</div>)}
+                        {/* /   {activeJob.fee.lines.map((line, i) => <div key={i}>{line}</div>)} */}
                       </div>
                     </motion.div>
                   )}
