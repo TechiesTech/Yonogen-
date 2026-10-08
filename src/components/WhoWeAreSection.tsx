@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoFrames from './PhotoFrames';
+import StudentHeroCard from './StudentHeroCard';
 
 export const WhoWeAreSection: React.FC = () => {
   return (
@@ -67,12 +67,9 @@ export const WhoWeAreSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Irregular Overlapping PhotoFrames Column (5 cols) beside Excellence in Consulting */}
+          {/* Right — StudentHeroCard beside Excellence in Consulting */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
-            {/* Ambient soft glow behind */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-100/40 via-sky-100/30 to-purple-100/30 blur-2xl rounded-full pointer-events-none" />
-
-            <PhotoFrames />
+            <StudentHeroCard />
           </div>
         </div>
       </div>

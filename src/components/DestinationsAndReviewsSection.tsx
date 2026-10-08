@@ -135,9 +135,9 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
           </div>
         </div>
 
-        {/* Client Reviews Section matching Screenshot 3 Middle */}
+        {/* Client Reviews Section */}
         <div className="pt-8 pb-3 sm:pb-4">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-block mb-3">
               <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-2xs">
                 Client Review
@@ -147,19 +147,8 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
               Kind words <br />
               from Our <span className="font-editorial-italic font-normal">Clients</span>
             </h2>
-
-            {/* Clean Trust Ratings Row */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-5">
-              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs text-slate-700 font-semibold shadow-2xs">
-                <span className="text-red-500 font-extrabold text-sm">C</span>lutch 4.5/5.0 <span className="text-amber-400">★★★★★</span>
-              </div>
-              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs text-slate-700 font-semibold shadow-2xs">
-                <span className="text-blue-500 font-bold">Google</span> Reviews 4.5/5.0 <span className="text-amber-400">★★★★★</span>
-              </div>
-            </div>
           </div>
 
-          {/* Premium Customer Feedback Grid & Destination Filters */}
           <CustomerFeedback onSelectReview={onSelectReview} />
         </div>
 

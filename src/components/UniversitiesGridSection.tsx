@@ -165,44 +165,35 @@ export const UniversitiesGridSection: React.FC = () => {
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative z-10">
         
-        {/* Section Header matching Screenshot 5 */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-block mb-3">
-            <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-2xs">
-              Our Universities
-            </span>
+        {/* Section Header */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-block mb-3">
+              <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-2xs">
+                Our Universities
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+              Our top Universities <br />
+              <span className="font-editorial-italic font-normal">Aboard</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 mt-3 max-w-lg mx-auto">
+              Official institutional tie-ups providing fast offer letter turnaround, application fee waivers, and exclusive international bursaries.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Our top Universities <br />
-            <span className="font-editorial-italic font-normal">Aboard</span>
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-3 max-w-lg mx-auto">
-            Official institutional tie-ups providing fast offer letter turnaround, application fee waivers, and exclusive international bursaries.
-          </p>
         </div>
 
-        {/* Marquee Ticker Container with Architectural Lines & Crosshairs */}
-        <div className="relative border-y border-slate-200/90 py-3 marquee-container group">
-          
-          {/* Top Crosshairs Row */}
-          <div className="hidden sm:flex justify-between text-slate-400 text-xs font-light select-none px-4 -mt-5 mb-2 pointer-events-none">
-            <span>+</span>
-            <span>+</span>
-            <span>+</span>
-            <span>+</span>
-            <span>+</span>
-            <span>+</span>
-            <span>+</span>
-          </div>
+        {/* Marquee Ticker — full viewport width, breaks out of container */}
+        <div className="relative border-y border-slate-200/90 py-3 marquee-container group overflow-hidden w-screen left-1/2 -translate-x-1/2">
 
-          {/* Left & Right Gradient Fade Edges for Smooth Entrance & Exit */}
-          <div className="absolute left-0 inset-y-0 w-24 sm:w-36 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 inset-y-0 w-24 sm:w-36 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
+          {/* Left & Right Gradient Fade — wide enough to cover any screen */}
+          <div className="absolute left-0 inset-y-0 w-[20vw] bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 inset-y-0 w-[20vw] bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
           {/* Marquee Row 1: Scrolling Right to Left */}
-          <div className="overflow-hidden py-2 border-b border-slate-100">
+          <div className="py-2 border-b border-slate-100">
             <div className="animate-marquee-left flex items-center">
               {marqueeRow1.map((uni, idx) => (
                 <div
@@ -234,7 +225,7 @@ export const UniversitiesGridSection: React.FC = () => {
           </div>
 
           {/* Marquee Row 2: Scrolling Right to Left (Slightly slower/delayed for visual depth) */}
-          <div className="overflow-hidden py-2">
+          <div className="py-2">
             <div className="animate-marquee-left-delayed flex items-center">
               {marqueeRow2.map((uni, idx) => (
                 <div
