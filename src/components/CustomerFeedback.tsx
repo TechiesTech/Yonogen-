@@ -8,7 +8,7 @@ const REVIEWS = [
     rating: 4.5,
     name: 'Abhinav Kaushik',
     program: 'MBBS Abroad',
-    avatar: '/images/abhinav-kaushik.png',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/abhinav-kaushik_wbknph.png',
   },
   {
     id: 'r2',
@@ -17,7 +17,7 @@ const REVIEWS = [
     rating: 4.5,
     name: 'Parul Vickku',
     program: 'MBBS Abroad',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=260&q=80',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791472338/ChatGPT_Image_Oct_8_2026_08_42_04_PM_soljyg.png',
   },
   {
     id: 'r3',
@@ -26,7 +26,7 @@ const REVIEWS = [
     rating: 4.5,
     name: 'Rohan Mehta',
     program: 'MBBS Abroad',
-    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=260&q=80',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791472036/ChatGPT_Image_Oct_8_2026_08_36_42_PM_ryptcb.png',
   },
   {
     id: 'r4',
@@ -64,7 +64,7 @@ export const CustomerFeedback: React.FC = () => {
           {/* Quote icon */}
           <div className="text-amber-500" style={{ fontSize: '2rem', lineHeight: 1 }}>
             <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 22V13.4C0 10.3333 0.633333 7.73333 1.9 5.6C3.16667 3.46667 5.13333 1.66667 7.8 0.2L9.8 3C8.2 3.93333 7 5.06667 6.2 6.4C5.4 7.73333 5 9.26667 5 11H10V22H0ZM18 22V13.4C18 10.3333 18.6333 7.73333 19.9 5.6C21.1667 3.46667 23.1333 1.66667 25.8 0.2L27.8 3C26.2 3.93333 25 5.06667 24.2 6.4C23.4 7.73333 23 9.26667 23 11H28V22H18Z" fill="#830dfa" fillOpacity="0.18"/>
+              <path d="M0 22V13.4C0 10.3333 0.633333 7.73333 1.9 5.6C3.16667 3.46667 5.13333 1.66667 7.8 0.2L9.8 3C8.2 3.93333 7 5.06667 6.2 6.4C5.4 7.73333 5 9.26667 5 11H10V22H0ZM18 22V13.4C18 10.3333 18.6333 7.73333 19.9 5.6C21.1667 3.46667 23.1333 1.66667 25.8 0.2L27.8 3C26.2 3.93333 25 5.06667 24.2 6.4C23.4 7.73333 23 9.26667 23 11H28V22H18Z" fill="#830dfa" fillOpacity="0.18" />
             </svg>
           </div>
 
