@@ -13,7 +13,7 @@ const frames = [
     alt: "International Student",
   },
   {
-    src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    src: "/images/graduate-celebrating.jpg",
     className: "frame frame-graduate",
     alt: "Graduate Celebrating",
   },

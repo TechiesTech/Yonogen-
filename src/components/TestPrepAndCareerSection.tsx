@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { BentoArt } from './BentoArt';
+import ieltsImage from '../assets/test-prep-ielts.png';
+import pteImage from '../assets/test-prep-pte.png';
+import jobOpportunityImage from '../assets/job-opportunity-3d.png';
 
 interface TestPrepModalData {
   title: string;
@@ -95,60 +97,61 @@ export const TestPrepAndCareerSection: React.FC<{ onOpenCounselling: () => void 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               
               {/* Card 1: IELTS */}
-              <div className="group bg-white rounded-3xl p-6 sm:p-7 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-                <div className="relative z-10">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 mb-4 shadow-2xs">
+              <div className="group bg-[#f4f5f8] rounded-[2rem] p-4 sm:p-5 border border-slate-200/80 shadow-[0_10px_30px_rgba(15,23,42,0.04)] transition-all duration-300 flex flex-row items-center gap-3 sm:gap-5 relative overflow-hidden sm:self-center sm:w-full">
+                <div className="relative z-10 flex min-w-0 flex-1 flex-col items-start">
+                  <span className="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-violet-700">
                     Test Preparation
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
-                    Test <span className="font-editorial-italic font-normal">IELTS</span>
+                  <h3 className="mt-3 text-2xl sm:text-[2rem] leading-none font-extrabold tracking-[-0.04em] text-slate-800">
+                    Test <span className="inline-block rounded-[0.9rem] bg-[#e7e2ff] px-2 py-1 text-[#5d4ab2] shadow-inner shadow-violet-200/70">IELTS</span>
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-[220px]">
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
                     Unlock your global potential with our expert-led IELTS test preparation!
                   </p>
-                </div>
-
-                {/* 3D Glowing Bulb graphic */}
-                <div className="relative h-32 sm:h-36 my-2 group-hover:scale-105 transition-transform">
-                  <BentoArt type="ielts-bulb" className="w-full h-full" />
-                </div>
-
-                <div className="relative z-10 pt-2">
                   <button
                     onClick={openIelts}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-800 hover:text-amber-600 transition-colors group/btn"
+                    className="mt-3 inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-800 hover:text-violet-700 transition-colors group/btn"
                   >
-                    Learn More <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    Learn More <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
+                </div>
+
+                <div className="relative flex w-[42%] max-w-[200px] shrink-0 items-center justify-center">
+                  <img
+                    src={ieltsImage}
+                    alt="IELTS preparation illustration"
+                    className="h-auto w-full object-contain drop-shadow-[0_12px_28px_rgba(125,92,255,0.18)] transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
               </div>
 
               {/* Card 2: PTE */}
-              <div className="group bg-white rounded-3xl p-6 sm:p-7 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-                <div className="relative z-10">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 mb-4 shadow-2xs">
+              <div className="group bg-[#f4f5f8] rounded-[2rem] p-4 sm:p-5 border border-slate-200/80 shadow-[0_10px_30px_rgba(15,23,42,0.04)] transition-all duration-300 flex flex-row items-center gap-3 sm:gap-5 relative overflow-hidden sm:self-center sm:w-full">
+                <div className="relative z-10 flex min-w-0 flex-1 flex-col items-start">
+                  <span className="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-violet-700">
                     Test Preparation
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
-                    Test <span className="font-editorial-italic font-normal">PTE</span>
+                  <h3 className="mt-3 text-2xl sm:text-[2rem] leading-none font-extrabold tracking-[-0.04em] text-slate-800">
+                    Test <span className="inline-block rounded-[0.9rem] bg-[#e7e2ff] px-2 py-1 text-[#5d4ab2] shadow-inner shadow-violet-200/70">PTE</span>
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-[220px]">
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
                     Ace your PTE exam with confidence—master the test format, sharpen your skills
                   </p>
-                </div>
-
-                {/* 3D Books & Grad Cap graphic */}
-                <div className="relative h-32 sm:h-36 my-2 group-hover:scale-105 transition-transform">
-                  <BentoArt type="pte-books" className="w-full h-full" />
-                </div>
-
-                <div className="relative z-10 pt-2">
                   <button
                     onClick={openPte}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-800 hover:text-amber-600 transition-colors group/btn"
+                    className="mt-3 inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-800 hover:text-violet-700 transition-colors group/btn"
                   >
-                    Learn More <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    Learn More <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
+
+                </div>
+
+                <div className="relative flex w-[42%] max-w-[200px] shrink-0 items-center justify-center">
+                  <img
+                    src={pteImage}
+                    alt="PTE preparation illustration"
+                    className="h-auto w-full object-contain drop-shadow-[0_12px_28px_rgba(125,92,255,0.18)] transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
               </div>
             </div>
@@ -170,15 +173,19 @@ export const TestPrepAndCareerSection: React.FC<{ onOpenCounselling: () => void 
                 </button>
               </div>
 
-              {/* 3D German Dictionary with Headphones graphic */}
+              {/* German language book and headphones illustration */}
               <div className="relative w-44 sm:w-56 h-40 sm:h-44 shrink-0 group-hover:scale-105 transition-transform">
-                <BentoArt type="german-dict" className="w-full h-full" />
+                <img
+                  src="/images/german-language.png"
+                  alt="German language book with headphones"
+                  className="h-full w-full scale-110 object-contain"
+                />
               </div>
             </div>
           </div>
 
           {/* Right Block (4 cols): Job Opportunity Tall Card */}
-          <div id="jobs" className="lg:col-span-4 group bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div id="jobs" className="lg:col-span-4 group bg-white rounded-3xl p-4 sm:p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
                 Job <span className="font-editorial-italic font-normal">Opportunity</span>
@@ -211,9 +218,13 @@ export const TestPrepAndCareerSection: React.FC<{ onOpenCounselling: () => void 
               </div>
             </div>
 
-            {/* 3D Medical Kit & Stethoscope Graphic */}
-            <div className="relative h-48 sm:h-56 my-2 group-hover:scale-105 transition-transform flex items-center justify-center">
-              <BentoArt type="medical-kit" className="w-full h-full max-h-52" />
+            {/* Transparent 3D job opportunity illustration */}
+            <div className="relative h-52 sm:h-60 my-0 group-hover:scale-105 transition-transform flex items-center justify-center">
+              <img
+                src={jobOpportunityImage}
+                alt="3D illustration of a professional exploring jobs in Germany and the UAE"
+                className="h-full w-full object-contain"
+              />
             </div>
 
             <div className="relative z-10 pt-4">

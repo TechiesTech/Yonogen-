@@ -46,7 +46,7 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             </div>
             <h3 className="text-2xl font-bold text-slate-900">Callback Requested!</h3>
             <p className="text-slate-600 text-sm max-w-sm mx-auto">
-              Thank you, <span className="font-semibold text-slate-800">{formData.name || 'Student'}</span>! Our senior overseas education counselor will call you at <span className="font-semibold text-slate-800">{formData.phone}</span> during your preferred slot: {formData.preferredTime}.
+              Thank you, <span className="font-semibold text-slate-800">{formData.name || 'Applicant'}</span>! A YOLOgen Consultant will call you at <span className="font-semibold text-slate-800">{formData.phone}</span> during your preferred slot: {formData.preferredTime}.
             </p>
             <button
               onClick={() => {
@@ -262,7 +262,7 @@ export const VisaModal: React.FC<{ visa: VisaService | null; onClose: () => void
           </div>
           <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
             <span className="text-xs font-medium text-slate-500 flex items-center gap-1.5 mb-1">
-              <Award className="w-3.5 h-3.5 text-indigo-600" /> Jagvimal Success Rate
+              <Award className="w-3.5 h-3.5 text-indigo-600" /> YOLOgen Success Rate
             </span>
             <span className="text-sm font-bold text-emerald-700">{visa.successRate}</span>
           </div>

@@ -389,7 +389,7 @@ export const CLIENT_TESTIMONIALS: TestimonialReview[] = [
     avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=260&q=80',
     hasVideo: true,
     videoTitle: 'My Journey to Medical Degree in Russia',
-    quote: 'Jagvimal guided me from NEET counselling all the way to hostel check-in in Russia. 100% transparent and supportive team.',
+    quote: 'YOLOgen Consultant guided me from NEET counselling all the way to hostel check-in in Russia. 100% transparent and supportive team.',
     size: 'large',
     tag: 'Medical'
   },
@@ -403,7 +403,7 @@ export const CLIENT_TESTIMONIALS: TestimonialReview[] = [
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=260&q=80',
     hasVideo: true,
     videoTitle: 'Admitted with 30% Scholarship in Sydney',
-    quote: 'From IELTS 7.5 prep to Australian visa grant in just 14 days! Jagvimal consultants made my dream come true.',
+    quote: 'From IELTS 7.5 prep to Australian visa grant in just 14 days! YOLOgen Consultant made my dream come true.',
     size: 'large',
     tag: 'Management'
   },
@@ -428,10 +428,10 @@ export const CLIENT_TESTIMONIALS: TestimonialReview[] = [
     university: 'Anerkennung Program',
     country: 'Germany',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1594824813511-9a99787ff27c?auto=format&fit=crop&w=260&q=80',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=260&q=80',
     hasVideo: false,
     videoTitle: 'Hospital Placement in Frankfurt',
-    quote: 'Zero tuition and guaranteed hospital contract with 2,800€ monthly starting pay. Thank you Jagvimal!',
+    quote: 'Zero tuition and guaranteed hospital contract with 2,800€ monthly starting pay. Thank you YOLOgen Consultant!',
     size: 'small',
     tag: 'Nursing'
   },
@@ -445,7 +445,7 @@ export const CLIENT_TESTIMONIALS: TestimonialReview[] = [
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=260&q=80',
     hasVideo: true,
     videoTitle: 'Canada Student to Work Permit Transition',
-    quote: 'Got my Canadian visa approved after one prior refusal through another agent. Jagvimal’s SOP drafted by legal counsel was flawless.',
+    quote: 'Got my Canadian visa approved after one prior refusal through another agent. YOLOgen Consultant helped with my Statement of Purpose.',
     size: 'medium',
     tag: 'Technology'
   },

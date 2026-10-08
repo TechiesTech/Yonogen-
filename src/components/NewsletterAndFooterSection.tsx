@@ -35,12 +35,12 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             <div className="lg:col-span-7 lg:pl-14 space-y-5 text-left">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Start your <br />
-                <span className="font-editorial-italic font-normal">Overseas Education</span> <br />
+                <span className="font-editorial-italic font-normal">Global Opportunities</span> <br />
                 Journey!
               </h2>
 
               <p className="text-xs sm:text-sm text-slate-600 max-w-md leading-relaxed">
-                Receive free university scholarship updates, visa rule alerts, and direct invitation to university spot assessment interviews.
+                Get helpful updates on study, work, visitor, and migration visas, plus guidance for planning your application.
               </p>
 
               {/* Email Form matching Screenshot 6 & 7 */}
@@ -102,32 +102,6 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             Instagram
           </a>
 
-          {/* Facebook */}
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-400 text-xs sm:text-sm font-medium text-slate-700 transition-all"
-          >
-            <div className="w-5 h-5 rounded-full bg-[#1877f2] text-white flex items-center justify-center font-bold text-[11px]">
-              f
-            </div>
-            Facebook
-          </a>
-
-          {/* Twitter (X) */}
-          <a
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-400 text-xs sm:text-sm font-medium text-slate-700 transition-all"
-          >
-            <div className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center font-bold text-[10px]">
-              𝕏
-            </div>
-            Twitter
-          </a>
-
           {/* Whatsapp */}
           <a
             href="https://whatsapp.com"
@@ -141,18 +115,6 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             Whatsapp
           </a>
 
-          {/* Youtube */}
-          <a
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-red-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
-          >
-            <div className="w-5 h-5 rounded-full bg-[#ff0000] text-white flex items-center justify-center text-[10px]">
-              ▶
-            </div>
-            Youtube
-          </a>
         </div>
 
         {/* 5 Column Navigation Grid matching Screenshot 6 & 7 */}
@@ -230,7 +192,7 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
         {/* Bottom Legal & Accreditations */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-700">Jagvimal Overseas Consultants</span>
+            <span className="font-bold text-slate-700">YOLOgen Consultant</span>
             <span>·</span>
             <span>© {new Date().getFullYear()} All rights reserved.</span>
           </div>

@@ -35,7 +35,7 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Google',
     highlightBadge: 'AUD $14,000 Merit Scholarship',
     counselor: 'Priya Mehta (Senior Lead)',
-    reviewText: 'Jagvimal Overseas was hands down the best decision for my Australian admission. They streamlined my SOP, secured a tuition fee waiver, and processed my subclass 500 visa in just 12 working days. Extremely professional team without hidden fees!',
+    reviewText: 'YOLOgen Consultant was hands down the best decision for my Australian admission. They streamlined my SOP, secured a tuition fee waiver, and processed my subclass 500 visa in just 12 working days. Extremely professional team without hidden fees!',
     helpfulCount: 42,
     hasVideo: true
   },
@@ -52,7 +52,7 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Google',
     highlightBadge: 'Direct WHO/NMC Seat',
     counselor: 'Rajesh Choudhary',
-    reviewText: 'After NEET, I was worried about private college budgets in India. The Jagvimal team arranged my direct admission in Kazan with zero donation, organized Indian food hostel accommodation, and supported my parents throughout the journey.',
+    reviewText: 'After NEET, I was worried about private college budgets in India. The YOLOgen Consultant team arranged my direct admission in Kazan with zero donation, organized Indian food hostel accommodation, and supported my parents throughout the journey.',
     helpfulCount: 38,
     hasVideo: true
   },
@@ -86,14 +86,14 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Google',
     highlightBadge: 'Approved After Prior Refusal',
     counselor: 'Amanpreet Kaur',
-    reviewText: 'I had one Canadian visa refusal from another local agent. Jagvimal’s immigration lawyer reconstructed my Statement of Purpose with airtight financial justification. Visa granted within 22 days with full co-op work authorization.',
+    reviewText: 'I had one Canadian visa refusal from another local agent. YOLOgen Consultant helped reconstruct my Statement of Purpose with clear financial justification. Visa granted within 22 days with full co-op work authorization.',
     helpfulCount: 51,
     hasVideo: true
   },
   {
     id: 'fb-5',
     name: 'Pooja Verma',
-    avatar: 'https://images.unsplash.com/photo-1594824813511-9a99787ff27c?auto=format&fit=crop&w=260&q=80',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=260&q=80',
     country: 'Germany',
     flag: '🇩🇪',
     program: 'Anerkennung Nursing Program',
@@ -103,7 +103,7 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Clutch',
     highlightBadge: '100% Free Tuition & Sponsored Relocation',
     counselor: 'Sunita Sharma',
-    reviewText: 'I joined as a B.Sc nurse from Punjab. Jagvimal took care of embassy interview drills, translated all my clinical transcripts into German, and provided free accommodation for the first month in Hamburg. Incredible service!',
+    reviewText: 'I joined as a B.Sc nurse from Punjab. YOLOgen Consultant helped with embassy interview preparation, translated my clinical transcripts into German, and supported my move to Hamburg. Incredible service!',
     helpfulCount: 35,
     hasVideo: false
   },
@@ -120,7 +120,7 @@ const INITIAL_FEEDBACK_DATA: FeedbackItem[] = [
     verifiedSource: 'Google',
     highlightBadge: 'English-Medium Medical Program',
     counselor: 'Vikas Shekhawat',
-    reviewText: 'The hospital rotations here are top notch with English speaking faculty. Jagvimal team members even accompanied our student batch from Delhi airport right to our university hostel rooms.',
+    reviewText: 'The hospital rotations here are top notch with English speaking faculty. YOLOgen Consultant team members even accompanied our student batch from Delhi airport right to our university hostel rooms.',
     helpfulCount: 22,
     hasVideo: false
   }
@@ -192,7 +192,7 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
       date: 'Just now',
       verifiedSource: 'Google',
       highlightBadge: 'Newly Verified Student Review',
-      counselor: 'Jagvimal Admissions Desk',
+      counselor: 'YOLOgen Consultant',
       reviewText: newReview.reviewText,
       helpfulCount: 1,
       hasVideo: false
@@ -398,7 +398,7 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = ({ onSelectRevi
                   <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-900 border border-amber-200">
                     <MessageSquare className="w-3 h-3" /> Student Review Submission
                   </span>
-                  <h3 className="text-2xl font-bold text-slate-900 mt-2">Share Your Jagvimal Experience</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mt-2">Share Your YOLOgen Experience</h3>
                   <p className="text-xs text-slate-500 mt-1">
                     Your candid feedback guides other students on their international admissions journey.
                   </p>
