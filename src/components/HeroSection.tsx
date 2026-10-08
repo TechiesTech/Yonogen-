@@ -91,8 +91,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section
       id="home"
+      aria-label="Featured destinations and services"
+      aria-roledescription="carousel"
       onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseLeave={(event) => {
+        if (!event.currentTarget.contains(document.activeElement)) setIsPaused(false);
+      }}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsPaused(false);
+      }}
       className="relative overflow-hidden transition-all duration-700 select-none"
     >
       {/* ========================================================= */}
@@ -196,11 +204,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
                   return (
                     <div
+                      role="button"
+                      tabIndex={0}
                       key={landmark.id}
                       className={`group relative rounded-3xl overflow-hidden text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:z-20 cursor-pointer border-2 border-white/90 ${floatClasses[idx % floatClasses.length]} ${heights[idx % heights.length]}`}
+                      aria-label={`Explore ${landmark.city}, ${landmark.country}`}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault();
+                          const country = COUNTRIES_DATA.find(
+                            (item) => item.name.toLowerCase() === landmark.country.toLowerCase()
+                          );
+                          if (country) handleCountryClick(country);
+                        }
+                      }}
                       onClick={() => {
-                        const country = COUNTRIES_DATA.find(c => c.name.toLowerCase() === landmark.country.toLowerCase()) || COUNTRIES_DATA[0];
-                        handleCountryClick(country);
+                        const country = COUNTRIES_DATA.find(
+                          (item) => item.name.toLowerCase() === landmark.country.toLowerCase()
+                        );
+                        if (country) handleCountryClick(country);
                       }}
                     >
                       <img
@@ -296,7 +318,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="absolute inset-0 bg-center"
             style={{
               backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/hero-slide-2_maolhq.jpg')",
-              backgroundSize: '100% 100%'
+              backgroundSize: 'cover'
             }}
           />
 
@@ -348,7 +370,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="absolute inset-0 bg-center"
             style={{
               backgroundImage: "url('/images/hero-slide-3.jpg')",
-              backgroundSize: '100% 100%'
+              backgroundSize: 'cover'
             }}
           />
 
@@ -393,7 +415,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="absolute inset-0 bg-center"
             style={{
               backgroundImage: "url('/images/hero-slide-4.jpg')",
-              backgroundSize: '100% 100%'
+              backgroundSize: 'cover'
             }}
           />
 
@@ -445,7 +467,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="absolute inset-0 bg-center"
             style={{
               backgroundImage: "url('/images/hero-slide-5.jpg')",
-              backgroundSize: '100% 100%'
+              backgroundSize: 'cover'
             }}
           />
 

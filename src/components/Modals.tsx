@@ -65,7 +65,7 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 overflow-hidden">
+      <div role="dialog" aria-modal="true" aria-labelledby="callback-modal-title" className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain">
         <button
           onClick={handleClose}
           className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
@@ -96,7 +96,7 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200">
                 <Phone className="w-3.5 h-3.5 text-amber-600" /> Direct Counselor Connect
               </span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-2">Request a Fast Callback</h2>
+              <h2 id="callback-modal-title" className="text-2xl font-bold text-slate-900 mt-2">Request a Fast Callback</h2>
               <p className="text-xs sm:text-sm text-slate-500 mt-1">
                 Get free 15-minute 1-on-1 guidance on visas, scholarships, and course selection.
               </p>
@@ -104,10 +104,12 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Full Name</label>
+                <label htmlFor="callback-name" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Full Name</label>
                 <input
+                  id="callback-name"
                   type="text"
                   required
+                  autoComplete="name"
                   placeholder="e.g. Rahul Sharma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -117,10 +119,12 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Phone Number</label>
+                  <label htmlFor="callback-phone" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Phone Number</label>
                   <input
+                    id="callback-phone"
                     type="tel"
                     required
+                    autoComplete="tel"
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -128,10 +132,12 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Email</label>
+                  <label htmlFor="callback-email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Email</label>
                   <input
+                    id="callback-email"
                     type="email"
                     required
+                    autoComplete="email"
                     placeholder="student@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -142,8 +148,9 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Target Country</label>
+                  <label htmlFor="callback-country" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Target Country</label>
                   <select
+                    id="callback-country"
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 text-sm bg-white"
@@ -159,8 +166,9 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Preferred Time</label>
+                  <label htmlFor="callback-time" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Preferred Time</label>
                   <select
+                    id="callback-time"
                     value={formData.preferredTime}
                     onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 text-sm bg-white"
@@ -197,12 +205,21 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export const CountryModal: React.FC<{ country: Country | null; onClose: () => void }> = ({ country, onClose }) => {
+interface DestinationModalProps {
+  onClose: () => void;
+  onOpenCallback: () => void;
+}
+
+export const CountryModal: React.FC<DestinationModalProps & { country: Country | null }> = ({
+  country,
+  onClose,
+  onOpenCallback
+}) => {
   if (!country) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 max-h-[90vh] overflow-y-auto">
+      <div role="dialog" aria-modal="true" aria-labelledby="country-modal-title" className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain">
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
@@ -219,7 +236,7 @@ export const CountryModal: React.FC<{ country: Country | null; onClose: () => vo
           />
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">Destination Overview</span>
-            <h2 className="text-2xl font-bold text-slate-900">{country.name}</h2>
+            <h2 id="country-modal-title" className="text-2xl font-bold text-slate-900">{country.name}</h2>
           </div>
         </div>
 
@@ -253,7 +270,10 @@ export const CountryModal: React.FC<{ country: Country | null; onClose: () => vo
 
         <div className="flex flex-col sm:flex-row gap-3 pt-2">
           <button
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              onOpenCallback();
+            }}
             className="flex-1 py-3 px-5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors text-center"
           >
             Consult on {country.name} Admissions
@@ -270,12 +290,16 @@ export const CountryModal: React.FC<{ country: Country | null; onClose: () => vo
   );
 };
 
-export const VisaModal: React.FC<{ visa: VisaService | null; onClose: () => void }> = ({ visa, onClose }) => {
+export const VisaModal: React.FC<DestinationModalProps & { visa: VisaService | null }> = ({
+  visa,
+  onClose,
+  onOpenCallback
+}) => {
   if (!visa) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 max-h-[90vh] overflow-y-auto">
+      <div role="dialog" aria-modal="true" aria-labelledby="visa-modal-title" className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain">
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
@@ -293,7 +317,7 @@ export const VisaModal: React.FC<{ visa: VisaService | null; onClose: () => void
           </span>
         </div>
 
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">{visa.title} Application Guide</h2>
+        <h2 id="visa-modal-title" className="text-2xl font-bold text-slate-900 mb-2">{visa.title} Application Guide</h2>
         <p className="text-sm text-slate-600 mb-6">{visa.description}</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -339,12 +363,21 @@ export const VisaModal: React.FC<{ visa: VisaService | null; onClose: () => void
           </div>
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex flex-col-reverse sm:flex-row justify-end gap-3">
           <button
             onClick={onClose}
             className="py-3 px-5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors text-center"
           >
             Close
+          </button>
+          <button
+            onClick={() => {
+              onClose();
+              onOpenCallback();
+            }}
+            className="py-3 px-5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors text-center"
+          >
+            Request guidance
           </button>
         </div>
       </div>

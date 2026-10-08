@@ -6,7 +6,6 @@ interface JobTheme {
   primary: string;
   background: string;
   text: string;
-  tagBg: string;
 }
 
 interface JobItem {
@@ -39,8 +38,7 @@ const jobs: JobItem[] = [
     theme: {
       primary: "#2F7D32",
       background: "#f0fdf4",
-      text: "#022c22",
-      tagBg: "bg-emerald-100 text-emerald-800 border-emerald-200"
+      text: "#022c22"
     }
   },
   {
@@ -60,8 +58,7 @@ const jobs: JobItem[] = [
     theme: {
       primary: "#dc2626",
       background: "#fef2f2",
-      text: "#450a0a",
-      tagBg: "bg-red-100 text-red-800 border-red-200"
+      text: "#450a0a"
     }
   },
   {
@@ -81,8 +78,7 @@ const jobs: JobItem[] = [
     theme: {
       primary: "#830dfa",
       background: "#f8f0ff",
-      text: "#3b0764",
-      tagBg: "bg-purple-100 text-purple-800 border-purple-200"
+      text: "#3b0764"
     }
   },
   {
@@ -101,8 +97,7 @@ const jobs: JobItem[] = [
     theme: {
       primary: "#0284c7",
       background: "#f0f9ff",
-      text: "#0c4a6e",
-      tagBg: "bg-sky-100 text-sky-800 border-sky-200"
+      text: "#0c4a6e"
     }
   }
 ];
@@ -140,8 +135,11 @@ export const JobShowcase: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (!(e.target instanceof Element) || !e.target.closest('#jobs')) return;
+
       if (e.key === "ArrowLeft") handlePrev();
       if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") e.preventDefault();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);

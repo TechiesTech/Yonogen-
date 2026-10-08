@@ -14,21 +14,15 @@ export interface LandmarkCard {
   id: string;
   city: string;
   country: string;
-  bgColor: string;
-  textColor: string;
-  accentColor: string;
   badgeBg: string;
   imageUrl: string;
-  svgType: 'eiffel' | 'towerbridge' | 'pagoda' | 'stbasil' | 'sydneyopera';
 }
 
 export interface VisaService {
   id: string;
   title: string;
-  slug: string;
   description: string;
   characterType: 'visitor' | 'student' | 'worker' | 'citizenship' | 'business';
-  badgeBg: string;
   eligibility: string[];
   processingTime: string;
   requiredDocuments: string[];
@@ -40,7 +34,6 @@ export interface CityDestination {
   name: string;
   country: string;
   imageUrl: string;
-  tagline: string;
   universities: number;
   studentsRating: number;
 }
@@ -48,10 +41,7 @@ export interface CityDestination {
 export interface UniversityPartner {
   id: string;
   name: string;
-  country: string;
   ranking: string;
-  popularPrograms: string;
-  established: string;
 }
 
 export const COUNTRIES_DATA: Country[] = [
@@ -122,6 +112,17 @@ export const COUNTRIES_DATA: Country[] = [
     description: 'Study business, design, and architecture in Madrid, Barcelona, or Valencia with low living expenses and Schengen mobility.'
   },
   {
+    id: 'france',
+    name: 'France',
+    flagUrl: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=120&q=80',
+    popularFor: 'Globally recognized universities, diverse programs, and rich cultural experiences.',
+    universitiesCount: 'Public and private institutions',
+    avgTuition: 'Varies by institution and program',
+    postStudyWork: 'Residence and work options depend on visa category',
+    popularIntakes: ['September', 'January'],
+    description: 'France offers a wide range of higher-education programs, including options in Paris and other major cities.'
+  },
+  {
     id: 'moldova',
     name: 'Moldova',
     flagUrl: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=120&q=80',
@@ -172,56 +173,36 @@ export const HERO_LANDMARKS: LandmarkCard[] = [
     id: 'paris',
     city: 'PARIS',
     country: 'France',
-    bgColor: 'from-emerald-500 to-teal-700',
-    textColor: 'text-white',
-    accentColor: '#10b981',
     badgeBg: 'bg-emerald-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=700&q=85',
-    svgType: 'eiffel'
+    imageUrl: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=700&q=85'
   },
   {
     id: 'london',
     city: 'LONDON',
     country: 'United Kingdom',
-    bgColor: 'from-blue-600 to-indigo-800',
-    textColor: 'text-white',
-    accentColor: '#3b82f6',
     badgeBg: 'bg-blue-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=700&q=85',
-    svgType: 'towerbridge'
+    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=700&q=85'
   },
   {
     id: 'china',
     city: 'CHINA',
     country: 'China',
-    bgColor: 'from-amber-500 to-orange-600',
-    textColor: 'text-white',
-    accentColor: '#830dfa',
     badgeBg: 'bg-amber-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=700&q=85',
-    svgType: 'pagoda'
+    imageUrl: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=700&q=85'
   },
   {
     id: 'russia',
     city: 'RUSSIA',
     country: 'Russia',
-    bgColor: 'from-purple-600 to-fuchsia-800',
-    textColor: 'text-white',
-    accentColor: '#a855f7',
     badgeBg: 'bg-purple-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=700&q=85',
-    svgType: 'stbasil'
+    imageUrl: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=700&q=85'
   },
   {
     id: 'sydney',
     city: 'SYDNEY',
     country: 'Australia',
-    bgColor: 'from-amber-400 to-yellow-500',
-    textColor: 'text-white',
-    accentColor: '#830dfa',
     badgeBg: 'bg-yellow-500/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=700&q=85',
-    svgType: 'sydneyopera'
+    imageUrl: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=700&q=85'
   }
 ];
 
@@ -229,10 +210,8 @@ export const VISA_SERVICES: VisaService[] = [
   {
     id: 'visitor-visa',
     title: 'Visitor Visa',
-    slug: 'visitor-visa',
     description: 'Unlock global opportunities: streamline your business travel with our expert visa services.',
     characterType: 'visitor',
-    badgeBg: 'bg-amber-50 text-amber-900 border-amber-200',
     eligibility: ['Valid passport with 6 months validity', 'Proof of sufficient funds', 'Clean immigration history', 'Travel itinerary & return flight tickets'],
     processingTime: '7 - 21 Business Days',
     requiredDocuments: ['Passport Copies', 'Bank Statements (6 months)', 'Employment/Leave Letter', 'Hotel Booking & Travel Insurance'],
@@ -241,10 +220,8 @@ export const VISA_SERVICES: VisaService[] = [
   {
     id: 'student-visa',
     title: 'Student Visa',
-    slug: 'student-visa',
     description: 'Secure your future by pursuing international education with our seamless student visa assistance.',
     characterType: 'student',
-    badgeBg: 'bg-emerald-50 text-emerald-900 border-emerald-200',
     eligibility: ['Valid university offer / CAS / I-20 / CoE', 'English proficiency (IELTS/PTE/TOEFL)', 'Academic records & certificates', 'Financial solvency proof'],
     processingTime: '15 - 45 Business Days',
     requiredDocuments: ['Letter of Acceptance', 'Proof of Tuition Payment', 'Financial Affidavit & GIC/SOP', 'Valid Medical Certificate'],
@@ -253,10 +230,8 @@ export const VISA_SERVICES: VisaService[] = [
   {
     id: 'worker-visa',
     title: 'Worker Visa',
-    slug: 'worker-visa',
     description: 'Secure your international job opportunity: our work visa solutions pave the way for your professional aspirations.',
     characterType: 'worker',
-    badgeBg: 'bg-blue-50 text-blue-900 border-blue-200',
     eligibility: ['Genuine employer job offer / sponsorship', 'Skill assessment qualification', 'Relevant professional experience', 'Basic host language proficiency'],
     processingTime: '30 - 90 Business Days',
     requiredDocuments: ['Employment Contract', 'Credential Evaluation (WES/ACS)', 'Experience Certificates', 'Police Clearance Certificate (PCC)'],
@@ -265,10 +240,8 @@ export const VISA_SERVICES: VisaService[] = [
   {
     id: 'citizenship',
     title: 'Migration Visa',
-    slug: 'citizenship',
     description: 'Embrace a future of stability and opportunity: our expert guidance supports your journey to citizenship.',
     characterType: 'citizenship',
-    badgeBg: 'bg-purple-50 text-purple-900 border-purple-200',
     eligibility: ['Permanent residency residency period met', 'Good character & tax compliance', 'Language & citizenship knowledge test', 'Continuous physical presence'],
     processingTime: '6 - 18 Months',
     requiredDocuments: ['PR Card & Passport History', 'Tax Returns & Utility Proofs', 'Citizenship Test Passed Certificate', 'Birth & Marriage Certificates'],
@@ -277,10 +250,8 @@ export const VISA_SERVICES: VisaService[] = [
   {
     id: 'business-visa',
     title: 'Business Visa',
-    slug: 'business-visa',
     description: 'Unlock global opportunities: streamline your business travel with our expert visa services.',
     characterType: 'business',
-    badgeBg: 'bg-indigo-50 text-indigo-900 border-indigo-200',
     eligibility: ['Invitation letter from overseas company', 'Corporate registration documents', 'Confirmed meeting agenda / trade expo passes', 'Company financial statements'],
     processingTime: '10 - 25 Business Days',
     requiredDocuments: ['Company Invitation Letter', 'Letter from Employer / Board', 'Company Bank Statements', 'Travel Insurance & Accommodation'],
@@ -294,7 +265,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'Melbourne',
     country: 'Australia',
     imageUrl: 'https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=600&q=80',
-    tagline: 'Voted World’s Most Liveable Student City',
     universities: 9,
     studentsRating: 4.9
   },
@@ -303,7 +273,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'Sydney',
     country: 'Australia',
     imageUrl: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80',
-    tagline: 'Global Financial & Tech Epicenter',
     universities: 8,
     studentsRating: 4.8
   },
@@ -312,7 +281,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'Brisbane',
     country: 'Australia',
     imageUrl: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?auto=format&fit=crop&w=600&q=80',
-    tagline: 'Sunshine Capital with Great Affordability',
     universities: 5,
     studentsRating: 4.7
   },
@@ -321,7 +289,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'Perth',
     country: 'Australia',
     imageUrl: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80',
-    tagline: 'Resource Hub & Extra Regional Migration Points',
     universities: 5,
     studentsRating: 4.7
   },
@@ -330,7 +297,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'London',
     country: 'United Kingdom',
     imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80',
-    tagline: 'A global capital for culture, business, and research',
     universities: 18,
     studentsRating: 4.8
   },
@@ -339,7 +305,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'Toronto',
     country: 'Canada',
     imageUrl: 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&w=600&q=80',
-    tagline: 'A welcoming hub for innovation and opportunity',
     universities: 8,
     studentsRating: 4.8
   },
@@ -348,7 +313,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'Berlin',
     country: 'Germany',
     imageUrl: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=600&q=80',
-    tagline: 'A creative, international center for higher learning',
     universities: 12,
     studentsRating: 4.7
   },
@@ -357,7 +321,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     name: 'Auckland',
     country: 'New Zealand',
     imageUrl: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80',
-    tagline: 'A diverse study destination between city and nature',
     universities: 5,
     studentsRating: 4.8
   }
@@ -367,97 +330,61 @@ export const UNIVERSITIES_PARTNERS: UniversityPartner[] = [
   {
     id: 'uni-aus',
     name: 'UNIVERSITIES AUSTRALIA',
-    country: 'Australia',
-    ranking: 'Peak Body (39 Universities)',
-    popularPrograms: 'Higher Education Framework',
-    established: '1920'
+    ranking: 'Peak Body (39 Universities)'
   },
   {
     id: 'federation-1',
     name: 'Federation UNIVERSITY AUSTRALIA',
-    country: 'Australia',
-    ranking: '#1 for Employability & Skills',
-    popularPrograms: 'IT, Nursing, Engineering, MBA',
-    established: '1870'
+    ranking: '#1 for Employability & Skills'
   },
   {
     id: 'anu',
     name: 'Australian National University',
-    country: 'Australia',
-    ranking: 'QS World Rank #30',
-    popularPrograms: 'Law, Public Policy, Physics',
-    established: '1946'
+    ranking: 'QS World Rank #30'
   },
   {
     id: 'macquarie-1',
     name: 'MACQUARIE University SYDNEY · AUSTRALIA',
-    country: 'Australia',
-    ranking: 'QS World Rank #130',
-    popularPrograms: 'Business Analytics, Cyber Security',
-    established: '1964'
+    ranking: 'QS World Rank #130'
   },
   {
     id: 'uni-aus-2',
     name: 'UNIVERSITIES AUSTRALIA',
-    country: 'Australia',
-    ranking: 'National Consortium Member',
-    popularPrograms: 'International Student Mobility',
-    established: '1920'
+    ranking: 'National Consortium Member'
   },
   {
     id: 'flinders',
     name: 'Flinders University',
-    country: 'Australia',
-    ranking: 'Top 2% Globally',
-    popularPrograms: 'Biomedicine, AI, Social Work',
-    established: '1966'
+    ranking: 'Top 2% Globally'
   },
   {
     id: 'federation-2',
     name: 'Federation UNIVERSITY AUSTRALIA',
-    country: 'Australia',
-    ranking: 'Regional Post-Study Perks (Up to 4 Yrs)',
-    popularPrograms: 'Hospitality, Data Science',
-    established: '1870'
+    ranking: 'Regional Post-Study Perks (Up to 4 Yrs)'
   },
   {
     id: 'anu-2',
     name: 'Australian National University',
-    country: 'Australia',
-    ranking: 'Group of Eight (Go8) Premier',
-    popularPrograms: 'Environmental Science, Economics',
-    established: '1946'
+    ranking: 'Group of Eight (Go8) Premier'
   },
   {
     id: 'macquarie-2',
     name: 'MACQUARIE University SYDNEY · AUSTRALIA',
-    country: 'Australia',
-    ranking: '5 QS Stars Rating',
-    popularPrograms: 'Finance, Media, Health Science',
-    established: '1964'
+    ranking: '5 QS Stars Rating'
   },
   {
     id: 'uni-aus-3',
     name: 'UNIVERSITIES AUSTRALIA',
-    country: 'Australia',
-    ranking: 'CRICOS Accredited Network',
-    popularPrograms: 'UG & PG Degree Direct Enrolment',
-    established: '1920'
+    ranking: 'CRICOS Accredited Network'
   },
   {
     id: 'flinders-2',
     name: 'Flinders University',
-    country: 'Australia',
-    ranking: 'Adelaide Innovation Hub',
-    popularPrograms: 'Creative Arts, Mechanical Eng',
-    established: '1966'
+    ranking: 'Adelaide Innovation Hub'
   },
   {
     id: 'federation-3',
     name: 'Federation UNIVERSITY AUSTRALIA',
-    country: 'Australia',
-    ranking: 'Guaranteed Industry Placements',
-    popularPrograms: 'Mining, Civil Eng, Commerce',
-    established: '1870'
+    ranking: 'Guaranteed Industry Placements'
   }
 ];

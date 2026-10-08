@@ -12,6 +12,7 @@ const SLIDES = [
 const StudentHeroCard: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const goTo = (index: number) => {
     if (animating) return;
@@ -22,12 +23,26 @@ const StudentHeroCard: React.FC = () => {
 
   // Auto-scroll every 3.5s
   useEffect(() => {
-    const timer = setInterval(() => goTo(current + 1), 3500);
+    if (isPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const timer = setInterval(() => {
+      setCurrent((index) => (index + 1) % SLIDES.length);
+    }, 3500);
     return () => clearInterval(timer);
-  }, [current]);
+  }, [isPaused]);
 
   return (
-    <div className="relative w-full max-w-[380px] mx-auto select-none">
+    <div
+      className="relative w-full max-w-[380px] mx-auto select-none"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={(event) => {
+        if (!event.currentTarget.contains(document.activeElement)) setIsPaused(false);
+      }}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsPaused(false);
+      }}
+    >
 
       {/* Soft ambient circle behind */}
       <div

@@ -63,11 +63,13 @@ export default function App() {
       <CountryModal
         country={selectedCountry}
         onClose={() => setSelectedCountry(null)}
+        onOpenCallback={() => setCallbackModalOpen(true)}
       />
 
       <VisaModal
         visa={selectedVisa}
         onClose={() => setSelectedVisa(null)}
+        onOpenCallback={() => setCallbackModalOpen(true)}
       />
     </div>
   );

@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# YOLOgen Consultant
 
-# Run and deploy your AI Studio app
+A React and Vite website for YOLOgen's study, travel, work, and migration consultancy.
 
-This contains everything you need to run your app locally.
+## Requirements
 
-View your app in AI Studio: https://ai.studio/apps/f78191a5-bc32-43f5-85f9-7060695b416f
+- Node.js 20.19+ (or 22.12+)
+- npm
 
-## Run Locally
+## Run locally
 
-**Prerequisites:**  Node.js
+```sh
+npm ci
+npm run dev
+```
 
+The development server is available at `http://localhost:3000`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Verify and build
+
+```sh
+npm run lint
+npm run build
+```
+
+The production-ready static site is written to `dist/`. Deploy the contents of
+that directory to a static host configured to serve `index.html` for application
+routes. No Gemini API key or server-side runtime is required to build the site.
+
+The callback form submits to the configured Google Apps Script endpoint, and
+images and fonts are served by external providers; verify those services and
+their production access before launch.
