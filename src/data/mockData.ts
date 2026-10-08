@@ -279,7 +279,7 @@ export const VISA_SERVICES: VisaService[] = [
   },
   {
     id: 'citizenship',
-    title: 'Migration',
+    title: 'Migration Visa',
     slug: 'citizenship',
     description: 'Embrace a future of stability and opportunity: our expert guidance supports your journey to citizenship.',
     characterType: 'citizenship',
