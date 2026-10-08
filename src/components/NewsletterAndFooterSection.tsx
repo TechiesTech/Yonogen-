@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Globe, Phone, Mail, MapPin, Instagram } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Globe, Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }> = ({ onOpenCallback }) => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-    }
-  };
-
   return (
     <div id="contact" className="bg-[#fcfdff] py-10 sm:py-14 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,32 +33,14 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
                 Get helpful updates on study, work, visitor, and migration visas, plus guidance for planning your application.
               </p>
 
-              {/* Email Form matching Screenshot 6 & 7 */}
-              {subscribed ? (
-                <div className="flex items-center gap-2 p-3.5 bg-white/90 backdrop-blur-sm rounded-full text-emerald-800 text-xs sm:text-sm font-semibold max-w-md border border-emerald-200">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <span>Welcome aboard! You will receive our free 2026 Admissions Playbook.</span>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="relative max-w-md">
-                  <div className="relative flex items-center bg-white rounded-full p-1.5 shadow-md border border-amber-200/80 focus-within:ring-2 focus-within:ring-amber-400/30">
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Email Address"
-                      className="w-full bg-transparent px-5 py-2.5 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
-                    />
-                    <button
-                      type="submit"
-                      className="shrink-0 inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition-all active:scale-95 shadow-sm"
-                    >
-                      Send <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </form>
-              )}
+              <a
+                href="https://wa.me/919703962596?text=%F0%9F%91%8B%20Hello%20YOLOgen%20Consultant%20team%2C%20I%E2%80%99m%20looking%20for%20visa%20consultancy.%20Could%20you%20please%20share%20the%20visa%20categories%20you%20assist%20with%2C%20including%20study%2C%20work%2C%20visitor%2C%20business%2C%20and%20migration%20visas%2C%20and%20explain%20how%20to%20get%20started%3F%20Thank%20you."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex max-w-md items-center justify-center gap-2 rounded-full bg-[#830dfa] px-8 py-3.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#700bd8] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2"
+              >
+                Chat with us on WhatsApp <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
@@ -132,6 +104,17 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
           </a>
 
           {/* YouTube */}
+          <a
+            href="tel:+919703962596"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-violet-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
+            aria-label="Call YOLOgen Consultant at +91 97039 62596"
+          >
+            <div className="w-5 h-5 rounded-full bg-violet-700 text-white flex items-center justify-center">
+              <Phone className="w-3 h-3" aria-hidden="true" />
+            </div>
+            Call us
+          </a>
+
           <a
             href="https://youtube.com/@yologen?si=WkfNewyryhhKLTsz"
             target="_blank"

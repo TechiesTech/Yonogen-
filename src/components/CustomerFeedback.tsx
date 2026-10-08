@@ -9,11 +9,11 @@ const REVIEWS = [
   {
     id: 'r1',
     role: 'MBBS Abroad Student',
-    text: 'Jagvimal Consultancy – A Symbol of Trust And Determination. I am Abhinav Kaushik from Jaipur– a student of Nanjing medical university (China) really enjoying and pursuing my medical degree here. Jagvimal Consultancy has been very helpful throughout the journey.',
+    text: 'I am Abhinav Kaushik from Jaipur, pursuing my medical degree at Nanjing Medical University in China. YOLOgen Consultant has guided me throughout my study-abroad journey, from understanding the process to preparing for my move. I appreciate their support along the way.',
     rating: 4.5,
     name: 'Abhinav Kaushik',
     program: 'MBBS Abroad',
-    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=260&q=80',
+    avatar: '/images/abhinav-kaushik.png',
   },
   {
     id: 'r2',
@@ -73,18 +73,14 @@ export const CustomerFeedback: React.FC<CustomerFeedbackProps> = () => {
             </svg>
           </div>
 
-          {/* Role */}
           <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">{review.role}</p>
 
-          {/* Review text */}
           <p className="text-sm text-slate-700 leading-relaxed line-clamp-5 flex-1">
             {review.text}
           </p>
 
-          {/* Star rating */}
           <StarRating rating={review.rating} />
 
-          {/* Divider */}
           <div className="border-t border-slate-100 pt-3 flex items-center gap-3">
             <img
               src={review.avatar}
