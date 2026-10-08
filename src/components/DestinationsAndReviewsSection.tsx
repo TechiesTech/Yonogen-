@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Star, ChevronRight, Quote, Award, Sparkles } from 'lucide-react';
-import { CITY_DESTINATIONS, CLIENT_TESTIMONIALS, TestimonialReview } from '../data/mockData';
+import { CITY_DESTINATIONS, TestimonialReview } from '../data/mockData';
 import { CustomerFeedback } from './CustomerFeedback';
 
 interface DestinationsAndReviewsSectionProps {
@@ -13,9 +12,6 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
   onOpenCounselling
 }) => {
   const [selectedCity, setSelectedCity] = useState<string>('melbourne');
-  const [activeStoryIndex, setActiveStoryIndex] = useState<number>(0);
-
-  const activeStory = CLIENT_TESTIMONIALS[activeStoryIndex];
 
   return (
     <section id="testimonials" className="py-10 sm:py-14 bg-white relative overflow-hidden">
@@ -100,77 +96,6 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
           <CustomerFeedback onSelectReview={onSelectReview} />
         </div>
 
-        {/* Results Speak the Loudest Section matching Screenshot 3 Bottom */}
-        <div className="mt-16 text-center">
-          <div className="inline-block mb-3">
-            <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-2xs">
-              Our Testimonial
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-8">
-            Results Speak <br className="sm:hidden" />
-            the <span className="font-editorial-italic font-normal">Loudest</span>
-          </h2>
-
-          {/* Interactive Spotlight Card */}
-          <div className="max-w-3xl mx-auto bg-gradient-to-br from-amber-50/50 via-white to-emerald-50/40 rounded-3xl p-6 sm:p-8 border border-amber-200/60 shadow-md text-left">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
-              <div className="flex items-center gap-3.5">
-                <img
-                  src={activeStory.avatar}
-                  alt={activeStory.name}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-amber-300 shadow-sm"
-                />
-                <div>
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900">{activeStory.name}</h4>
-                  <p className="text-xs text-amber-800 font-semibold">
-                    {activeStory.role} · {activeStory.university} ({activeStory.country})
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
-                  Visa Approved
-                </span>
-                <button
-                  onClick={() => onSelectReview(activeStory)}
-                  className="p-2 rounded-full bg-white shadow-sm hover:bg-amber-50 text-amber-600 transition-colors border border-slate-100"
-                  aria-label="Play testimonial video"
-                >
-                  <Play className="w-4 h-4 fill-current ml-0.5" />
-                </button>
-              </div>
-            </div>
-
-            <p className="mt-6 text-sm sm:text-base text-slate-700 leading-relaxed italic">
-              "{activeStory.quote}"
-            </p>
-
-            {/* Switchers */}
-            <div className="mt-6 flex items-center justify-between pt-4 border-t border-slate-100">
-              <div className="flex gap-1.5">
-                {CLIENT_TESTIMONIALS.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveStoryIndex(idx)}
-                    className={`h-2 rounded-full transition-all ${
-                      idx === activeStoryIndex ? 'w-6 bg-amber-500' : 'w-2 bg-slate-200 hover:bg-slate-300'
-                    }`}
-                    aria-label={`View story ${idx + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={onOpenCounselling}
-                className="text-xs sm:text-sm font-semibold text-amber-700 hover:text-amber-800 flex items-center gap-1 group"
-              >
-                Start Your Story <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
