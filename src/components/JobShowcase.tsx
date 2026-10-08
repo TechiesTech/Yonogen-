@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "motion/react";
 
 const jobs = [

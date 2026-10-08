@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Play, ArrowUpRight, Plane, Compass, GraduationCap, Briefcase } from 'lucide-react';
+import { ArrowUpRight, Plane, Compass, GraduationCap, Briefcase } from 'lucide-react';
 import { COUNTRIES_DATA, HERO_LANDMARKS, Country } from '../data/mockData';
 
 interface HeroSectionProps {
@@ -65,6 +65,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   // Flip text interval
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const flipTimer = setInterval(() => {
       setTravelWordIdx((prev) => (prev + 1) % travelWords.length);
       setExploreWordIdx((prev) => (prev + 1) % exploreWords.length);
@@ -75,13 +77,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => clearInterval(flipTimer);
   }, []);
 
-  // Automatic Slide Rotation (5 slides total, every 6.5 seconds)
+  // Automatic Slide Rotation (5 slides total, every 4 seconds)
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % 5);
-    }, 6500);
+    }, 4000);
 
     return () => clearInterval(timer);
   }, [isPaused]);
@@ -307,14 +309,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
               Fly Seamlessly to Your <br />
-              <span className="animate-text-flip font-editorial-italic font-bold text-sky-300 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] mx-2 inline-block">
+              <span className="animate-text-flip font-editorial-italic font-bold text-sky-300 mx-2 inline-block">
                 {travelWords[travelWordIdx]}
               </span>
             </h2>
 
-            <p className="mt-5 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base md:text-lg text-white font-medium max-w-2xl mx-auto leading-relaxed">
               Discounted student flight airfares, extra 40kg baggage allowances, multi-currency forex cards, and verified airport pickups in 30+ countries.
             </p>
 
@@ -359,14 +361,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
               Turn Every Semester into <br />
-              <span className="animate-text-flip font-editorial-italic font-bold text-amber-300 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] mx-2 inline-block">
+              <span className="animate-text-flip font-editorial-italic font-bold text-amber-300 mx-2 inline-block">
                 {exploreWords[exploreWordIdx]}
               </span>
             </h2>
 
-            <p className="mt-5 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base md:text-lg text-white font-medium max-w-2xl mx-auto leading-relaxed">
               Experience 27 European Schengen nations with one visa, travel with student Eurail passes, and explore iconic destinations while earning your degree.
             </p>
 
@@ -411,14 +413,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] max-w-4xl mx-auto">
               Unlock Global Education with <br />
-              <span className="animate-text-flip font-editorial-italic font-bold text-emerald-300 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] mx-2 inline-block">
+              <span className="animate-text-flip font-editorial-italic font-bold text-emerald-300 mx-2 inline-block">
                 {eduWords[eduWordIdx]}
               </span>
             </h2>
 
-            <p className="mt-3 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base md:text-lg text-white font-medium max-w-2xl mx-auto leading-relaxed">
               Direct institutional tie-ups across Australia, UK, Germany, Canada, and Ireland. Secure up to 100% scholarships and express 14-day offer letters.
             </p>
 
@@ -463,14 +465,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] max-w-4xl mx-auto">
               Launch High-Paying Careers in <br />
-              <span className="animate-text-flip font-editorial-italic font-bold text-cyan-300 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] mx-2 inline-block">
+              <span className="animate-text-flip font-editorial-italic font-bold text-cyan-300 mx-2 inline-block">
                 {jobWords[jobWordIdx]}
               </span>
             </h2>
 
-            <p className="mt-3 text-sm sm:text-base md:text-lg text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base md:text-lg text-white font-medium max-w-2xl mx-auto leading-relaxed">
               Direct employer hospital contracts for nurses and doctors in Germany starting from €3,200/month, plus tax-free engineering and tech roles in Dubai.
             </p>
 

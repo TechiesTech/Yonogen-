@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Menu, X, Globe } from 'lucide-react';
+import { Send, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   onOpenCounselling: () => void;
@@ -13,7 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center group py-2">
+          <a href="#home" className="flex items-center group py-2" aria-label="YOLOgen home">
             <img
               src="/images/Yologen Global Flight Logo.png"
               alt="YOLOgen Logo"
@@ -56,6 +56,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
             aria-label="Toggle Navigation Menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -64,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-fade-in shadow-xl">
+        <nav id="mobile-navigation" aria-label="Mobile navigation" className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-fade-in shadow-xl">
           <a
             href="#home"
             onClick={() => setMobileMenuOpen(false)}
@@ -111,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCounselling }) => {
               <Send className="w-3.5 h-3.5 rotate-12" /> Get in Touch
             </button>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

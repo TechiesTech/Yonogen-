@@ -45,21 +45,6 @@ export interface CityDestination {
   studentsRating: number;
 }
 
-export interface TestimonialReview {
-  id: string;
-  name: string;
-  role: string;
-  university: string;
-  country: string;
-  rating: number;
-  avatar: string;
-  hasVideo: boolean;
-  videoTitle: string;
-  quote: string;
-  size: 'small' | 'medium' | 'large';
-  tag: string;
-}
-
 export interface UniversityPartner {
   id: string;
   name: string;
@@ -375,93 +360,6 @@ export const CITY_DESTINATIONS: CityDestination[] = [
     tagline: 'A diverse study destination between city and nature',
     universities: 5,
     studentsRating: 4.8
-  }
-];
-
-export const CLIENT_TESTIMONIALS: TestimonialReview[] = [
-  {
-    id: '1',
-    name: 'Dr. Rohan Mehra',
-    role: 'MBBS Graduate',
-    university: 'Kazan Federal University',
-    country: 'Russia',
-    rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=260&q=80',
-    hasVideo: true,
-    videoTitle: 'My Journey to Medical Degree in Russia',
-    quote: 'YOLOgen Consultant guided me from NEET counselling all the way to hostel check-in in Russia. 100% transparent and supportive team.',
-    size: 'large',
-    tag: 'Medical'
-  },
-  {
-    id: '2',
-    name: 'Ananya Sharma',
-    role: 'Master in Management',
-    university: 'University of Sydney',
-    country: 'Australia',
-    rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=260&q=80',
-    hasVideo: true,
-    videoTitle: 'Admitted with 30% Scholarship in Sydney',
-    quote: 'From IELTS 7.5 prep to Australian visa grant in just 14 days! YOLOgen Consultant made my dream come true.',
-    size: 'large',
-    tag: 'Management'
-  },
-  {
-    id: '3',
-    name: 'Dr. Vivek Sharma',
-    role: 'General Physician',
-    university: 'Semmelweis & German Board',
-    country: 'Germany',
-    rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=260&q=80',
-    hasVideo: true,
-    videoTitle: 'Medical Licensing and Nursing Path in Germany',
-    quote: 'Their German language faculty and Approbation licensing guidance are top tier in India.',
-    size: 'medium',
-    tag: 'Healthcare'
-  },
-  {
-    id: '4',
-    name: 'Pooja Verma',
-    role: 'Staff Nurse',
-    university: 'Anerkennung Program',
-    country: 'Germany',
-    rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=260&q=80',
-    hasVideo: false,
-    videoTitle: 'Hospital Placement in Frankfurt',
-    quote: 'Zero tuition and guaranteed hospital contract with 2,800€ monthly starting pay. Thank you YOLOgen Consultant!',
-    size: 'small',
-    tag: 'Nursing'
-  },
-  {
-    id: '5',
-    name: 'Harpreet Singh',
-    role: 'Cloud Architect',
-    university: 'Seneca College & Tech PR',
-    country: 'Canada',
-    rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=260&q=80',
-    hasVideo: true,
-    videoTitle: 'Canada Student to Work Permit Transition',
-    quote: 'Got my Canadian visa approved after one prior refusal through another agent. YOLOgen Consultant helped with my Statement of Purpose.',
-    size: 'medium',
-    tag: 'Technology'
-  },
-  {
-    id: '6',
-    name: 'Dr. Sneha Patel',
-    role: 'Surgical Resident',
-    university: 'Astana Medical University',
-    country: 'Kazakhstan',
-    rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=260&q=80',
-    hasVideo: false,
-    videoTitle: 'Kazakhstan Clinical Training',
-    quote: 'Hands-on clinical exposure and excellent Indian food mess right on campus. Best overseas mentor.',
-    size: 'small',
-    tag: 'Medical'
   }
 ];
 

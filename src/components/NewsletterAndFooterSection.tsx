@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Globe, Phone, Mail, MapPin, Instagram } from 'lucide-react';
+import { ArrowRight, Phone, Instagram } from 'lucide-react';
 
 export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }> = ({ onOpenCallback }) => {
   return (

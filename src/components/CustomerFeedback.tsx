@@ -1,9 +1,4 @@
 import React from 'react';
-import { TestimonialReview } from '../data/mockData';
-
-interface CustomerFeedbackProps {
-  onSelectReview: (review: TestimonialReview) => void;
-}
 
 const REVIEWS = [
   {
@@ -58,7 +53,7 @@ const StarRating = ({ rating }: { rating: number }) => {
   );
 };
 
-export const CustomerFeedback: React.FC<CustomerFeedbackProps> = () => {
+export const CustomerFeedback: React.FC = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
       {REVIEWS.map((review) => (

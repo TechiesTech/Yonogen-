@@ -42,6 +42,10 @@ body {
   font-family: var(--font-sans);
 }
 
+html {
+  scroll-padding-top: 4rem;
+}
+
 .font-editorial-italic {
   font-family: var(--font-serif);
   font-style: italic;
@@ -153,6 +157,23 @@ body {
   display: inline-block;
   animation: textFlipIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   transform-origin: center;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Floating card animation for StudentHeroCard */

@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { CITY_DESTINATIONS, TestimonialReview } from '../data/mockData';
+import { CITY_DESTINATIONS } from '../data/mockData';
 import { CustomerFeedback } from './CustomerFeedback';
 
-interface DestinationsAndReviewsSectionProps {
-  onSelectReview: (review: TestimonialReview) => void;
-  onOpenCounselling: () => void;
-}
-
-export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSectionProps> = ({
-  onSelectReview,
-  onOpenCounselling
-}) => {
+export const DestinationsAndReviewsSection: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>('melbourne');
   const [destinationPage, setDestinationPage] = useState(0);
   const [isDestinationsPaused, setIsDestinationsPaused] = useState(false);
@@ -23,7 +15,11 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
   );
 
   useEffect(() => {
-    if (destinationPageCount < 2 || isDestinationsPaused) return;
+    if (
+      destinationPageCount < 2 ||
+      isDestinationsPaused ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) return;
 
     const intervalId = window.setInterval(() => {
       setDestinationPage((page) => (page + 1) % destinationPageCount);
@@ -33,7 +29,7 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
   }, [destinationPageCount, isDestinationsPaused]);
 
   return (
-    <section id="testimonials" className="py-10 sm:py-14 bg-white relative overflow-hidden">
+    <section id="destinations" className="py-10 sm:py-14 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Destination Cities Grid matching Screenshot 3 Top */}
         <div className="mb-24">
@@ -136,7 +132,7 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
         </div>
 
         {/* Client Reviews Section */}
-        <div className="pt-8 pb-3 sm:pb-4">
+        <div id="testimonials" className="pt-8 pb-3 sm:pb-4">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-block mb-3">
               <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-2xs">
@@ -149,7 +145,7 @@ export const DestinationsAndReviewsSection: React.FC<DestinationsAndReviewsSecti
             </h2>
           </div>
 
-          <CustomerFeedback onSelectReview={onSelectReview} />
+          <CustomerFeedback />
         </div>
 
       </div>

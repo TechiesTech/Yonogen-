@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhoWeAreSection } from './components/WhoWeAreSection';
@@ -7,14 +7,13 @@ import { DestinationsAndReviewsSection } from './components/DestinationsAndRevie
 import { UniversitiesGridSection } from './components/UniversitiesGridSection';
 import { NewsletterAndFooterSection } from './components/NewsletterAndFooterSection';
 import { JobShowcase } from './components/JobShowcase';
-import { CallbackModal, CountryModal, VisaModal, VideoModal } from './components/Modals';
-import { Country, VisaService, TestimonialReview } from './data/mockData';
+import { CallbackModal, CountryModal, VisaModal } from './components/Modals';
+import { Country, VisaService } from './data/mockData';
 
 export default function App() {
   const [callbackModalOpen, setCallbackModalOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [selectedVisa, setSelectedVisa] = useState<VisaService | null>(null);
-  const [selectedReview, setSelectedReview] = useState<TestimonialReview | null>(null);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
@@ -44,10 +43,7 @@ export default function App() {
         <JobShowcase />
 
         {/* Screenshot 3: Study Destinations (Melbourne, Sydney, etc.) & Client Reviews with Google/Clutch */}
-        <DestinationsAndReviewsSection
-          onSelectReview={(review) => setSelectedReview(review)}
-          onOpenCounselling={() => setCallbackModalOpen(true)}
-        />
+        <DestinationsAndReviewsSection />
 
         {/* Screenshot 5: Our Top Universities Abroad with Architectural Crosshairs Grid */}
         <UniversitiesGridSection />
@@ -72,11 +68,6 @@ export default function App() {
       <VisaModal
         visa={selectedVisa}
         onClose={() => setSelectedVisa(null)}
-      />
-
-      <VideoModal
-        review={selectedReview}
-        onClose={() => setSelectedReview(null)}
       />
     </div>
   );

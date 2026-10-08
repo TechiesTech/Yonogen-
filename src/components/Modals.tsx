@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Phone, Calendar, Globe, GraduationCap, Clock, Award, ShieldCheck, Send } from 'lucide-react';
-import { Country, VisaService, TestimonialReview } from '../data/mockData';
+import { X, CheckCircle2, Phone, Clock, Award, ShieldCheck } from 'lucide-react';
+import { Country, VisaService } from '../data/mockData';
 
 interface ModalProps {
   isOpen: boolean;
@@ -310,54 +310,6 @@ export const VisaModal: React.FC<{ visa: VisaService | null; onClose: () => void
             Close
           </button>
         </div>
-      </div>
-    </div>
-  );
-};
-
-export const VideoModal: React.FC<{ review: TestimonialReview | null; onClose: () => void }> = ({ review, onClose }) => {
-  if (!review) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 overflow-hidden">
-        <button
-          onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
-          aria-label="Close modal"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="flex items-center gap-3.5 mb-5">
-          <img src={review.avatar} alt={review.name} className="w-14 h-14 rounded-full object-cover border-2 border-indigo-200" />
-          <div>
-            <h3 className="text-lg font-bold text-slate-900">{review.name}</h3>
-            <p className="text-xs text-slate-500">{review.role} · {review.university} ({review.country})</p>
-          </div>
-        </div>
-
-        <div className="aspect-video w-full rounded-2xl bg-slate-950 relative overflow-hidden flex items-center justify-center group mb-4">
-          <img src={review.avatar} alt="Video preview" className="absolute inset-0 w-full h-full object-cover opacity-40 blur-[2px]" />
-          <div className="relative z-10 text-center text-white px-4">
-            <div className="w-14 h-14 rounded-full bg-indigo-600/90 flex items-center justify-center mx-auto mb-2 shadow-lg shadow-indigo-600/40">
-              <span className="w-0 h-0 border-y-8 border-y-transparent border-l-12 border-l-white ml-1"></span>
-            </div>
-            <p className="text-sm font-semibold">{review.videoTitle}</p>
-            <p className="text-xs text-slate-300">Verified Client Video Story (03:15)</p>
-          </div>
-        </div>
-
-        <blockquote className="italic text-sm text-slate-700 bg-slate-50 p-4 rounded-2xl border border-slate-100 mb-5">
-          "{review.quote}"
-        </blockquote>
-
-        <button
-          onClick={onClose}
-          className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-medium transition-colors"
-        >
-          Close Video
-        </button>
       </div>
     </div>
   );
