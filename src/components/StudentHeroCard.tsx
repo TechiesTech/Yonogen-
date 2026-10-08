@@ -8,11 +8,6 @@ const SLIDES = [
   "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472392/86ec50656b1aef024239f2cb38a65516_x1ninm.jpg",
 ];
 
-const AVATARS = [
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&q=80",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=80&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80",
-];
 
 const StudentHeroCard: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -92,23 +87,6 @@ const StudentHeroCard: React.FC = () => {
         </div>
       </div>
 
-      {/* Floating stats card */}
-      <div
-        className="absolute z-20 left-1/2 -translate-x-1/2 w-[84%] bg-white rounded-2xl px-4 py-3
-                   shadow-[0_14px_40px_rgba(0,0,0,0.13)] flex items-center gap-3"
-        style={{ bottom: "32px", animation: "floatCard 4s ease-in-out infinite" }}
-      >
-        <div className="flex -space-x-2.5 shrink-0">
-          {AVATARS.map((src, i) => (
-            <img key={i} src={src} alt="" className="w-9 h-9 rounded-full border-2 border-white object-cover shadow-sm" />
-          ))}
-        </div>
-        <div>
-          <p className="text-base font-extrabold text-slate-900 leading-tight">50,000+</p>
-          <p className="text-[11px] text-slate-500 whitespace-nowrap font-medium">Students placed globally</p>
-        </div>
-        <div className="ml-auto w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: "#830dfa" }} />
-      </div>
 
       {/* Small floating badge — top right */}
       <div

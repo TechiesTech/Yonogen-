@@ -295,7 +295,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div
             className="absolute inset-0 bg-center"
             style={{
-              backgroundImage: "url('/images/hero-slide-2.jpg')",
+              backgroundImage: "url('https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/hero-slide-2_maolhq.jpg')",
               backgroundSize: '100% 100%'
             }}
           />
@@ -354,13 +354,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Headings & Title directly on the Image */}
           <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-6 text-center">
-            <div className="inline-block mb-5">
-              <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-bold shadow-lg">
-                <Compass className="w-4 h-4 text-amber-400" />
-                World Exploration &amp; Global Student Life
-              </span>
-            </div>
-
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
               Turn Every Semester into <br />
               <span className="animate-text-flip font-editorial-italic font-bold text-amber-300 mx-2 inline-block">

@@ -29,9 +29,14 @@ export const WhoWeAreSection: React.FC = () => {
               </h2>
             </div>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
-              <span className="font-semibold text-[#830dfa]">YOLOgen</span> Consultant helps people plan their next step abroad. Whether you want to study, work, visit, or migrate, our team can guide you through visa options, documents, and the application process. We also support course selection and overseas career planning, with clear guidance tailored to your goals at every step.
-            </p>
+            <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p>
+                <span className="font-semibold text-[#830dfa]">YOLOgen</span> is an international travel, education, and migration consultancy helping individuals and families turn their global ambitions into reality. We offer a wide range of services including study abroad programs, college and university admissions, student visas, international job opportunities, work visas, PR and migration pathways, family trips, hotel bookings, and travel assistance. From choosing the right destination and course to preparing documents and navigating the visa process, our team provides personalized guidance at every step.
+              </p>
+              <p>
+                With a client-focused approach, <span className="font-semibold text-[#830dfa]">YOLOgen</span> aims to make international travel, education, and migration simple, transparent, and hassle-free. Whether you are planning to study, work, settle, travel, or explore new opportunities abroad, we connect you with the right options and support you throughout your journey. <span className="font-semibold text-slate-900">YOLOgen — Your Journey. Your Opportunity. Your World.</span>
+              </p>
+            </div>
 
             {/* Stats Grid matching Screenshot 2 with vertical purple accent lines */}
             <div className="grid grid-cols-2 gap-y-8 gap-x-6 sm:gap-x-10 pt-2 max-w-xl">
