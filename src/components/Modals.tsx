@@ -1,38 +1,73 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Phone, Clock, Award, ShieldCheck } from 'lucide-react';
-import { Country, VisaService } from '../data/mockData';
+import { X, CheckCircle2, Phone, Calendar, Globe, GraduationCap, Clock, Award, ShieldCheck, Send, Loader2 } from 'lucide-react';
+import { Country, VisaService, TestimonialReview } from '../data/mockData';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+const SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbx7doXU8PSMTSpH_FDzHauWLbbBpvt2HCV-uYEvjSNJGHv_FNvvSfibjXOaO6iikYSx/exec';
+
+const INITIAL_FORM = {
+  name: '',
+  phone: '',
+  email: '',
+  country: 'Australia',
+  course: 'Undergraduate / Master Degree',
+  preferredTime: 'Morning (10:00 AM - 1:00 PM)'
+};
+
 export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    country: 'Australia',
-    course: 'Undergraduate / Master Degree',
-    preferredTime: 'Morning (10:00 AM - 1:00 PM)'
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+  const [formData, setFormData] = useState(INITIAL_FORM);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleClose = () => {
+    if (submitted) {
+      setSubmitted(false);
+      setFormData(INITIAL_FORM);
+    }
+    setError('');
+    onClose();
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      // auto close or allow user to close
-    }, 4000);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setError('');
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+
+      const result = await res.json();
+      if (!result.success) throw new Error(result.error || 'Submission failed');
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Callback form error:', err);
+      setError("Sorry, we couldn't submit your request. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
       <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 overflow-hidden">
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
           aria-label="Close modal"
         >
@@ -49,10 +84,7 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               Thank you, <span className="font-semibold text-slate-800">{formData.name || 'Applicant'}</span>! A YOLOgen Consultant will call you at <span className="font-semibold text-slate-800">{formData.phone}</span> during your preferred slot: {formData.preferredTime}.
             </p>
             <button
-              onClick={() => {
-                setSubmitted(false);
-                onClose();
-              }}
+              onClick={handleClose}
               className="mt-4 px-6 py-2.5 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition-all text-sm"
             >
               Done
@@ -140,11 +172,22 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
+              {error && (
+                <div role="alert" className="px-4 py-2.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs">
+                  {error}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-3 px-6 mt-2 rounded-xl bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold shadow-md shadow-amber-400/20 transition-all text-sm flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full py-3 px-6 mt-2 rounded-xl bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold shadow-md shadow-amber-400/20 transition-all text-sm flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <Phone className="w-4 h-4" /> Schedule My Call
+                {isSubmitting ? (
+                  <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                ) : (
+                  <><Phone className="w-4 h-4" /> Schedule My Call</>
+                )}
               </button>
             </form>
           </div>
