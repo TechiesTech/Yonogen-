@@ -50,7 +50,7 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
 
           {/* Linkedin */}
           <a
-            href="https://www.linkedin.com/in/yologen-669450442/"
+            href="https://www.linkedin.com/company/yologen/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
