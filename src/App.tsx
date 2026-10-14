@@ -8,6 +8,7 @@ import { UniversitiesGridSection } from './components/UniversitiesGridSection';
 import { NewsletterAndFooterSection } from './components/NewsletterAndFooterSection';
 import { JobShowcase } from './components/JobShowcase';
 import { CallbackModal, CountryModal, VisaModal } from './components/Modals';
+import { WhatsAppPopup } from './components/WhatsAppPopup';
 import { Country, VisaService } from './data/mockData';
 
 export default function App() {
@@ -71,6 +72,9 @@ export default function App() {
         onClose={() => setSelectedVisa(null)}
         onOpenCallback={() => setCallbackModalOpen(true)}
       />
+
+      {/* Floating 3-Second WhatsApp Popup */}
+      <WhatsAppPopup />
     </div>
   );
 }

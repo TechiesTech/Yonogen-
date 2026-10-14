@@ -16,6 +16,45 @@ export interface LandmarkCard {
   country: string;
   badgeBg: string;
   imageUrl: string;
+  details?: CountryDetails;
+}
+
+export interface CountryDetails {
+  topUniversities: string;
+  globalRankings: string;
+  popularCourses: string;
+  courseDuration?: string;
+  careerOpportunities?: string;
+  graduatePathways?: string;
+  careerExposure?: string;
+  admissionEssentials?: string;
+  workAfterGraduation?: string;
+  industryExperience?: string;
+  admissionRequirements?: string;
+  graduateOpportunities?: string;
+  flexibleLearning?: string;
+  careerPreparation?: string;
+  admissionReq?: string;
+  workOptions?: string;
+  languageOptions?: string;
+  tuitionAdvantage?: string;
+  careerExposureGermany?: string;
+  graduateOptions?: string;
+  industryLinks?: string;
+  admissions?: string;
+  postStudyPathways?: string;
+  teachingLanguages?: string;
+  tuition?: string;
+  careerExposureFrance?: string;
+  admissionsAndVisas?: string;
+  learningApproach?: string;
+  careerPathways?: string;
+  postStudyOptions?: string;
+  practicalLearning?: string;
+  graduatePathwaysNZ?: string;
+  studyOptions?: string;
+  industryExposureItaly?: string;
+  admissionsItaly?: string;
 }
 
 export interface VisaService {
@@ -170,39 +209,157 @@ export const COUNTRIES_DATA: Country[] = [
 
 export const HERO_LANDMARKS: LandmarkCard[] = [
   {
-    id: 'paris',
-    city: 'PARIS',
-    country: 'France',
-    badgeBg: 'bg-emerald-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=700&q=85'
-  },
-  {
-    id: 'london',
+    id: 'united-kingdom',
     city: 'LONDON',
     country: 'United Kingdom',
     badgeBg: 'bg-blue-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=700&q=85'
+    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'University of Oxford, University of Cambridge, Imperial College London, UCL and the University of Manchester.',
+      globalRankings: 'Oxford ranked #4, Imperial joint #2 and Cambridge #6 in the QS World University Rankings 2027.',
+      popularCourses: 'Business Analytics, Finance, Computer Science, Engineering, Data Science, Law and Public Health.',
+      courseDuration: 'Many master programs take one year; bachelor degrees commonly take three years, depending on the programme.',
+      careerOpportunities: 'Explore finance, consulting, technology, healthcare and engineering through internships and university career services.',
+      graduatePathways: 'Eligible graduates may qualify for the Graduate visa or other work routes under the rules applicable at the time.'
+    }
   },
   {
-    id: 'china',
-    city: 'CHINA',
-    country: 'China',
-    badgeBg: 'bg-amber-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=700&q=85'
+    id: 'canada',
+    city: 'TORONTO',
+    country: 'Canada',
+    badgeBg: 'bg-red-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'University of Toronto, McGill University, University of British Columbia, University of Alberta and University of Waterloo.',
+      globalRankings: 'Toronto, McGill and UBC are established internationally ranked institutions; check the latest QS 2027 positions for each university.',
+      popularCourses: 'Computer Science, AI, Engineering, Finance, Supply Chain Management, Healthcare and Business Analytics.',
+      careerExposure: 'Co-op degrees, internships and employer-linked learning are available at selected institutions and programmes.',
+      admissionEssentials: 'Academic transcripts, English-language scores where required, proof of funds and a study permit.',
+      workAfterGraduation: 'A Post-Graduation Work Permit may be available to eligible graduates of qualifying programmes and institutions; not every course qualifies.'
+    }
   },
   {
-    id: 'russia',
-    city: 'RUSSIA',
-    country: 'Russia',
-    badgeBg: 'bg-purple-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=700&q=85'
-  },
-  {
-    id: 'sydney',
+    id: 'australia',
     city: 'SYDNEY',
     country: 'Australia',
     badgeBg: 'bg-yellow-500/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=700&q=85'
+    imageUrl: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'University of Melbourne, UNSW Sydney, University of Sydney, Australian National University and Monash University.',
+      globalRankings: 'UNSW and the University of Melbourne are among Australia highest-ranked institutions in QS 2027.',
+      popularCourses: 'Information Technology, Engineering, Nursing, Public Health, Accounting, Business and Environmental Science.',
+      industryExperience: 'Explore professional placements, internships and practical projects offered by selected courses.',
+      admissionRequirements: 'Academic qualifications, English proficiency, financial evidence and student visa requirements must be met.',
+      graduateOpportunities: 'Eligible students may access post-study work pathways depending on their qualification, age and applicable visa conditions.'
+    }
+  },
+  {
+    id: 'united-states',
+    city: 'BOSTON',
+    country: 'United States',
+    badgeBg: 'bg-indigo-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'MIT, Stanford University, Harvard University, California Institute of Technology and UC Berkeley.',
+      globalRankings: 'MIT ranks #1, Stanford and Imperial are joint #2, and Harvard ranks #5 in QS 2027.',
+      popularCourses: 'Artificial Intelligence, Computer Science, Finance, Business, Biotechnology, Engineering and Media Studies.',
+      flexibleLearning: 'Many universities offer broad subject choices, electives, research projects and interdisciplinary programmes.',
+      careerPreparation: 'Internships, research opportunities and campus recruitment may support career development; employment is not guaranteed.',
+      admissionReq: 'Transcripts, essays, recommendations and English tests where required; SAT, ACT or GRE requirements depend on the programme.',
+      workOptions: 'OPT and STEM OPT extensions may be available to eligible students and graduates, subject to immigration rules.'
+    }
+  },
+  {
+    id: 'germany',
+    city: 'BERLIN',
+    country: 'Germany',
+    badgeBg: 'bg-purple-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'Technical University of Munich, LMU Munich, Heidelberg University, RWTH Aachen University and Freie Universitat Berlin.',
+      globalRankings: 'Technical University of Munich is ranked #25 in QS World University Rankings 2027.',
+      popularCourses: 'Mechanical Engineering, Automotive Technology, Robotics, Computer Science, Renewable Energy and Business.',
+      languageOptions: 'English-taught master programs are available, while many bachelor programs require German proficiency.',
+      tuitionAdvantage: 'Many public universities charge no general tuition, but exceptions, semester contributions and living costs apply.',
+      careerExposureGermany: 'Engineering, manufacturing, automotive, research and technology offer relevant pathways, with German language skills often beneficial.',
+      graduateOptions: 'Eligible graduates may apply for Germany job-search residence pathway under the applicable requirements.'
+    }
+  },
+  {
+    id: 'ireland',
+    city: 'CLIFFS OF MOHER',
+    country: 'Ireland',
+    badgeBg: 'bg-green-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'Trinity College Dublin, University College Dublin, University of Galway, University College Cork and University of Limerick.',
+      globalRankings: 'Trinity College Dublin and UCD are prominent internationally ranked Irish universities; confirm the latest individual QS 2027 positions before publishing.',
+      popularCourses: 'Data Analytics, Pharmaceutical Science, Computer Science, Finance, Business, Cybersecurity and Biotechnology.',
+      industryLinks: 'Dublin technology and financial services sectors offer relevant networking and career opportunities.',
+      admissions: 'Academic transcripts, English proficiency and course-specific prerequisites are typically required.',
+      postStudyPathways: 'Eligible non-EU graduates may qualify for the Third Level Graduate Programme, depending on their award and current immigration conditions.'
+    }
+  },
+  {
+    id: 'france',
+    city: 'PARIS',
+    country: 'France',
+    badgeBg: 'bg-emerald-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'Universite PSL, Institut Polytechnique de Paris, HEC Paris, Sorbonne University and Ecole Polytechnique.',
+      globalRankings: 'Universite PSL ranks #8 in the QS Europe 2026 ranking; note that this is a regional ranking, not its global position.',
+      popularCourses: 'Luxury Brand Management, Fashion, Business, Aerospace Engineering, Data Science, Culinary Arts and International Relations.',
+      teachingLanguages: 'English-taught master and business programmes are available; French opens up additional study and career options.',
+      tuition: 'Public institutions have comparatively affordable fee structures, but non-EU fees and exemptions vary. Campus France lists 2026-27 differentiated annual fees of 2,902 EUR for bachelor and 3,950 EUR for master programmes at covered public institutions.',
+      careerExposureFrance: 'Luxury, hospitality, aerospace, business and technology offer potential pathways depending on the qualification and language skills.',
+      admissionsAndVisas: 'Requirements vary by programme, nationality and language of instruction; check the applicable Campus France and visa process.'
+    }
+  },
+  {
+    id: 'finland',
+    city: 'ROVANIEMI',
+    country: 'Finland',
+    badgeBg: 'bg-cyan-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'Aalto University, University of Helsinki, LUT University, Tampere University and University of Turku.',
+      globalRankings: 'Aalto and the University of Helsinki are leading Finnish institutions; verify individual positions against QS 2027 before publication.',
+      popularCourses: 'Artificial Intelligence, Software Engineering, Sustainable Technology, Business Analytics, Design and Renewable Energy.',
+      learningApproach: 'Emphasis on research, innovation, practical projects and independent learning.',
+      careerPathways: 'Technology, clean energy, research and digital industries offer relevant opportunities; Finnish language skills can improve employability.',
+      postStudyOptions: 'Eligible graduates can explore Finland residence permit pathways for job-seeking or starting a business, subject to current rules.'
+    }
+  },
+  {
+    id: 'new-zealand',
+    city: 'AUCKLAND',
+    country: 'New Zealand',
+    badgeBg: 'bg-teal-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'University of Auckland, University of Otago, University of Waikato, Victoria University of Wellington and University of Canterbury.',
+      globalRankings: 'The University of Auckland is a leading New Zealand institution; check the latest QS 2027 listing for its exact position.',
+      popularCourses: 'Agriculture, Environmental Science, Information Technology, Business, Engineering, Public Health and Tourism Management.',
+      practicalLearning: 'Selected programmes include industry projects, internships, research and supervised professional experience.',
+      admissions: 'Academic records, English-language proficiency and programme-specific criteria apply.',
+      graduatePathwaysNZ: 'Eligible qualifications may support a Post Study Work Visa for up to three years, depending on the qualification and applicable rules. New Zealand has also announced further graduate visa changes from 16 November 2026.'
+    }
+  },
+  {
+    id: 'italy',
+    city: 'ROME',
+    country: 'Italy',
+    badgeBg: 'bg-orange-600/90 text-white',
+    imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=700&q=85',
+    details: {
+      topUniversities: 'Politecnico di Milano, University of Bologna, Sapienza University of Rome, University of Padua and Bocconi University.',
+      globalRankings: 'Politecnico di Milano ranks #45 in the QS Europe 2026 ranking; University of Bologna ranks #59 in the same regional edition.',
+      popularCourses: 'Architecture, Mechanical Engineering, Fashion Design, Automotive Engineering, Economics, Finance and Luxury Management.',
+      studyOptions: 'English-taught master degrees are available across several disciplines; bachelor choices vary by institution and subject.',
+      industryExposureItaly: 'Fashion, design, manufacturing, automotive and hospitality sectors provide relevant career connections depending on the course.',
+      admissionsItaly: 'Academic eligibility, language requirements, document recognition and student visa procedures depend on the chosen programme.'
+    }
   }
 ];
 

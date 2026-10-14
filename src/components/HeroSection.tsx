@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, Plane, Compass, GraduationCap, Briefcase } from 'lucide-react';
-import { COUNTRIES_DATA, HERO_LANDMARKS, Country } from '../data/mockData';
+import { ArrowUpRight, Plane, Compass, GraduationCap, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
+import { COUNTRIES_DATA, HERO_LANDMARKS, Country, LandmarkCard } from '../data/mockData';
+import { CountryDetailsModal } from './CountryDetailsModal';
 
 interface HeroSectionProps {
   onOpenCallback: () => void;
@@ -16,12 +17,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
   const [activeCountryId, setActiveCountryId] = useState<string>('luxembourg');
+  const [landmarkPage, setLandmarkPage] = useState<number>(0);
+  const [isLandmarksPaused, setIsLandmarksPaused] = useState<boolean>(false);
+  const [selectedLandmark, setSelectedLandmark] = useState<LandmarkCard | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const landmarksPerPage = 5;
+  const landmarkPageCount = Math.ceil(HERO_LANDMARKS.length / landmarksPerPage);
+  const visibleLandmarks = HERO_LANDMARKS.slice(
+    landmarkPage * landmarksPerPage,
+    (landmarkPage + 1) * landmarksPerPage
+  );
 
-  // Flipping words indices
+  // Flipping words indices for hero slides
+  const [heroWordIdx, setHeroWordIdx] = useState<number>(0);
   const [travelWordIdx, setTravelWordIdx] = useState<number>(0);
   const [exploreWordIdx, setExploreWordIdx] = useState<number>(0);
   const [eduWordIdx, setEduWordIdx] = useState<number>(0);
   const [jobWordIdx, setJobWordIdx] = useState<number>(0);
+
+  const heroWords = [
+    'Global',
+    'Trusted',
+    'Premier',
+    'Overseas',
+    'Top-Rated'
+  ];
 
   const travelWords = [
     'Dream Destinations',
@@ -55,8 +75,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     'Global Engineering'
   ];
 
-  const row1Countries = COUNTRIES_DATA.slice(0, 6);
-  const row2Countries = COUNTRIES_DATA.slice(6);
+  const row1Countries = HERO_LANDMARKS.slice(0, 5);
+  const row2Countries = HERO_LANDMARKS.slice(5, 10);
 
   const handleCountryClick = (c: Country) => {
     setActiveCountryId(c.id);
@@ -68,6 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const flipTimer = setInterval(() => {
+      setHeroWordIdx((prev) => (prev + 1) % heroWords.length);
       setTravelWordIdx((prev) => (prev + 1) % travelWords.length);
       setExploreWordIdx((prev) => (prev + 1) % exploreWords.length);
       setEduWordIdx((prev) => (prev + 1) % eduWords.length);
@@ -87,6 +108,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
     return () => clearInterval(timer);
   }, [isPaused]);
+
+  // Automatic Landmarks Carousel Rotation (2 pages of 5 cards each, every 5 seconds)
+  useEffect(() => {
+    if (
+      landmarkPageCount < 2 ||
+      isLandmarksPaused ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) return;
+
+    const timer = setInterval(() => {
+      setLandmarkPage((page) => (page + 1) % landmarkPageCount);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [landmarkPageCount, isLandmarksPaused]);
 
   return (
     <section
@@ -116,9 +152,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            {/* Main Title matching Screenshot 1 */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 tracking-tight max-w-4xl mx-auto leading-[1.05]">
-              Your <span className="font-editorial-italic font-normal">Global</span> Visa &amp; Migration <br className="hidden sm:inline" />
+            {/* Main Title matching Screenshot with 3D Flip Text Animation */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 tracking-tight max-w-4xl mx-auto leading-[1.12]">
+              Your{' '}
+              <span
+                key={heroWordIdx}
+                className="animate-text-flip font-editorial-italic font-normal text-purple-600 inline-block mx-1"
+              >
+                {heroWords[heroWordIdx]}
+              </span>{' '}
+              Visa &amp; Migration <br className="hidden sm:inline" />
               Consultants in India.
             </h1>
 
@@ -183,123 +226,162 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </svg>
             </div>
 
-            {/* 5 Photo Tiles for PARIS, LONDON, CHINA, RUSSIA, SYDNEY */}
+            {/* 5 Photo Tiles for Destinations with Carousel */}
             <div className="-mt-8 sm:-mt-11 pt-1 pb-4">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto items-end justify-center">
-                {HERO_LANDMARKS.map((landmark, idx) => {
-                  const floatClasses = [
-                    'animate-float-1',
-                    'animate-float-2',
-                    'animate-float-3',
-                    'animate-float-4',
-                    'animate-float-5'
-                  ];
-                  const heights = [
-                    'h-60 sm:h-68',
-                    'h-68 sm:h-76',
-                    'h-60 sm:h-66',
-                    'h-68 sm:h-76',
-                    'h-60 sm:h-70'
-                  ];
+              <div
+                onMouseEnter={() => setIsLandmarksPaused(true)}
+                onMouseLeave={() => setIsLandmarksPaused(false)}
+                onFocusCapture={() => setIsLandmarksPaused(true)}
+                onBlurCapture={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                    setIsLandmarksPaused(false);
+                  }
+                }}
+              >
+                <div
+                  key={landmarkPage}
+                  className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto items-end justify-center"
+                >
+                  {visibleLandmarks.map((landmark, idx) => {
+                    const floatClasses = [
+                      'animate-float-1',
+                      'animate-float-2',
+                      'animate-float-3',
+                      'animate-float-4',
+                      'animate-float-5'
+                    ];
+                    const heights = [
+                      'h-60 sm:h-68',
+                      'h-68 sm:h-76',
+                      'h-60 sm:h-66',
+                      'h-68 sm:h-76',
+                      'h-60 sm:h-70'
+                    ];
 
-                  return (
-                    <div
-                      role="button"
-                      tabIndex={0}
-                      key={landmark.id}
-                      className={`group relative rounded-3xl overflow-hidden text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:z-20 cursor-pointer border-2 border-white/90 ${floatClasses[idx % floatClasses.length]} ${heights[idx % heights.length]}`}
-                      aria-label={`Explore ${landmark.city}, ${landmark.country}`}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                          event.preventDefault();
-                          const country = COUNTRIES_DATA.find(
-                            (item) => item.name.toLowerCase() === landmark.country.toLowerCase()
-                          );
-                          if (country) handleCountryClick(country);
-                        }
-                      }}
-                      onClick={() => {
-                        const country = COUNTRIES_DATA.find(
-                          (item) => item.name.toLowerCase() === landmark.country.toLowerCase()
-                        );
-                        if (country) handleCountryClick(country);
-                      }}
-                    >
-                      <img
-                        src={landmark.imageUrl}
-                        alt={`${landmark.city} ${landmark.country}`}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-115 transition-transform duration-700 ease-out"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/50 group-hover:via-black/10 transition-colors" />
+                    return (
+                      <div
+                        role="button"
+                        tabIndex={0}
+                        key={landmark.id}
+                        className={`group relative rounded-3xl overflow-hidden text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:z-20 cursor-pointer border-2 border-white/90 ${floatClasses[idx % floatClasses.length]} ${heights[idx % heights.length]}`}
+                        aria-label={`Explore ${landmark.city}, ${landmark.country}`}
+                        onKeyDown={(event) => {
+                          if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            setSelectedLandmark(landmark);
+                            setIsModalOpen(true);
+                          }
+                        }}
+                        onClick={() => {
+                          setSelectedLandmark(landmark);
+                          setIsModalOpen(true);
+                        }}
+                      >
+                        <img
+                          src={landmark.imageUrl}
+                          alt={`${landmark.city} ${landmark.country}`}
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-115 transition-transform duration-700 ease-out"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/50 group-hover:via-black/10 transition-colors" />
 
-                      <div className="relative z-10 pt-2.5 px-2 flex justify-center">
-                        <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-extrabold tracking-wider uppercase shadow-md backdrop-blur-md ${landmark.badgeBg}`}>
-                          {landmark.city}
-                        </span>
-                      </div>
-
-                      <div className="absolute inset-x-0 bottom-0 p-2.5 z-10 text-center flex flex-col items-center">
-                        <span className="text-[11px] sm:text-xs font-bold text-white drop-shadow-md">
-                          {landmark.country}
-                        </span>
-                        <span className="text-[10px] text-white/80 font-medium mt-0.5 line-clamp-1">
-                          {landmark.id === 'paris' ? 'France · Schengen' :
-                            landmark.id === 'london' ? 'UK · Top Global Unis' :
-                              landmark.id === 'china' ? 'Asia · Low Tuition' :
-                                landmark.id === 'russia' ? 'Top Medical Academies' :
-                                  'Australia · Post-Study PSW'}
-                        </span>
-                        <div className="mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className="inline-flex items-center gap-1 text-[10px] font-semibold bg-white/90 text-slate-900 px-2.5 py-1 rounded-full shadow-sm">
-                            Explore <ArrowUpRight className="w-2.5 h-2.5" />
+                        <div className="relative z-10 pt-2.5 px-2 flex justify-center">
+                          <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-extrabold tracking-wider uppercase shadow-md backdrop-blur-md ${landmark.badgeBg}`}>
+                            {landmark.city}
                           </span>
                         </div>
+
+                        <div className="absolute inset-x-0 bottom-0 p-2.5 z-10 text-center flex flex-col items-center">
+                          <span className="text-[11px] sm:text-xs font-bold text-white drop-shadow-md">
+                            {landmark.country}
+                          </span>
+                          <span className="text-[10px] text-white/80 font-medium mt-0.5 line-clamp-1">
+                            {landmark.id === 'united-kingdom' ? 'UK · Top Global Unis' :
+                              landmark.id === 'canada' ? 'Canada · Post-Study PSW' :
+                                landmark.id === 'australia' ? 'Australia · World-Class Unis' :
+                                  landmark.id === 'united-states' ? 'USA · STEM OPT' :
+                                    landmark.id === 'germany' ? 'Germany · Free Tuition' :
+                                      landmark.id === 'ireland' ? 'Ireland · Tech Hub' :
+                                        landmark.id === 'france' ? 'France · Schengen' :
+                                          landmark.id === 'finland' ? 'Finland · Innovation' :
+                                            landmark.id === 'new-zealand' ? 'New Zealand · Work Visa' :
+                                              'Italy · Design & Fashion'}
+                          </span>
+                          <div className="mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold bg-white/90 text-slate-900 px-2.5 py-1 rounded-full shadow-sm">
+                              Explore <ArrowUpRight className="w-2.5 h-2.5" />
+                            </span>
+                          </div>
+                        </div>
                       </div>
+                    );
+                  })}
+                </div>
+
+                {/* Carousel Navigation */}
+                {landmarkPageCount > 1 && (
+                  <div className="mx-auto mt-4 flex max-w-5xl items-center justify-center gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setLandmarkPage((page) => (page - 1 + landmarkPageCount) % landmarkPageCount)}
+                      className="rounded-full border border-slate-200 p-2 text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+                      aria-label="Show previous destinations"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <div className="flex items-center gap-2" aria-label="Destination pages">
+                      {Array.from({ length: landmarkPageCount }, (_, pageIndex) => (
+                        <button
+                          key={pageIndex}
+                          type="button"
+                          onClick={() => setLandmarkPage(pageIndex)}
+                          className={`h-2.5 rounded-full transition-all ${
+                            pageIndex === landmarkPage
+                              ? 'w-7 bg-violet-500'
+                              : 'w-2.5 bg-violet-200 hover:bg-violet-300'
+                          }`}
+                          aria-label={`Show destination page ${pageIndex + 1}`}
+                          aria-current={pageIndex === landmarkPage ? 'true' : undefined}
+                        />
+                      ))}
                     </div>
-                  );
-                })}
+                    <button
+                      type="button"
+                      onClick={() => setLandmarkPage((page) => (page + 1) % landmarkPageCount)}
+                      className="rounded-full border border-slate-200 p-2 text-slate-600 transition-colors hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+                      aria-label="Show next destinations"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
 
-            {/* Country Selector Pills */}
+            {/* Country Display Pills matching the 10 cards above */}
             <div className="mt-6 max-w-4xl mx-auto space-y-2">
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-                {row1Countries.map((c) => {
-                  const isActive = activeCountryId === c.id;
-                  return (
-                    <button
-                      key={c.id}
-                      onClick={() => handleCountryClick(c)}
-                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm ${isActive
-                        ? 'bg-purple-100/90 text-purple-900 border border-purple-300 ring-2 ring-purple-400/20 shadow-md font-semibold'
-                        : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/80 hover:border-slate-300'
-                        }`}
-                    >
-                      <img src={c.flagUrl} alt="" className="w-5 h-5 rounded-full object-cover shadow-xs border border-white" />
-                      <span>{c.name}</span>
-                    </button>
-                  );
-                })}
+                {row1Countries.map((c) => (
+                  <div
+                    key={c.id}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white text-slate-700 border border-slate-200/80 shadow-sm"
+                  >
+                    <img src={c.imageUrl} alt={c.country} className="w-5 h-5 rounded-full object-cover shadow-xs border border-white" />
+                    <span>{c.country}</span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-                {row2Countries.map((c) => {
-                  const isActive = activeCountryId === c.id;
-                  return (
-                    <button
-                      key={c.id}
-                      onClick={() => handleCountryClick(c)}
-                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm ${isActive
-                        ? 'bg-purple-100/90 text-purple-900 border border-purple-300 ring-2 ring-purple-400/20 shadow-md font-semibold'
-                        : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/80 hover:border-slate-300'
-                        }`}
-                    >
-                      <img src={c.flagUrl} alt="" className="w-5 h-5 rounded-full object-cover shadow-xs border border-white" />
-                      <span>{c.name}</span>
-                    </button>
-                  );
-                })}
+                {row2Countries.map((c) => (
+                  <div
+                    key={c.id}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white text-slate-700 border border-slate-200/80 shadow-sm"
+                  >
+                    <img src={c.imageUrl} alt={c.country} className="w-5 h-5 rounded-full object-cover shadow-xs border border-white" />
+                    <span>{c.country}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -535,6 +617,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           );
         })}
       </div>
+
+      {/* Country Details Modal */}
+      <CountryDetailsModal
+        landmark={selectedLandmark}
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedLandmark(null);
+        }}
+      />
     </section>
   );
 };
