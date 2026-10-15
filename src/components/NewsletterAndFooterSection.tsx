@@ -14,9 +14,11 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             <div className="relative lg:col-span-5 flex items-center justify-center min-h-56 sm:min-h-64">
               <div className="absolute inset-x-0 -top-24 bottom-0 sm:-top-28 lg:inset-x-auto lg:left-[-10%] lg:right-auto lg:-top-32 lg:-bottom-12 mx-auto lg:mx-0 w-full max-w-md sm:max-w-lg lg:w-[130%] lg:max-w-none">
                 <img
-                  src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471195/world-landmarks_jmsvvt.png"
+                  src="https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791471195/world-landmarks_jmsvvt.png"
                   alt="World landmarks surrounding a globe"
                   className="w-full h-full object-contain drop-shadow-2xl"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

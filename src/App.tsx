@@ -1,79 +1,137 @@
-import { useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Navbar } from './components/Navbar';
-import { HeroSection } from './components/HeroSection';
-import { WhoWeAreSection } from './components/WhoWeAreSection';
+import { HeroSection } from './components/hero/HeroSection';
+import { WhoWeAreSection } from './components/about/WhoWeAreSection';
 import { VisaServicesSection } from './components/VisaServicesSection';
 import { DestinationsAndReviewsSection } from './components/DestinationsAndReviewsSection';
-import { UniversitiesGridSection } from './components/UniversitiesGridSection';
 import { NewsletterAndFooterSection } from './components/NewsletterAndFooterSection';
-import { JobShowcase } from './components/JobShowcase';
-import { CallbackModal, CountryModal, VisaModal } from './components/Modals';
 import { WhatsAppPopup } from './components/WhatsAppPopup';
-import { Country, VisaService } from './data/mockData';
+import type { VisaService } from './data/mockData';
+
+const JobShowcase = lazy(() =>
+  import('./components/JobShowcase').then((module) => ({ default: module.JobShowcase })),
+);
+const UniversitiesGridSection = lazy(() =>
+  import('./components/UniversitiesGridSection').then((module) => ({ default: module.UniversitiesGridSection })),
+);
+const CallbackModal = lazy(() =>
+  import('./components/Modals').then((module) => ({ default: module.CallbackModal })),
+);
+const VisaModal = lazy(() =>
+  import('./components/Modals').then((module) => ({ default: module.VisaModal })),
+);
+
+interface DeferredSectionProps {
+  children: ReactNode;
+  placeholderHeight: number;
+}
+
+function DeferredSection({ children, placeholderHeight }: DeferredSectionProps) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isNearViewport, setIsNearViewport] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    if (!('IntersectionObserver' in window)) {
+      setIsNearViewport(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '800px 0px' },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={sectionRef}>
+      {isNearViewport ? (
+        <Suspense fallback={<div aria-hidden="true" style={{ minHeight: placeholderHeight }} />}>
+          {children}
+        </Suspense>
+      ) : (
+        <div aria-hidden="true" style={{ minHeight: placeholderHeight }} />
+      )}
+    </div>
+  );
+}
 
 export default function App() {
   const [callbackModalOpen, setCallbackModalOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [selectedVisa, setSelectedVisa] = useState<VisaService | null>(null);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
-      {/* Top Navbar */}
+      {/* Navigation */}
       <Navbar
         onOpenCounselling={() => setCallbackModalOpen(true)}
       />
 
-      {/* Main Content Sections faithfully matching all 8 screenshots */}
       <main>
-        {/* Screenshot 1: Hero Section with 3D Landmarks & Country Pills */}
+        {/* Home and hero */}
         <HeroSection
           onOpenCallback={() => setCallbackModalOpen(true)}
           onOpenCounselling={() => setCallbackModalOpen(true)}
-          onSelectCountry={(country) => setSelectedCountry(country)}
         />
 
-        {/* Screenshot 2: Who We Are & 4 Stats with Vertical Accent & Fan Collage */}
+        {/* About us */}
         <WhoWeAreSection />
 
-        {/* Screenshot 8: Our Services / 5 Visa Types with 3D Character Art */}
+        {/* Visa services */}
         <VisaServicesSection
           onSelectVisa={(visa) => setSelectedVisa(visa)}
         />
 
-        {/* Premium Full-Screen Job Showcase */}
-        <JobShowcase />
+        {/* Job opportunities */}
+        <DeferredSection placeholderHeight={650}>
+          <JobShowcase />
+        </DeferredSection>
 
-        {/* Screenshot 3: Study Destinations (Melbourne, Sydney, etc.) & Client Reviews with Google/Clutch */}
+        {/* Study destinations and client reviews */}
         <DestinationsAndReviewsSection />
 
-        {/* Screenshot 5: Our Top Universities Abroad with Architectural Crosshairs Grid */}
-        <UniversitiesGridSection />
+        {/* Partner universities */}
+        <DeferredSection placeholderHeight={600}>
+          <UniversitiesGridSection />
+        </DeferredSection>
 
-        {/* Screenshot 6 & 7: Newsletter Banner, Social Links Row, and 5-Column Detailed Footer */}
+        {/* Contact, newsletter, and footer */}
         <NewsletterAndFooterSection
           onOpenCallback={() => setCallbackModalOpen(true)}
         />
       </main>
 
-      {/* Interactive Modals */}
-      <CallbackModal
-        isOpen={callbackModalOpen}
-        onClose={() => setCallbackModalOpen(false)}
-      />
+      {/* Callback request modal */}
+      {callbackModalOpen && (
+        <Suspense fallback={null}>
+          <CallbackModal
+            isOpen={callbackModalOpen}
+            onClose={() => setCallbackModalOpen(false)}
+          />
+        </Suspense>
+      )}
 
-      <CountryModal
-        country={selectedCountry}
-        onClose={() => setSelectedCountry(null)}
-        onOpenCallback={() => setCallbackModalOpen(true)}
-      />
+      {/* Selected visa details modal */}
+      {selectedVisa && (
+        <Suspense fallback={null}>
+          <VisaModal
+            visa={selectedVisa}
+            onClose={() => setSelectedVisa(null)}
+            onOpenCallback={() => setCallbackModalOpen(true)}
+          />
+        </Suspense>
+      )}
 
-      <VisaModal
-        visa={selectedVisa}
-        onClose={() => setSelectedVisa(null)}
-        onOpenCallback={() => setCallbackModalOpen(true)}
-      />
-
-      {/* Floating 3-Second WhatsApp Popup */}
+      {/* Floating WhatsApp contact popup */}
       <WhatsAppPopup />
     </div>
   );

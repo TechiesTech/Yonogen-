@@ -289,6 +289,10 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         src={currentCountry.imageUrl}
                         alt=""
                         className="w-5 h-5 rounded-full object-cover shrink-0 shadow-2xs border border-white"
+                        loading="lazy"
+                        decoding="async"
+                        width="20"
+                        height="20"
                       />
                       <span className="font-semibold text-slate-900 truncate">
                         {currentCountry.name}
@@ -325,6 +329,10 @@ export const CallbackModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                                 src={c.imageUrl}
                                 alt=""
                                 className="w-5 h-5 rounded-full object-cover shrink-0 border border-slate-200"
+                                loading="lazy"
+                                decoding="async"
+                                width="20"
+                                height="20"
                               />
                               <span className="truncate">{c.name}</span>
                             </div>
@@ -508,6 +516,9 @@ export const CountryModal: React.FC<DestinationModalProps & { country: Country |
             src={country.flagUrl}
             alt={country.name}
             className="w-14 h-14 rounded-2xl object-cover shadow-md border-2 border-slate-100"
+            decoding="async"
+            width="56"
+            height="56"
           />
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">Destination Overview</span>

@@ -46,6 +46,9 @@ export const CountryDetailsModal: React.FC<CountryDetailsModalProps> = ({
               src={landmark.imageUrl}
               alt={`${landmark.city} banner`}
               className="w-full h-full object-cover"
+              decoding="async"
+              width="700"
+              height="240"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
           </div>

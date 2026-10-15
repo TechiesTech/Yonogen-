@@ -74,6 +74,10 @@ export const DestinationsAndReviewsSection: React.FC = () => {
                         src={city.imageUrl}
                         alt={city.name}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
+                        width="320"
+                        height="320"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
 
