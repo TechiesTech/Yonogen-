@@ -8,7 +8,7 @@ const REVIEWS = [
     rating: 5,
     name: 'Parul',
     program: 'MBBS Abroad',
-    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791472338/ChatGPT_Image_Oct_8_2026_08_42_04_PM_soljyg.png',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472338/ChatGPT_Image_Oct_8_2026_08_42_04_PM_soljyg.png',
   },
   {
     id: 'r2',
@@ -17,7 +17,7 @@ const REVIEWS = [
     rating: 4,
     name: 'Rohan',
     program: 'European Work Permit',
-    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791472036/ChatGPT_Image_Oct_8_2026_08_36_42_PM_ryptcb.png',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472036/ChatGPT_Image_Oct_8_2026_08_36_42_PM_ryptcb.png',
   },
   {
     id: 'r3',
@@ -26,7 +26,7 @@ const REVIEWS = [
     rating: 4.5,
     name: 'Abhinav',
     program: 'MBBS Abroad',
-    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791471194/abhinav-kaushik_wbknph.png',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791471194/abhinav-kaushik_wbknph.png',
   },
   {
     id: 'r4',
@@ -35,7 +35,7 @@ const REVIEWS = [
     rating: 4,
     name: 'Sneha',
     program: 'Skilled Migration & PR',
-    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/v1791472036/ChatGPT_Image_Oct_8_2026_08_35_36_PM_onxwhe.png',
+    avatar: 'https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472036/ChatGPT_Image_Oct_8_2026_08_35_36_PM_onxwhe.png',
   },
 ];
 
@@ -81,6 +81,10 @@ export const CustomerFeedback: React.FC = () => {
               src={review.avatar}
               alt={review.name}
               className="w-9 h-9 rounded-full object-cover ring-2 ring-amber-100 shrink-0"
+              loading="lazy"
+              decoding="async"
+              width="36"
+              height="36"
             />
             <div className="min-w-0">
               <p className="text-sm font-bold text-slate-900 truncate">{review.name}</p>

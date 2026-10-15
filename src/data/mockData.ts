@@ -213,7 +213,7 @@ export const HERO_LANDMARKS: LandmarkCard[] = [
     city: 'LONDON',
     country: 'United Kingdom',
     badgeBg: 'bg-blue-600/90 text-white',
-    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=700&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=500&q=80',
     details: {
       topUniversities: 'University of Oxford, University of Cambridge, Imperial College London, UCL and the University of Manchester.',
       globalRankings: 'Oxford ranked #4, Imperial joint #2 and Cambridge #6 in the QS World University Rankings 2027.',

@@ -25,7 +25,7 @@ const jobs: JobItem[] = [
     country: "ALBANIA",
     category: "WORK PERMIT",
     title: "GREENHOUSE",
-    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475346/Greenhouse_Vacancy_in_Albania_gbd7um.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791475346/Greenhouse_Vacancy_in_Albania_gbd7um.png",
     description: "Exciting opportunities to work in the agricultural sector in Albania. We are recruiting dedicated workers for greenhouse operations.",
     details: [
       "Role: Warehouse / Greenhouse",
@@ -46,7 +46,7 @@ const jobs: JobItem[] = [
     country: "SLOVAKIA",
     category: "WORK PERMIT",
     title: "TRUCK / TRAILER DRIVER",
-    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475370/Slovakia_Truck_Driver_Recruitment_Poster_cijf9y.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791475370/Slovakia_Truck_Driver_Recruitment_Poster_cijf9y.png",
     description: "Professional driving opportunities with established employers. Hit the road with lucrative truck driving positions across Europe.",
     details: [
       "Role: Truck / Trailer Driver",
@@ -66,7 +66,7 @@ const jobs: JobItem[] = [
     country: "GEORGIA",
     category: "JOB OPPORTUNITY",
     title: "NURSING PROFESSIONALS",
-    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475347/Nursing_in_Georgia_efhuz0.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791475347/Nursing_in_Georgia_efhuz0.png",
     description: "Advance your healthcare career with nursing opportunities in Georgia. We connect qualified healthcare professionals with top medical facilities.",
     details: [
       "Role: Registered Nurse",
@@ -86,7 +86,7 @@ const jobs: JobItem[] = [
     country: "GLOBAL",
     category: "CAREER OPPORTUNITY",
     title: "INTERNATIONAL NURSING",
-    image: "https://res.cloudinary.com/droqi9jl3/image/upload/v1791475348/nursing_dybief.png",
+    image: "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791475348/nursing_dybief.png",
     description: "Take your nursing career worldwide. Discover incredible nursing positions across Europe and beyond, offering competitive salaries.",
     details: [
       "Locations: UK, Germany, Europe",
@@ -164,7 +164,7 @@ export const JobShowcase: React.FC = () => {
         style={{ backgroundColor: activeJob.theme.primary }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
 
           {/* ======================================================== */}
@@ -309,7 +309,7 @@ export const JobShowcase: React.FC = () => {
           {/* ======================================================== */}
           <div className="lg:col-span-7 flex justify-center lg:justify-start">
             <div
-              className="relative overflow-hidden rounded-[24px] p-2"
+              className="relative overflow-hidden rounded-3xl p-2"
               style={{
                 width: window.innerWidth < 640
                   ? "100%"
@@ -356,10 +356,13 @@ export const JobShowcase: React.FC = () => {
                         alt={`${job.country} – ${job.title}`}
                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
+                        decoding="async"
+                        width="260"
+                        height="390"
                       />
 
                       {/* Bottom Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-950/35 to-transparent pointer-events-none" />
 
                       {/* Top Bar: Country Pill + Status Tag */}
                       <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
@@ -454,6 +457,7 @@ export const JobShowcase: React.FC = () => {
                 src={lightboxImage}
                 alt="Job Recruitment Flyer"
                 className="w-full h-auto max-h-[85vh] object-contain"
+                decoding="async"
               />
             </motion.div>
           </motion.div>

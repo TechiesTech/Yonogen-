@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
-  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472393/557e5c61bc970fcf4aadd0eab9f28134_eai3vj.jpg",
-  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472391/2130e3a334abf0e8becd745a46e6b08d_wcbjzt.jpg",
-  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472392/18ef412b065c76b51966f14293930084_tswd5j.jpg",
-  "https://res.cloudinary.com/droqi9jl3/image/upload/v1791472392/86ec50656b1aef024239f2cb38a65516_x1ninm.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472393/557e5c61bc970fcf4aadd0eab9f28134_eai3vj.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472391/2130e3a334abf0e8becd745a46e6b08d_wcbjzt.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472392/18ef412b065c76b51966f14293930084_tswd5j.jpg",
+  "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472392/86ec50656b1aef024239f2cb38a65516_x1ninm.jpg",
 ];
 
 
@@ -58,10 +58,14 @@ const StudentHeroCard: React.FC = () => {
         {SLIDES.map((src, i) => (
           <img
             key={i}
-            src={src}
+            src={i === current ? src : undefined}
             alt={`Student slide ${i + 1}`}
             className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500"
             style={{ opacity: i === current ? 1 : 0 }}
+            loading="lazy"
+            decoding="async"
+            width="300"
+            height="460"
           />
         ))}
 
