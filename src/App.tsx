@@ -2,14 +2,14 @@ import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from 'rea
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/hero/HeroSection';
 import { WhoWeAreSection } from './components/about/WhoWeAreSection';
-import { VisaServicesSection } from './components/VisaServicesSection';
+import { VisaServicesSection } from './components/services/VisaServicesSection';
 import { DestinationsAndReviewsSection } from './components/DestinationsAndReviewsSection';
 import { NewsletterAndFooterSection } from './components/NewsletterAndFooterSection';
 import { WhatsAppPopup } from './components/WhatsAppPopup';
 import type { VisaService } from './data/mockData';
 
 const JobShowcase = lazy(() =>
-  import('./components/JobShowcase').then((module) => ({ default: module.JobShowcase })),
+  import('./components/services/JobShowcase').then((module) => ({ default: module.JobShowcase })),
 );
 const UniversitiesGridSection = lazy(() =>
   import('./components/UniversitiesGridSection').then((module) => ({ default: module.UniversitiesGridSection })),

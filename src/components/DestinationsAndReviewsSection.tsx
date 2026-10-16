@@ -64,7 +64,7 @@ export const DestinationsAndReviewsSection: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setSelectedCity(city.id)}
-                      className={`relative block aspect-square w-full overflow-hidden rounded-[32px] border-2 shadow-md transition-all duration-300 group-hover:shadow-xl ${
+                      className={`relative block aspect-square w-full overflow-hidden rounded-4xl border-2 shadow-md transition-all duration-300 group-hover:shadow-xl ${
                         isSelected ? 'border-amber-500 ring-4 ring-amber-100/80 scale-102' : 'border-transparent'
                       }`}
                       aria-pressed={isSelected}
@@ -79,7 +79,7 @@ export const DestinationsAndReviewsSection: React.FC = () => {
                         width="320"
                         height="320"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
 
                       <div className="absolute inset-x-3 bottom-3 text-center">
                         <span className="inline-block rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-semibold text-slate-800 opacity-0 shadow-sm backdrop-blur-md transition-opacity group-hover:opacity-100">
@@ -135,22 +135,8 @@ export const DestinationsAndReviewsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Client Reviews Section */}
-        <div id="testimonials" className="pt-8 pb-3 sm:pb-4">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-block mb-3">
-              <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-2xs">
-                Client Review
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Kind words <br />
-              from Our <span className="font-editorial-italic font-normal">Clients</span>
-            </h2>
-          </div>
-
-          <CustomerFeedback />
-        </div>
+        {/* Client Reviews component */}
+        <CustomerFeedback />
 
       </div>
     </section>

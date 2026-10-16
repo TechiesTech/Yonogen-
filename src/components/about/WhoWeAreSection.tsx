@@ -19,24 +19,26 @@ export const WhoWeAreSection: React.FC = () => {
       <div aria-hidden="true" className="absolute inset-0 bg-white/85" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Text & Stats Column (7 cols) */}
-          <div className="lg:col-span-7 space-y-8">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100">
-              Who We Are?
-            </span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          {/* Left Text & Stats Column */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+            <div>
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100">
+                Who We Are?
+              </span>
+            </div>
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
               <span className="font-editorial-italic font-normal">
                 Excellence
               </span>{" "}
-              in Consulting <br />
+              in Consulting <br className="hidden sm:inline" />
               &amp; Management.
             </h2>
 
             {/* Content Paragraphs */}
-            <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+            <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
               <p>
                 <span className="font-semibold text-[#830dfa]">YOLOgen</span> is
                 an international travel, education, and migration consultancy
@@ -64,7 +66,7 @@ export const WhoWeAreSection: React.FC = () => {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-y-8 gap-x-6 sm:gap-x-10 pt-2 max-w-xl">
+            <div className="grid grid-cols-2 gap-y-6 gap-x-4 sm:gap-x-10 pt-2">
               {/* Stat 1 */}
               <div className="flex items-start gap-3">
                 <div className="w-1 h-12 bg-indigo-600 rounded-full shrink-0" />
@@ -120,7 +122,7 @@ export const WhoWeAreSection: React.FC = () => {
           </div>
 
           {/* Right Column — StudentHeroCard */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
+          <div className="lg:col-span-5 flex items-center justify-center">
             <StudentHeroCard />
           </div>
         </div>
