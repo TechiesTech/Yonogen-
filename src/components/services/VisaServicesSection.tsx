@@ -49,8 +49,7 @@ export const VisaServicesSection: React.FC<VisaServicesSectionProps> = ({ onSele
               >
                 {/* Text Content */}
                 <div className={`relative z-10 ${isWide ? 'lg:pr-36' : 'lg:pr-24'}`}>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-1.5 mb-2">
-                    <span className="text-amber-500 font-extrabold">/</span> {visa.title}
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-1.5 mb-2"> {visa.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {visa.description}

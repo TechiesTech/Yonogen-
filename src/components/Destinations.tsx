@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { CITY_DESTINATIONS } from '../data/mockData';
-import { CustomerFeedback } from './CustomerFeedback';
 
-export const DestinationsAndReviewsSection: React.FC = () => {
+export const Destinations: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>('melbourne');
   const [destinationPage, setDestinationPage] = useState(0);
   const [isDestinationsPaused, setIsDestinationsPaused] = useState(false);
@@ -81,11 +80,9 @@ export const DestinationsAndReviewsSection: React.FC = () => {
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
 
-                      <div className="absolute inset-x-3 bottom-3 text-center">
-                        <span className="inline-block rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-semibold text-slate-800 opacity-0 shadow-sm backdrop-blur-md transition-opacity group-hover:opacity-100">
-                          {city.universities} Universities · ★ {city.studentsRating}
-                        </span>
-                      </div>
+                      <span className="absolute inset-x-3 bottom-3 inline-block text-center rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-semibold text-slate-800 opacity-0 shadow-sm backdrop-blur-md transition-opacity group-hover:opacity-100">
+                        {city.universities} Universities · ★ {city.studentsRating}
+                      </span>
                     </button>
                     <h4 className="mt-3.5 text-base font-bold text-slate-800 transition-colors group-hover:text-amber-600 sm:text-lg">
                       {city.name}
@@ -134,10 +131,6 @@ export const DestinationsAndReviewsSection: React.FC = () => {
             )}
           </div>
         </div>
-
-        {/* Client Reviews component */}
-        <CustomerFeedback />
-
       </div>
     </section>
   );

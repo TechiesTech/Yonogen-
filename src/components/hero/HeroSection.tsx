@@ -40,6 +40,13 @@ const JOB_WORDS = [
 ];
 
 const LANDMARKS_PER_PAGE = 5;
+const TRAVEL_HERO_IMAGE =
+  "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto,w_1200,c_scale/v1791485086/photo-1780584523927-8bc7f966637d_x2izyv.avif";
+const TRAVEL_HERO_IMAGE_SRCSET = [
+  TRAVEL_HERO_IMAGE.replace("w_1200", "w_960") + " 960w",
+  TRAVEL_HERO_IMAGE + " 1200w",
+  TRAVEL_HERO_IMAGE.replace("w_1200", "w_1600") + " 1600w",
+].join(", ");
 
 // Helper to optimize Cloudinary URLs for LCP & bandwidth performance
 const optimizeCloudinaryUrl = (url: string, width = 500): string => {
@@ -316,10 +323,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           badgeIcon={Plane}
           badgeIconColorClass="text-sky-400"
           badgeText="International Student Travel &amp; Flight Desk"
-          bgImageUrl={optimizeCloudinaryUrl(
-            "https://res.cloudinary.com/droqi9jl3/image/upload/v1791485086/photo-1780584523927-8bc7f966637d_x2izyv.avif",
-            1600
-          )}
+          bgImageUrl={TRAVEL_HERO_IMAGE}
+          bgImageSrcSet={TRAVEL_HERO_IMAGE_SRCSET}
+          isLcpCandidate
           titlePrefix="Fly Seamlessly to Your"
           flipWord={TRAVEL_WORDS[travelWordIdx]}
           flipWordColorClass="text-sky-300"

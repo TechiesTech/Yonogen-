@@ -28,7 +28,7 @@ interface ModalProps {
 const SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbx7doXU8PSMTSpH_FDzHauWLbbBpvt2HCV-uYEvjSNJGHv_FNvvSfibjXOaO6iikYSx/exec';
 
-// The 10 countries matching the 10 landmark cards above
+  // The 10 countries matching the 10 landmark cards above
 const DESTINATION_COUNTRIES = HERO_LANDMARKS.slice(0, 10).map((l) => ({
   id: l.id,
   name: l.country,
