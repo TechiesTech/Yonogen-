@@ -71,13 +71,13 @@ export const WhatsAppPopup: React.FC = () => {
     <div
       role="complementary"
       aria-label="Quick chat assistance"
-      className={`fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 w-[260px] sm:w-[280px] transition-all duration-300 ease-out transform ${
+      className={`fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 w-65 sm:w-70 transition-all duration-300 ease-out transform ${
         isAnimating
           ? 'opacity-100 translate-y-0 scale-100'
           : 'opacity-0 translate-y-4 scale-95'
       }`}
     >
-      <div className="relative rounded-2xl bg-gradient-to-br from-[#e8f1fc] via-[#f2f7fd] to-white border border-slate-200/70 shadow-[0_8px_32px_rgba(131,13,250,0.12)] overflow-hidden">
+      <div className="relative rounded-2xl bg-linear-to-br from-[#e8f1fc] via-[#f2f7fd] to-white border border-slate-200/70 shadow-[0_8px_32px_rgba(131,13,250,0.12)] overflow-hidden">
 
         {/* Close button */}
         <button
@@ -92,11 +92,11 @@ export const WhatsAppPopup: React.FC = () => {
         <div className="flex items-center gap-2 px-3 pt-3 pb-2">
 
           {/* Left — small landmarks image */}
-          <div className="shrink-0 w-[72px] h-[72px] flex items-center justify-center">
+          <div className="shrink-0 w-18 h-18 flex items-center justify-center">
             <img
               src="https://res.cloudinary.com/droqi9jl3/image/upload/v1791471195/world-landmarks_jmsvvt.png"
               alt="World landmarks"
-              className="w-[72px] h-[72px] object-contain drop-shadow-md select-none pointer-events-none"
+              className="w-18 h-18 object-contain drop-shadow-md select-none pointer-events-none"
             />
           </div>
 

@@ -12,7 +12,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenCounselling }) 
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all will-change-transform">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          
+
           <a href="#home" className="flex items-center group py-2" aria-label="YOLOgen home">
             <img
               src="https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791471196/Yologen_Global_Flight_Logo_q7dnae.png"

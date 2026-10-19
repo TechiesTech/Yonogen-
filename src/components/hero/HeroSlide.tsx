@@ -6,6 +6,8 @@ interface HeroSlideProps {
   badgeIconColorClass: string;
   badgeText: string;
   bgImageUrl: string;
+  bgImageSrcSet?: string;
+  isLcpCandidate?: boolean;
   titlePrefix: string;
   flipWord: string;
   flipWordColorClass: string;
@@ -23,6 +25,8 @@ export const HeroSlide: React.FC<HeroSlideProps> = ({
   badgeIconColorClass,
   badgeText,
   bgImageUrl,
+  bgImageSrcSet,
+  isLcpCandidate = false,
   titlePrefix,
   flipWord,
   flipWordColorClass,
@@ -36,12 +40,16 @@ export const HeroSlide: React.FC<HeroSlideProps> = ({
 }) => {
   return (
     <div className="relative min-h-[calc(100vh-5rem)] px-4 py-8 flex items-center justify-center overflow-hidden animate-fade-in transition-opacity duration-700 w-full">
-      <div
-        className="absolute inset-0 bg-center"
-        style={{
-          backgroundImage: `url('${bgImageUrl}')`,
-          backgroundSize: "cover",
-        }}
+      <img
+        src={bgImageUrl}
+        srcSet={bgImageSrcSet}
+        sizes={bgImageSrcSet ? "100vw" : undefined}
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        fetchPriority={isLcpCandidate ? "high" : "auto"}
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-slate-950/50 backdrop-blur-[2px]" />
       <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-6 text-center">

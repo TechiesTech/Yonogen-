@@ -69,6 +69,12 @@ export const LandmarkCarousel: React.FC<LandmarkCarouselProps> = ({
             >
               <img
                 src={landmark.imageUrl}
+                srcSet={
+                  isLcpCandidate
+                    ? `${landmark.imageUrl.replace("w=500", "w=320")} 320w, ${landmark.imageUrl} 500w, ${landmark.imageUrl.replace("w=500", "w=720")} 720w`
+                    : undefined
+                }
+                sizes={isLcpCandidate ? "(max-width: 640px) 46vw, 215px" : undefined}
                 alt={`${landmark.city} ${landmark.country}`}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-115 transition-transform duration-700 ease-out"
                 loading={isLcpCandidate ? "eager" : "lazy"}

@@ -1,18 +1,21 @@
-import React from 'react';
-import { ArrowRight, Phone, Instagram, Mail } from 'lucide-react';
+import React from "react";
+import { ArrowRight, Phone, Instagram, Mail } from "lucide-react";
 
-export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }> = ({ onOpenCallback }) => {
+export const NewsletterAndFooterSection: React.FC<{
+  onOpenCallback: () => void;
+}> = ({ onOpenCallback }) => {
   return (
-    <div id="contact" className="border-t border-slate-100 bg-[#fcfdff] pt-10 pb-3 sm:pt-14 sm:pb-4">
+    <footer
+      id="contact"
+      className="border-t border-slate-100 bg-[#fcfdff] pt-10 sm:pt-14"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Banner Card matching Screenshot 6 & 7 */}
-        <div className="relative max-w-5xl mx-auto rounded-[36px] bg-gradient-to-r from-amber-100/90 via-orange-50 to-emerald-50/80 px-4 py-3 sm:px-6 sm:py-4 md:px-7 md:py-5 overflow-visible shadow-lg border border-amber-200/80 mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-
-            {/* Left 3D World Landmarks Art (5 cols) */}
-            <div className="relative lg:col-span-5 flex items-center justify-center min-h-56 sm:min-h-64">
-              <div className="absolute inset-x-0 -top-24 bottom-0 sm:-top-28 lg:inset-x-auto lg:left-[-10%] lg:right-auto lg:-top-32 lg:-bottom-12 mx-auto lg:mx-0 w-full max-w-md sm:max-w-lg lg:w-[130%] lg:max-w-none">
+        {/* Banner Card */}
+        <div className="relative max-w-5xl mx-auto rounded-[36px] bg-linear-to-r from-amber-100/90 via-orange-50 to-emerald-50/80 px-5 py-6 sm:px-8 sm:py-8 md:px-10 md:py-10 shadow-lg border border-amber-200/80 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            {/* World Landmarks Art */}
+            <div className="relative lg:col-span-5 flex items-center justify-center min-h-50 sm:min-h-60">
+              <div className="absolute inset-x-0 -top-20 bottom-0 sm:-top-24 lg:inset-x-auto lg:left-[-15%] lg:-top-28 lg:-bottom-12 w-full max-w-sm sm:max-w-md lg:w-[130%] lg:max-w-none">
                 <img
                   src="https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791471195/world-landmarks_jmsvvt.png"
                   alt="World landmarks surrounding a globe"
@@ -23,16 +26,20 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
               </div>
             </div>
 
-            {/* Right Content & Email Form (7 cols) */}
-            <div className="lg:col-span-7 lg:pl-14 space-y-5 text-left">
+            {/* Content & WhatsApp Action */}
+            <div className="lg:col-span-7 lg:pl-6 space-y-4 text-left">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Start your <br />
-                <span className="font-editorial-italic font-normal">Global Opportunities</span> <br />
+                <span className="font-editorial-italic font-normal">
+                  Global Opportunities
+                </span>{" "}
+                <br />
                 Journey!
               </h2>
 
               <p className="text-xs sm:text-sm text-slate-600 max-w-md leading-relaxed">
-                Get helpful updates on study, work, visitor, and migration visas, plus guidance for planning your application.
+                Get helpful updates on study, work, visitor, and migration
+                visas, plus guidance for planning your application.
               </p>
 
               <a
@@ -41,16 +48,15 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
                 rel="noopener noreferrer"
                 className="inline-flex max-w-md items-center justify-center gap-2 rounded-full bg-[#830dfa] px-8 py-3.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#700bd8] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2"
               >
-                Chat with us on WhatsApp <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Chat with us on WhatsApp{" "}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Social Links Row matching Screenshot 6 & 7 */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-20">
-
-          {/* Linkedin */}
+        {/* Social Links Row */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-16">
           <a
             href="https://www.linkedin.com/company/yologen/"
             target="_blank"
@@ -63,20 +69,18 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             Linkedin
           </a>
 
-          {/* Instagram */}
           <a
             href="https://www.instagram.com/yologen.in?utm_source=qr&stkn=MXM5ZDI5aGVjZWhjbA=="
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-pink-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
           >
-            <div className="w-5 h-5 rounded-md bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white flex items-center justify-center">
+            <div className="w-5 h-5 rounded-md bg-linear-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white flex items-center justify-center">
               <Instagram className="w-3.5 h-3.5" strokeWidth={2.5} />
             </div>
             Instagram
           </a>
 
-          {/* Facebook */}
           <a
             href="https://www.facebook.com/share/1FBB4zG6ib/"
             target="_blank"
@@ -89,7 +93,6 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             Facebook
           </a>
 
-          {/* Whatsapp */}
           <a
             href="https://wa.me/919703962596?text=%F0%9F%91%8B%20Hello%20YOLOgen%20Consultant%20team%2C%20I%E2%80%99m%20looking%20for%20visa%20consultancy.%20Could%20you%20please%20share%20the%20visa%20categories%20you%20assist%20with%2C%20including%20study%2C%20work%2C%20visitor%2C%20business%2C%20and%20migration%20visas%2C%20and%20explain%20how%20to%20get%20started%3F%20Thank%20you."
             target="_blank"
@@ -97,15 +100,27 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
           >
             <div className="w-5 h-5 rounded-full bg-[#25d366] text-white flex items-center justify-center">
-              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" aria-hidden="true">
-                <path d="M20.2 11.4a8.2 8.2 0 0 1-12.1 7.2L4 19.7l1.1-4a8.2 8.2 0 1 1 15.1-4.3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-                <path d="M9 8.3c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2.1 2 .2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1.1-.2-2.4-.9-3.7-2.1-1.1-1-1.9-2.2-2.2-3.2-.3-.9 0-1.7.5-2.3.3-.3.6-.5.8-.7Z" fill="currentColor" />
+              <svg
+                viewBox="0 0 24 24"
+                className="w-3.5 h-3.5"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.2 11.4a8.2 8.2 0 0 1-12.1 7.2L4 19.7l1.1-4a8.2 8.2 0 1 1 15.1-4.3Z"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9 8.3c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2.1 2 .2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1.1-.2-2.4-.9-3.7-2.1-1.1-1-1.9-2.2-2.2-3.2-.3-.9 0-1.7.5-2.3.3-.3.6-.5.8-.7Z"
+                  fill="currentColor"
+                />
               </svg>
             </div>
             Whatsapp
           </a>
 
-          {/* YouTube */}
           <a
             href="tel:+919703962596"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-violet-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"
@@ -128,137 +143,283 @@ export const NewsletterAndFooterSection: React.FC<{ onOpenCallback: () => void }
             </div>
             YouTube
           </a>
-
         </div>
-
       </div>
 
+      {/* Footer Navigation Columns */}
       <div className="border-t border-violet-200 bg-[#f3e8ff]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          {/* Footer navigation and contact columns */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-6 pb-8 border-b border-violet-200 text-left md:grid-cols-3 lg:grid-cols-6">
-          
-          {/* Col 1: Quick Links */}
-          <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
-              <span className="text-amber-500 font-extrabold">/</span> Quick Links
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-500">
-              <li><a href="#about-us" className="hover:text-amber-600 transition-colors">About Us</a></li>
-              <li><a href="#testimonials" className="hover:text-amber-600 transition-colors">Blogs</a></li>
-              <li><a href="#testimonials" className="hover:text-amber-600 transition-colors">Stories</a></li>
-              <li><a href="#testimonials" className="hover:text-amber-600 transition-colors">Videos</a></li>
-              <li><button onClick={onOpenCallback} className="hover:text-amber-600 transition-colors text-left">Contact Us</button></li>
-            </ul>
-          </div>
-
-          {/* Col 2: Top Countries */}
-          <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
-              <span className="text-amber-500 font-extrabold">/</span> Top Countries
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-500">
-              <li><a href="#home" className="hover:text-amber-600 transition-colors">UK</a></li>
-              <li><a href="#home" className="hover:text-amber-600 transition-colors">Germany</a></li>
-              <li><a href="#home" className="hover:text-amber-600 transition-colors">Australia</a></li>
-              <li><a href="#home" className="hover:text-amber-600 transition-colors">Canada</a></li>
-              <li><a href="#home" className="hover:text-amber-600 transition-colors">New Zealand</a></li>
-            </ul>
-          </div>
-
-          {/* Col 3: IELTS Center */}
-          <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
-              <span className="text-amber-500 font-extrabold">/</span> IELTS Center
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-500">
-              <li><span className="hover:text-amber-600 cursor-pointer">Jaipur</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">Sikar</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">Chandigarh</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">Mohali</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">Dubai</span></li>
-            </ul>
-          </div>
-
-          {/* Col 4: Courses /Jobs */}
-          <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
-              <span className="text-amber-500 font-extrabold">/</span> Courses /Jobs
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-500">
-              <li><a href="#jobs" className="hover:text-amber-600 transition-colors">Nursing Jobs in Germany</a></li>
-              <li><a href="#study-abroad" className="hover:text-amber-600 transition-colors">MHA in UK</a></li>
-              <li><a href="#jobs" className="hover:text-amber-600 transition-colors">Ausbildung in Germany</a></li>
-            </ul>
-          </div>
-
-          {/* Col 5: Intakes */}
-          <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
-              <span className="text-amber-500 font-extrabold">/</span> Intakes
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-500">
-              <li><span className="hover:text-amber-600 cursor-pointer">Jan Intake UK</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">May Intake UK</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">September Intake UK</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">February Intake Australia</span></li>
-              <li><span className="hover:text-amber-600 cursor-pointer">July Intake Australia</span></li>
-            </ul>
-          </div>
-
-          {/* Col 6: Contact Details */}
-          <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
-              <span className="text-amber-500 font-extrabold">/</span> Contact Us
-            </h4>
-            <ul className="space-y-2.5 text-[11px] sm:text-xs text-slate-600">
-              <li>
-                <a
-                  href="tel:+919703962596"
-                  className="inline-flex items-start gap-1.5 transition-colors hover:text-[#830dfa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2 rounded-sm"
-                  aria-label="Call YOLOgen Consultant at +91 97039 62596"
-                >
-                  <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                  +91 97039 62596
-                </a>
-              </li>
-              {[
-                ['Careers', 'carrers@yologen.in'],
-                ['General enquiries', 'contact@yologen.in'],
-                ['Travel', 'travel@yologen.in'],
-                ['Study', 'study@yologen.in'],
-              ].map(([label, email]) => (
-                <li key={email}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 pb-8 border-b border-violet-200 text-left md:grid-cols-3 lg:grid-cols-6">
+            {/* Col 1: Quick Links */}
+            <div>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
+                Quick Links
+              </h4>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                <li>
                   <a
-                    href={`mailto:${email}`}
-                    className="inline-flex items-start gap-1.5 break-all transition-colors hover:text-[#830dfa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2 rounded-sm"
-                    aria-label={`${label}: ${email}`}
+                    href="#about-us"
+                    className="hover:text-amber-600 transition-colors"
                   >
-                    <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                    {email}
+                    About Us
                   </a>
                 </li>
-              ))}
-            </ul>
-          </div>
+                <li>
+                  <a
+                    href="#testimonials"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Blogs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#testimonials"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Stories
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#testimonials"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Videos
+                  </a>
+                </li>
+                <li>
+                  <button
+                    onClick={onOpenCallback}
+                    className="hover:text-amber-600 transition-colors text-left"
+                  >
+                    Contact Us
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 2: Top Countries */}
+            <div>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
+                Top Countries
+              </h4>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                <li>
+                  <a
+                    href="#home"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    UK
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#home"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Germany
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#home"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Australia
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#home"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Canada
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#home"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    New Zealand
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 3: IELTS Center */}
+            <div>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
+                IELTS Center
+              </h4>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    Jaipur
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    Sikar
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    Chandigarh
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    Mohali
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    Dubai
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 4: Courses / Jobs */}
+            <div>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
+                Courses / Jobs
+              </h4>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                <li>
+                  <a
+                    href="#jobs"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Nursing Jobs in Germany
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#study-abroad"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    MHA in UK
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#jobs"
+                    className="hover:text-amber-600 transition-colors"
+                  >
+                    Ausbildung in Germany
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 5: Intakes */}
+            <div>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
+                Intakes
+              </h4>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    Jan Intake UK
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    May Intake UK
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    September Intake UK
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    February Intake Australia
+                  </span>
+                </li>
+                <li>
+                  <span className="hover:text-amber-600 cursor-pointer">
+                    July Intake Australia
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 6: Contact Details */}
+            <div>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 tracking-wider mb-4 flex items-center gap-1">
+                Contact Us
+              </h4>
+              <ul className="space-y-2.5 text-[11px] sm:text-xs text-slate-600">
+                <li>
+                  <a
+                    href="tel:+919703962596"
+                    className="inline-flex items-start gap-1.5 transition-colors hover:text-[#830dfa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2 rounded-sm"
+                    aria-label="Call YOLOgen Consultant at +91 97039 62596"
+                  >
+                    <Phone
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    +91 97039 62596
+                  </a>
+                </li>
+                {[
+                  ["Careers", "careers@yologen.in"],
+                  ["General enquiries", "contact@yologen.in"],
+                  ["Travel", "travel@yologen.in"],
+                  ["Study", "study@yologen.in"],
+                ].map(([label, email]) => (
+                  <li key={email}>
+                    <a
+                      href={`mailto:${email}`}
+                      className="inline-flex items-start gap-1.5 break-all transition-colors hover:text-[#830dfa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2 rounded-sm"
+                      aria-label={`${label}: ${email}`}
+                    >
+                      <Mail
+                        className="mt-0.5 h-3.5 w-3.5 shrink-0"
+                        aria-hidden="true"
+                      />
+                      {email}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Bottom Legal & Accreditations */}
-          <div className="grid grid-cols-1 items-center justify-items-center gap-3 pt-5 text-xs text-slate-400 md:grid-cols-3">
-            <div className="flex items-center gap-2 md:justify-self-start">
-              <span className="font-bold text-slate-700">YOLOgen Consultant</span>
+          <div className="grid grid-cols-1 items-center justify-items-center gap-3 pt-6 text-xs text-slate-500 md:grid-cols-3">
+            <div className="font-bold text-slate-700 md:justify-self-start">
+              YOLOgen Consultant
             </div>
 
-            <span className="text-center">© {new Date().getFullYear()} All rights reserved.</span>
+            <div className="text-center">
+              © {new Date().getFullYear()} All rights reserved.
+            </div>
 
-            <div className="flex items-center gap-4 text-slate-500 md:justify-self-end">
-              <button onClick={onOpenCallback} className="hover:text-amber-600">Privacy Policy</button>
+            <div className="flex items-center gap-4 text-slate-600 md:justify-self-end">
+              <button
+                onClick={onOpenCallback}
+                className="hover:text-amber-600 transition-colors"
+              >
+                Privacy Policy
+              </button>
               <span>·</span>
-              <button onClick={onOpenCallback} className="hover:text-amber-600">Terms of Service</button>
+              <button
+                onClick={onOpenCallback}
+                className="hover:text-amber-600 transition-colors"
+              >
+                Terms of Service
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };

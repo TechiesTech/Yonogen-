@@ -8,7 +8,6 @@ const SLIDES = [
   "https://res.cloudinary.com/droqi9jl3/image/upload/f_auto,q_auto/v1791472392/86ec50656b1aef024239f2cb38a65516_x1ninm.jpg",
 ];
 
-
 const StudentHeroCard: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -105,7 +104,6 @@ const StudentHeroCard: React.FC = () => {
           ))}
         </div>
       </div>
-
 
       {/* Small floating badge — top right */}
       <div

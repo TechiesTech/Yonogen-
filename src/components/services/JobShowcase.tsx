@@ -157,7 +157,7 @@ export const JobShowcase: React.FC = () => {
 
       <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
-          
+
           {/* LEFT COLUMN: Active Opening Details */}
           <div className="lg:col-span-5 flex flex-col justify-center z-10">
             <div className="flex items-center gap-3 mb-3 sm:mb-4 text-xs font-bold tracking-widest text-slate-400">
@@ -281,7 +281,7 @@ export const JobShowcase: React.FC = () => {
                     }}
                   >
                     <img src={job.image} alt={`${job.country} – ${job.title}`} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="260" height="390" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-950/35 to-transparent pointer-events-none" />
 
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
                       <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white border border-white/20">
@@ -323,7 +323,7 @@ export const JobShowcase: React.FC = () => {
             </motion.div>
           </div>
 
-        </div>
+          </div>
       </div>
 
       {/* Lightbox Modal */}
