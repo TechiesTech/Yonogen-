@@ -56,7 +56,7 @@ export const NewsletterAndFooterSection: React.FC<{
         </div>
 
         {/* Social Links Row */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-16">
           <a
             href="https://www.linkedin.com/company/yologen/"
             target="_blank"
@@ -143,19 +143,6 @@ export const NewsletterAndFooterSection: React.FC<{
             </div>
             YouTube
           </a>
-        </div>
-
-        {/* Company Legal Entity & Address */}
-        <div className="text-center text-xs sm:text-sm text-slate-600 mb-12 max-w-xl mx-auto px-4">
-          <p className="font-bold text-slate-900 text-sm sm:text-base">
-            Squad Services PVT LTD.
-          </p>
-          <p className="text-slate-600 mt-1">
-            ASR Building, Durga Nagar Colony, Punjagutta, Hyderabad 500016
-          </p>
-          <p className="text-slate-500 font-medium mt-0.5 tracking-wide">
-            CIN NO. <span className="font-semibold text-slate-700">U82199TS2026PTC210311</span>
-          </p>
         </div>
       </div>
 
@@ -406,16 +393,21 @@ export const NewsletterAndFooterSection: React.FC<{
           </div>
 
           {/* Bottom Legal & Accreditations */}
-          <div className="grid grid-cols-1 items-center justify-items-center gap-3 pt-6 text-xs text-slate-500 md:grid-cols-3">
-            <div className="font-bold text-slate-700 md:justify-self-start">
-              YOLOgen Consultant
+          <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 pt-6 text-xs text-slate-500">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left gap-0.5 md:justify-self-start">
+              <span className="text-slate-600">
+                Powered by <strong className="font-bold text-slate-900 tracking-wide">SQUAD SERVICES PVT LTD</strong>
+              </span>
+              <span className="text-slate-500 font-medium">
+                CIN NO. U82199TS2026PTC210311
+              </span>
             </div>
 
-            <div className="text-center">
-              © {new Date().getFullYear()} All rights reserved.
+            <div className="text-center text-slate-600 md:justify-self-center">
+              © {new Date().getFullYear()} Zenbeta Technologies Pvt. Ltd. All rights reserved.
             </div>
 
-            <div className="flex items-center gap-4 text-slate-600 md:justify-self-end">
+            <div className="flex items-center justify-center gap-4 text-slate-600 md:justify-self-end">
               <button
                 onClick={onOpenCallback}
                 className="hover:text-amber-600 transition-colors"
