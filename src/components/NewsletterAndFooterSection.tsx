@@ -56,7 +56,7 @@ export const NewsletterAndFooterSection: React.FC<{
         </div>
 
         {/* Social Links Row */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-16">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6">
           <a
             href="https://www.linkedin.com/company/yologen/"
             target="_blank"
@@ -143,6 +143,19 @@ export const NewsletterAndFooterSection: React.FC<{
             </div>
             YouTube
           </a>
+        </div>
+
+        {/* Company Legal Entity & Address */}
+        <div className="text-center text-xs sm:text-sm text-slate-600 mb-12 max-w-xl mx-auto px-4">
+          <p className="font-bold text-slate-900 text-sm sm:text-base">
+            Squad Services PVT LTD.
+          </p>
+          <p className="text-slate-600 mt-1">
+            ASR Building, Durga Nagar Colony, Punjagutta, Hyderabad 500016
+          </p>
+          <p className="text-slate-500 font-medium mt-0.5 tracking-wide">
+            CIN NO. <span className="font-semibold text-slate-700">U82199TS2026PTC210311</span>
+          </p>
         </div>
       </div>
 
