@@ -1,0 +1,72 @@
+# Netlify configuration for YOLOgen Consultant (Vite SPA)
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  # Node version
+  environment = { NODE_VERSION = "20" }
+
+# ─────────────────────────────────────────────
+# Security headers (Task 3 – HTTPS / HSTS)
+# ─────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # HSTS – 1 year, include subdomains, preload ready
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Prevent MIME-type sniffing
+    X-Content-Type-Options = "nosniff"
+    # Prevent clickjacking (allow same-origin frames only)
+    X-Frame-Options = "SAMEORIGIN"
+    # Control referrer info
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Permissions policy – disable unnecessary browser features
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Basic CSP (relaxed for Cloudinary, Google Fonts, WhatsApp, Apps Script)
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://res.cloudinary.com https://images.unsplash.com https://upload.wikimedia.org https://flagcdn.com; connect-src 'self' https://script.google.com; frame-ancestors 'self';"
+
+# Cache static assets aggressively (hashed filenames from Vite)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache fonts
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Don't cache HTML (always fresh for SPA)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Don't cache sitemap / robots
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# ─────────────────────────────────────────────
+# Redirects (Task 3 – Force HTTPS & canonical)
+# ─────────────────────────────────────────────
+[[redirects]]
+  # Force non-www → www (canonical: https://yologen.in)
+  # If you want www canonical, flip this.
+  from = "https://www.yologen.in/*"
+  to   = "https://yologen.in/:splat"
+  status = 301
+  force = true
+
+# SPA fallback — serve index.html for all routes (React Router handles routing)
+# 404 pages get a true 404 status via the 404.html file or the React catch-all
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Instagram, Mail } from "lucide-react";
 
 export const NewsletterAndFooterSection: React.FC<{
@@ -408,19 +409,19 @@ export const NewsletterAndFooterSection: React.FC<{
             </div>
 
             <div className="flex items-center justify-center gap-4 text-slate-600 md:justify-self-end">
-              <button
-                onClick={onOpenCallback}
-                className="hover:text-amber-600 transition-colors"
+              <Link
+                to="/privacy-policy"
+                className="hover:text-[#8408FC] transition-colors"
               >
                 Privacy Policy
-              </button>
+              </Link>
               <span>·</span>
-              <button
-                onClick={onOpenCallback}
-                className="hover:text-amber-600 transition-colors"
+              <Link
+                to="/terms-and-conditions"
+                className="hover:text-[#8408FC] transition-colors"
               >
-                Terms of Service
-              </button>
+                Terms &amp; Conditions
+              </Link>
             </div>
           </div>
         </div>

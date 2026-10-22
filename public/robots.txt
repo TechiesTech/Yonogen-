@@ -1,0 +1,11 @@
+# robots.txt for YOLOgen Consultant – https://yologen.in
+# Generated: 2026-10-22
+
+User-agent: *
+Allow: /
+# Disallow private / admin areas (none currently – update if you add them)
+# Disallow: /admin/
+# Disallow: /dashboard/
+
+# Sitemap location
+Sitemap: https://yologen.in/sitemap.xml
