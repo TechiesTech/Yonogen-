@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { Send, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenCounselling: () => void;
+  onOpenCounselling?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenCounselling }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const getNavHref = (hash: string) => (isHome ? hash : `/${hash}`);
+
+  const handleGetInTouch = () => {
+    if (onOpenCounselling) {
+      onOpenCounselling();
+    } else {
+      window.location.href = '/#contact';
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-[#8408FC] text-white shadow-md transition-all will-change-transform">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
 
-          <a href="#home" className="flex items-center group py-2" aria-label="YOLOgen home">
+          <Link to="/#home" className="flex items-center group py-2" aria-label="YOLOgen home">
             <img
               src="https://res.cloudinary.com/droqi9jl3/image/upload/v1792413052/White_YOLOGen_Flight_Logo_bdhwgp.png"
               alt="YOLOgen Logo"
@@ -23,32 +36,36 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenCounselling }) 
               loading="eager"
               decoding="async"
             />
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-7">
             <a
-              href="#home"
-              className="text-sm font-semibold text-white relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full"
+              href={getNavHref('#home')}
+              className={`text-sm ${
+                isHome
+                  ? "font-semibold text-white relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:rounded-full"
+                  : "font-medium text-white/90 hover:text-white transition-colors py-1"
+              }`}
             >
               Home
             </a>
-            <a href="#about-us" className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
+            <a href={getNavHref('#about-us')} className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
               About us
             </a>
-            <a href="#study-abroad" className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
+            <a href={getNavHref('#study-abroad')} className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
               Our Services
             </a>
-            <a href="#testimonials" className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
+            <a href={getNavHref('#testimonials')} className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
               Blog
             </a>
-            <a href="#contact" className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
+            <a href={getNavHref('#contact')} className="text-sm font-medium text-white/90 hover:text-white transition-colors py-1">
               Contact us
             </a>
           </nav>
 
           <div className="hidden sm:flex items-center gap-3">
             <button
-              onClick={onOpenCounselling}
+              onClick={handleGetInTouch}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#8408FC] text-xs sm:text-sm font-semibold shadow-sm hover:shadow hover:bg-slate-50 transition-all active:scale-95 cursor-pointer"
             >
               <Send className="w-3.5 h-3.5 text-[#8408FC] rotate-12" />
@@ -75,35 +92,39 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenCounselling }) 
           className="lg:hidden bg-[#8408FC] border-t border-white/15 px-4 pt-3 pb-6 space-y-2 shadow-2xl transition-all"
         >
           <a
-            href="#home"
+            href={getNavHref('#home')}
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-sm font-bold text-white bg-white/20"
+            className={`block px-3 py-2.5 rounded-lg text-sm ${
+              isHome
+                ? "font-bold text-white bg-white/20"
+                : "font-medium text-white/90 hover:bg-white/10"
+            }`}
           >
             Home
           </a>
           <a
-            href="#about-us"
+            href={getNavHref('#about-us')}
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-sm font-medium text-white/90 hover:bg-white/10"
           >
             About us
           </a>
           <a
-            href="#study-abroad"
+            href={getNavHref('#study-abroad')}
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-sm font-medium text-white/90 hover:bg-white/10"
           >
             Our Services
           </a>
           <a
-            href="#testimonials"
+            href={getNavHref('#testimonials')}
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-sm font-medium text-white/90 hover:bg-white/10"
           >
             Blog
           </a>
           <a
-            href="#contact"
+            href={getNavHref('#contact')}
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-sm font-medium text-white/90 hover:bg-white/10"
           >
@@ -113,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenCounselling }) 
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenCounselling();
+                handleGetInTouch();
               }}
               className="w-full py-3 rounded-full bg-white text-[#8408FC] text-xs sm:text-sm font-bold hover:bg-slate-50 shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-colors"
             >

@@ -2,6 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Instagram, Mail } from "lucide-react";
 
+const WHATSAPP_MESSAGE = `Hi YOLOgen, I'm reaching you seeking overseas guidance.
+
+Name: [Your Name]
+Target Country: [Country]
+Best time to call: [Time]
+Purpose: [Study, Job, Visa or Migration]
+
+Please connect me with a consultant.`;
+
+const WHATSAPP_URL = `https://wa.me/919703962596?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
 export const NewsletterAndFooterSection: React.FC<{
   onOpenCallback: () => void;
 }> = ({ onOpenCallback }) => {
@@ -44,7 +55,7 @@ export const NewsletterAndFooterSection: React.FC<{
               </p>
 
               <a
-                href="https://wa.me/919703962596?text=%F0%9F%91%8B%20Hello%20YOLOgen%20Consultant%20team%2C%20I%E2%80%99m%20looking%20for%20visa%20consultancy.%20Could%20you%20please%20share%20the%20visa%20categories%20you%20assist%20with%2C%20including%20study%2C%20work%2C%20visitor%2C%20business%2C%20and%20migration%20visas%2C%20and%20explain%20how%20to%20get%20started%3F%20Thank%20you."
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex max-w-md items-center justify-center gap-2 rounded-full bg-[#830dfa] px-8 py-3.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#700bd8] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#830dfa] focus-visible:ring-offset-2"
@@ -95,7 +106,7 @@ export const NewsletterAndFooterSection: React.FC<{
           </a>
 
           <a
-            href="https://wa.me/919703962596?text=%F0%9F%91%8B%20Hello%20YOLOgen%20Consultant%20team%2C%20I%E2%80%99m%20looking%20for%20visa%20consultancy.%20Could%20you%20please%20share%20the%20visa%20categories%20you%20assist%20with%2C%20including%20study%2C%20work%2C%20visitor%2C%20business%2C%20and%20migration%20visas%2C%20and%20explain%20how%20to%20get%20started%3F%20Thank%20you."
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 transition-all"

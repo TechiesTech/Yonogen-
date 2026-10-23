@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Send } from "lucide-react";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { Navbar } from "./Navbar";
+import { CallbackModal } from "./Modals";
 
 /**
  * Terms & Conditions page – matches site brand (purple/violet, Plus Jakarta Sans).
@@ -9,6 +10,12 @@ import { usePageMeta } from "../hooks/usePageMeta";
  * Please have it reviewed by a qualified legal professional before publishing.
  */
 export const TermsAndConditionsPage: React.FC = () => {
+  const [callbackModalOpen, setCallbackModalOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   usePageMeta({
     title: "Terms & Conditions | YOLOgen Consultant",
     description: "Review the Terms and Conditions governing your use of YOLOgen Consultant's visa and migration consultancy services.",
@@ -17,31 +24,8 @@ export const TermsAndConditionsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans">
-      {/* Branded top bar */}
-      <header className="sticky top-0 z-40 bg-[#8408FC] text-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            <Link to="/" aria-label="YOLOgen home" className="flex items-center group py-2">
-              <img
-                src="https://res.cloudinary.com/droqi9jl3/image/upload/v1792413052/White_YOLOGen_Flight_Logo_bdhwgp.png"
-                alt="YOLOgen Logo"
-                width="150"
-                height="56"
-                className="h-10 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
-                loading="eager"
-                decoding="async"
-              />
-            </Link>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#8408FC] text-xs sm:text-sm font-semibold shadow-sm hover:shadow hover:bg-slate-50 transition-all active:scale-95"
-            >
-              <Send className="w-3.5 h-3.5 rotate-12" />
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Constant Top Navbar */}
+      <Navbar onOpenCounselling={() => setCallbackModalOpen(true)} />
 
       {/* Hero band */}
       <div className="bg-gradient-to-br from-[#8408FC] to-[#5e09aa] text-white py-14 px-4">
@@ -240,6 +224,13 @@ export const TermsAndConditionsPage: React.FC = () => {
           <Link to="/terms-and-conditions" className="hover:text-[#8408FC] underline">Terms &amp; Conditions</Link>
         </p>
       </div>
+
+      {callbackModalOpen && (
+        <CallbackModal
+          isOpen={callbackModalOpen}
+          onClose={() => setCallbackModalOpen(false)}
+        />
+      )}
     </div>
   );
 };
