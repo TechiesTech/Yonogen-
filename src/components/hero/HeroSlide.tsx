@@ -61,7 +61,10 @@ export const HeroSlide: React.FC<HeroSlideProps> = ({
         </div>
         <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] max-w-4xl mx-auto">
           {titlePrefix} <br />
-          <span className={`animate-text-flip font-editorial-italic font-bold ${flipWordColorClass} mx-2 inline-block`}>
+          <span
+            className={`animate-text-flip font-editorial-italic font-bold !text-white text-white ${flipWordColorClass} mx-2 inline-block`}
+            style={{ color: "#ffffff" }}
+          >
             {flipWord}
           </span>
         </h2>

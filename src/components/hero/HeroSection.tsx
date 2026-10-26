@@ -176,7 +176,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Your{" "}
               <span
                 key={heroWordIdx}
-                className="animate-text-flip font-editorial-italic font-normal text-purple-600 inline-block mx-1"
+                className="animate-text-flip font-editorial-italic font-normal text-[#830dfa] inline-block mx-1"
               >
                 {HERO_WORDS[heroWordIdx]}
               </span>{" "}
@@ -328,7 +328,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           isLcpCandidate
           titlePrefix="Fly Seamlessly to Your"
           flipWord={TRAVEL_WORDS[travelWordIdx]}
-          flipWordColorClass="text-sky-300"
+          flipWordColorClass="text-white"
           description="Discounted student flight airfares, extra 40kg baggage allowances, multi-currency forex cards, and verified airport pickups in 30+ countries."
           primaryBtnText="Plan Student Flight &amp; Travel"
           primaryBtnIcon={Plane}
@@ -351,7 +351,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           )}
           titlePrefix="Turn Every Semester into"
           flipWord={EXPLORE_WORDS[exploreWordIdx]}
-          flipWordColorClass="text-amber-300"
+          flipWordColorClass="text-white"
           description="Experience 27 European Schengen nations with one visa, travel with student Eurail passes, and explore iconic destinations while earning your degree."
           primaryBtnText="Explore Student Travel Perks"
           primaryBtnIcon={Compass}
@@ -374,7 +374,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           )}
           titlePrefix="Unlock Global Education with"
           flipWord={EDU_WORDS[eduWordIdx]}
-          flipWordColorClass="text-emerald-300"
+          flipWordColorClass="text-white"
           description="Direct institutional tie-ups across Australia, UK, Germany, Canada, and Ireland. Secure up to 100% scholarships and express 14-day offer letters."
           primaryBtnText="Explore Top Universities"
           primaryBtnIcon={GraduationCap}
@@ -397,7 +397,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           )}
           titlePrefix="Launch High-Paying Careers in"
           flipWord={JOB_WORDS[jobWordIdx]}
-          flipWordColorClass="text-cyan-300"
+          flipWordColorClass="text-white"
           description="Direct employer hospital contracts for nurses and doctors in Germany starting from €3,200/month, plus tax-free engineering and tech roles in Dubai."
           primaryBtnText="Apply for Overseas Jobs"
           primaryBtnIcon={Briefcase}
@@ -417,15 +417,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               key={idx}
               onClick={() => setActiveSlide(idx)}
               aria-label={`Jump to slide ${idx + 1}`}
-              className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${
-                isActive
-                  ? activeSlide === 0
-                    ? "w-7 sm:w-8 bg-indigo-600 shadow-md"
-                    : "w-7 sm:w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-                  : activeSlide === 0
-                    ? "w-2 bg-slate-300 hover:bg-slate-400"
-                    : "w-2 bg-white/40 hover:bg-white/70"
-              }`}
+              className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${isActive
+                ? activeSlide === 0
+                  ? "w-7 sm:w-8 bg-indigo-600 shadow-md"
+                  : "w-7 sm:w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+                : activeSlide === 0
+                  ? "w-2 bg-slate-300 hover:bg-slate-400"
+                  : "w-2 bg-white/40 hover:bg-white/70"
+                }`}
             />
           );
         })}

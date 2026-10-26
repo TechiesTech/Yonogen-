@@ -54,6 +54,11 @@ html {
   color: #830dfa;
 }
 
+.font-editorial-italic.text-white,
+.font-editorial-italic.\!text-white {
+  color: #ffffff !important;
+}
+
 /* Floating animation for 3D landmark cards */
 @keyframes floatSlow {
   0%, 100% {
